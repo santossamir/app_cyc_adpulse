@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo_cyc img{
+    width: 80%;
+    padding: 0 10% 0;
+}
+
+.profile_img{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-bottom: -20%;
+}
+
+.profile_img img{
+    position: relative;
+    z-index: 10;
+    width: 30%;
+}
+
+.customization_user{
+    background-color: #8cc63f;
+    border-radius: 55px 55px 0px 0px;
+    padding-top: 25%;
+}
+
+.profile_button, .logout_button, .look_teachers_button{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 25px;
+    padding: 0 10% 0;
+}
+
+.profile_button button, .logout_button button, .look_teachers_button button{
+    width: 100%;
+    height: 120px;
+    border-radius: 25px;
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.profile_button button a{
+    color: #8cc63f;
+}
+
+.look_teachers_button button{
+    background-color: #f7931e;
+}
+
+.logout_button button{
+    background-color: #4d9a10 !important;
+}
+
+.logout_button button a, .look_teachers_button button a{
+    color: #fff;
+}
+
+.footer_img_city{
+    background-color: #8cc63f;
+}
+
+.footer_img_city img{
+    width: 100%;  
+}

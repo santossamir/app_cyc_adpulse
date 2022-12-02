@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+body{
+    background-color: #f2f2db;
+}
+
+.logo_cyc img{
+    width: 80%;
+    padding: 0 10% 5%;
+}
+
+.text_show_cyc p{
+    font-size: 28px;
+    color: #000;
+    line-height: 43px;
+    text-align: justify;
+    padding: 0 10% 0;
+    margin:5% 0 5% 0 ;
+}
+
+.question_cyc h2{
+    font-weight: bolder;
+    font-size:56px;
+    color: #4d4d4d;
+    line-height:62px;
+    padding: 0 10% 0;
+    text-align: center;
+    margin: 8% 0 8% 0;
+}
+
+.buttons{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.button_teacher, .button_student{
+    width: 80%;
+    margin-bottom: 25px;
+}
+
+.button_teacher button, .button_student button{
+    width: 100%;
+    height: 120px;
+    border-radius: 25px;
+    border: none;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button_teacher button{
+    background-color: #8cc63f;
+}
+
+.button_student button{
+    background-color: #f7931e;
+}
+
+.footer_img_city{
+    margin-top: -144px;
+}
+
+.footer_img_city img{
+    width: 100%;
+}
+
