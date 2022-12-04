@@ -43,28 +43,28 @@
                         </div>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-localizacao.svg">
+						<img src="./public/img/svg/icon-localizacao-green.svg">
 						<span>Na cidade desde julho 2022</span>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-aulas.svg">
+						<img src="./public/img/svg/icon-aulas-green.svg">
 						<span>Participou em 30 aulas</span>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-rating.svg">
+						<img src="./public/img/svg/estrela.svg">
 						<span>4.3 de 5.0</span>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-boa-comunicacao.svg">
+							<img src="./public/img/svg/icon-boa-comunicacao-green.svg">
 							<span id="span_communication">Boa comunicação</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-empatia.svg">
+							<img src="./public/img/svg/icon-empatia-green.svg">
 							<span>Empatia</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-responsavel.svg">
+							<img src="./public/img/svg/icon-responsavel-green.svg">
 							<span>Responsável</span>    
 						</div>
 					</div>

@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: linear-gradient(0deg, #0068379c, #8bc63f93),url("../img/png/2954453.jpg");
+    background-image: linear-gradient(0deg, #0068379c, #8bc63f93),url("../img/png/background-city.jpg");
 }
 
 a{
@@ -84,6 +84,7 @@ h1{
 .dropdown_search img{
     width: 70%;
     margin-top: 43px;
+    display: none;
 }
 
 .search_button{
@@ -116,31 +117,66 @@ h1{
     transition: background 0.5s;
 }
 
+.locator_buttons{
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.button_locator_one, .button_locator_two, .button_locator_three{
+    cursor: pointer;
+    width: 70px;
+    border: none;
+    background-color: transparent;
+}
+
+.button_locator_one{
+    margin: 8% 0 0 55% ;
+}
+
+.button_locator_two{
+    margin: 30% 0 0 10% ;
+}
+
+.button_locator_three{
+    margin: 8% 0 6% 80% ;
+}
+
+
+
 .photo_locator{
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/svg/icon-localizadores.svg");
+    background-repeat:no-repeat;
+}
+
+.photo_locator_number, .modal_title_number{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 8% 10% 0;
-    width: 80%;
 }
 
-.photo_locator img{
-    width: 8%;
-    margin-left: 20%;
+.photo_locator_number h3, .modal_title_number h3{
+    margin-top: 34%;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 25px;
 }
 
 .modal_teacher{
     border-radius: 55px 55px 0px 0px;
     background-color: #d40023;
     margin-top: 40px;
+    display: none;
 }
 
 .modal_title{
     background-color: #d40023;
     width: 80%;
-    margin: 0 10% 0;
+    margin: 0 7% 0;
     color: #fff;
-    height: 160px;
+    height: 180px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -148,16 +184,23 @@ h1{
 
 .modal_title h1{
     font-weight: 500;
-    font-size: 47px;
-    padding-top: 4%;
+    font-size: 40px;
+    padding-top: 6%;
 }
 .modal_title span{
     font-weight: bolder;
 }
 
-.modal_title img{
-    width: 10%;
-    padding: 3%;
+.modal_title_img{
+    width: 110px;
+    height: 110px;
+    margin: 5% 0 0;
+    background-image: url("../img/svg/icon-localizadores-white.svg");
+    background-repeat:no-repeat;
+}
+
+.modal_title_number h3{
+    color: #d40023 !important;
 }
 
 .card_teacher{
@@ -175,8 +218,8 @@ h1{
 }
 
 .card_name h2{
-    font-weight:bolder;
-    font-size:35px;
+    font-weight: bolder;
+    font-size: 35px;
 }
 
 .card_name h4{

@@ -26,3 +26,7 @@ function localization(){
         alert("Localização!");
     }, 400);            
 }
+
+function teste(){
+    alert("Ok!");
+}

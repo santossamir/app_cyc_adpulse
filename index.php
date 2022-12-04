@@ -12,7 +12,7 @@
   	<body>
 		<div class="container">
 			<div class="logo_cyc">
-                <img src="./public/img/png/logo-CYC-19.png">
+                <img src="./public/img/svg/logo-cyc.svg">
             </div>
             <div class="text_show_cyc">
                 <p>

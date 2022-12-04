@@ -43,12 +43,37 @@
                 <button id="btn_category" class="btn" onClick="category()">Categoria</button>
                 <button id="btn_localization" class="btn active" onClick="localization()">Localização</button>                     
             </div>
-            <div class="photo_locator">
-                <img src="./public/img/svg/icon-localizadores.svg">
+            <div class="locator_buttons">
+                 <button class="button_locator_one" onClick="teste()">
+                    <div class="photo_locator">
+                        <div class="photo_locator_number">
+                            <h3>6</h3>
+                        </div>
+                    </div>
+                </button>
+                <button class="button_locator_two" onClick="teste()">
+                    <div class="photo_locator">
+                        <div class="photo_locator_number">
+                            <h3>6</h3>
+                        </div>
+                    </div>
+                </button>
+                <button class="button_locator_three" onClick="teste()">
+                    <div class="photo_locator">
+                        <div class="photo_locator_number">
+                            <h3>6</h3>
+                        </div>
+                    </div>
+                </button>
             </div>
             <div class="modal_teacher">
                 <div class="modal_title">
-                    <img src="./public/img/svg/icon-localizadores-white.svg">
+                    <div class="modal_title_img">
+                        <!--Image like background-->
+                        <div class="modal_title_number">
+                            <h3>6</h3>
+                        </div>
+                    </div>
                     <h1>MENTORES EM <span>LISBOA</span></h1>
                 </div>
                 <div class="card_teacher">
@@ -102,6 +127,6 @@
 		</div> 
   	</body>
     <script src="public/js/search_teacher.js">
-
+       
     </script>
 </html>

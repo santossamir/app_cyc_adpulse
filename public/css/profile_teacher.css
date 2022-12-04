@@ -124,6 +124,10 @@ a{
     margin-top: 20px !important;
 }
 
+.topics_session{
+    padding-right: 10%;
+}
+
 .topics_session_plus{
     margin-top: 40px;
 }
