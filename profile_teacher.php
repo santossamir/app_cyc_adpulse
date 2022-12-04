@@ -14,7 +14,7 @@
 			<div class="header_photo">
 				<div class="header_buttons">
                     <div class="come_back_button">
-                        <a href="#">
+                        <a href="user_teacher.php">
 							<img src="./public/img/svg/seta-esquerda.svg">
 						</a>
                     </div>
