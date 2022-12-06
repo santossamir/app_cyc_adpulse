@@ -12,7 +12,30 @@
   	<body>
 		<div class="container">
             <div class="form">
-                <form id="form_login" method="POST" onSubmit="handleSubmitForm(event)">
+                <form id="form_login" method="POST" action="user_controller.php?action=login" onSubmit="handleSubmitForm(event)">
+                    
+                    <!--Start of error text-->
+                    <?php
+                        if(isset($_GET['login']) && $_GET['login'] == 'Error'){
+                    ?>
+                    <!--Error text of login-->
+                    <div class="text_error">
+                        <strong>Usuário ou senha inválido(s).</strong>
+                    </div>               
+
+                    <?php } ?> 
+
+                    <?php
+                        if(isset($_GET['login']) && $_GET['login'] == 'Error2'){
+                    ?>
+                     <!--Error text of authentication-->
+                    <div class="text_error">
+                        <strong>Faça login antes de acessar as páginas.</strong>
+                    </div>               
+
+                    <?php } ?>
+                    <!--End error text-->
+
                     <label>E-mail</label>
                     <div class="email">
                         <input type="text" name="email" placeholder="Insere o teu e-mail" required>
@@ -30,7 +53,7 @@
                         </button>
                     </div>
                     <h4>
-                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="#">Regista-te</a>
+                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="user_registration.php">Regista-te</a>
                     </h4>
                 </form>
             </div>

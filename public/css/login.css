@@ -8,6 +8,17 @@ body{
     background-color: #f2f2db;
 }
 
+.text_error{
+    color: #c1272d;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
 .form{
     background-color: #f8f8f8;
     border-radius: 0 0 60px 60px;

@@ -8,11 +8,9 @@ function category(){
         btn_category.classList.add('active');
     }else{
         btn_localization.classList.add('active');
-        
     }; 
-    setTimeout(function teste(){
-        alert("Categoria!");
-    }, 400);   
+    
+    document.getElementById('dropdown').style.display = 'flex'; 
 }
 
 function localization(){
@@ -22,11 +20,14 @@ function localization(){
     }else{
         btn_category.classList.add('active');
     }; 
-    setTimeout(function teste(){
-        alert("Localização!");
-    }, 400);            
+   
+    document.getElementById('dropdown').style.display = 'none'; 
 }
 
-function teste(){
-    alert("Ok!");
+function find_teacher(){
+    if( (document.getElementById('dropdown').style.display != 'flex')){
+        alert("Pode!");
+     }else{
+        alert("Não pode!");
+     }
 }

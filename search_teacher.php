@@ -19,7 +19,7 @@
                         </a>                    
                     </div>
                     <div class="menu_button">
-                        <a href="#">
+                        <a href="user_student.php">
                         <img src="./public/img/svg/menu.svg">
                         </a>
                     </div>
@@ -32,9 +32,9 @@
                 <div class="search_teacher">
                     <input typpe="search" name="search" placeholder="Escolhe a tua categoria">
                     <button class="dropdown_search">
-                        <img src="./public/img/svg/dropdown-pesquisa.svg">
+                        <img id="dropdown" src="./public/img/svg/dropdown-pesquisa.svg">
                     </button>
-                    <button class="icon_search">
+                    <button class="icon_search" onClick="find_teacher()">
                         <img src="./public/img/svg/icon-search.svg">
                     </button>
                 </div>

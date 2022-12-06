@@ -1,3 +1,6 @@
+<?php
+	require_once "access_validator.php";
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -55,7 +58,7 @@
                 </div>
                 <div class="logout_button">
                     <button>
-                        <a href="login.php">Logout</a>
+                        <a href="logoff.php">Logout</a>
                     </button>
                 </div>
                 <div class="footer_img_city">

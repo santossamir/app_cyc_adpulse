@@ -19,7 +19,7 @@
 						</a>
                     </div>
                     <div class="menu_button">
-                        <a href="#">
+                        <a href="user_student.php">
 							<img src="./public/img/svg/menu.svg">
 						</a>
                     </div>
