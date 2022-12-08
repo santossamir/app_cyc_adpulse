@@ -12,7 +12,7 @@
   	<body>
 		<div class="container">
             <div class="form">
-                <form id="form_login" method="POST" action="user_controller.php?action=login" onSubmit="handleSubmitForm(event)">
+                <form id="form_login" method="POST" action="teacher_controller.php?action=login" onSubmit="handleSubmitForm(event)">
                     
                     <!--Start of error text-->
                     <?php

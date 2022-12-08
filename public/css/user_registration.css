@@ -8,6 +8,17 @@ body{
     background-color: #f2f2db;
 }
 
+.text_error{
+    color: #c1272d;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 40px;
+}
+
 #inputs_radio{
     margin-top: 40px;
 }
@@ -41,12 +52,19 @@ body{
     display: none;
 }
 
-.first_name, .last_name, .mentor, .city, .email, .password {
+.profile_img, .first_name, .last_name, .mentor, .city, .email, .password {
     margin: 0 10% 0;
     width: 80%;
     background: #FFFFFF;
     border: 1px solid #F1F1F1;
     border-radius: 25px;
+    margin-top:10px; 
+    box-shadow: 1px 1px 20px #91918d38;
+}
+
+.profile_img{
+    margin: 0 13% 0;
+    width: 50%;
     margin-top:10px; 
     box-shadow: 1px 1px 20px #91918d38;
 }
@@ -72,6 +90,12 @@ body{
     font-size: 30px;
     width: 100%;
     margin-left: 40px; 
+}
+
+.profile_img input{
+    background: #f2f2db;
+    font-weight: 600;
+    font-size: 30px; 
 }
 
 .first_name input:focus, .last_name input:focus, .mentor input:focus, .city input:focus, .email input:focus, .password input:focus{

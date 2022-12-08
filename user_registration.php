@@ -22,7 +22,44 @@
                 <!--End input radio for choose type user-->
 
                 <!--Start registration form-->
-                <form id="form_login" method="POST" action="user_controller.php?action=insert" onSubmit="handleSubmitForm(event)">
+                <form id="form_login" method="POST" action="user_controller.php?action=insert" enctype="multipart/form-data">
+                    <label>Foto do perfil</label>
+                    <div class="profile_img">
+                        <input type="file" name="profile_img" required>
+                    </div>
+
+                    <!--Start error text loading image-->
+                    <?php
+                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error3'){
+                    ?>
+                        <!--Error text of send image-->
+                    <div class="text_error">
+                        <strong>Falha ao enviar arquivo.</strong>
+                    </div>               
+
+                    <?php } ?>
+    
+                    <?php
+                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error4'){
+                    ?>
+                        <!--Error text of image size-->
+                    <div class="text_error">
+                        <strong>Arquivo muito grande. Max: 2MB.</strong>
+                    </div>               
+
+                    <?php } ?>
+
+                    <?php
+                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error5'){
+                    ?>
+                        <!--Error text of image type-->
+                    <div class="text_error">
+                        <strong>Tipo de arquivo não aceito.</strong>
+                    </div>               
+
+                    <?php } ?>
+                    <!--End error text loading image-->
+
                     <label>Nome</label>
                     <div class="first_name">
                         <input type="text" name="first_name" placeholder="Insere o teu nome" required>
@@ -33,7 +70,7 @@
                     </div>
                     <label id="label_mentor">Mentor de</label>
                     <div class="mentor">
-                        <input id="mentor" type="text" name="mentor" placeholder="Insere tua habilidade" required>
+                        <input id="mentor" type="text" name="mentor" placeholder="Insere tua habilidade">
                     </div>
                     <label>Concelho</label>
                     <div class="city">
