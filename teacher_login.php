@@ -53,7 +53,7 @@
                         </button>
                     </div>
                     <h4>
-                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="user_registration.php">Regista-te</a>
+                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="teacher_registration.php">Regista-te</a>
                     </h4>
                 </form>
             </div>

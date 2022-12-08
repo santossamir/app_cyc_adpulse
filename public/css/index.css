@@ -32,6 +32,17 @@ body{
     margin: 8% 0 8% 0;
 }
 
+.text_error{
+    color: #c1272d;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
 .buttons{
     display: flex;
     flex-direction:column;

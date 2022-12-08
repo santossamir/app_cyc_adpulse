@@ -1,17 +1,16 @@
 <?php 
-    class TeacherService{
+    class StudentService{
         private $conexion;
         private $teacher_id;
         private $first_name;
         private $last_name;
         private $city;
-        private $mentor;
         private $email;
         private $password;
         private $image_path;
         private $date_registration;
 
-        public function __construct(Conexion $conexion, Teacher $email){
+        public function __construct(Conexion $conexion, Student $email){
             $this->conexion = $conexion->connect();
             $this->first_name = $first_name;
             $this->email = $email;
@@ -19,9 +18,9 @@
         }
 
         public function insert(){
-            $query_insert = 'insert into tb_user_teacher(teacher)values(:teacher)';
+            $query_insert = 'insert into tb_user_student(student)values(:student)';
             $stmt = $this->conexion->prepare($query_insert);
-            $stmt->bindValue(':teacher', $this->user->__get('teacher'));
+            $stmt->bindValue(':student', $this->user->__get('student'));
             $stmt->execute();
         }
 
@@ -32,13 +31,12 @@
                    first_name,
                    last_name,
                    email,
-                   mentor,
                    city,
                    password,
                    image_path,
                    date_registration
                 from
-                   tb_user_teacher
+                   tb_user_student
             ';
             $stmt = $this->conexion->prepare($query_consultar);
             $stmt->execute();

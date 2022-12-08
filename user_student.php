@@ -1,3 +1,6 @@
+<?php
+	require_once "access_validator.php";
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />

@@ -1,10 +1,9 @@
 <?php
-    class Teacher {
+    class Student {
         private $teacher_id;
         private $first_name;
         private $last_name;
         private $city;
-        private $mentor;
         private $email;
         private $password;
         private $image_path;

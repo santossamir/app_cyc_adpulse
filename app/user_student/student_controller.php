@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require "./app/user_teacher/teacher_model.php";
-    require "./app/user_teacher/teacher_service.php";
+    require "./app/user_student/student_model.php";
+    require "./app/user_student/student_service.php";
     require "./app/conexion.php";
 
     $action = isset($_GET['action']) ? $_GET['action'] : $action;
@@ -42,17 +42,6 @@
             $error = "Nome/Apelido deve conter min de 3 caracteres.";
         }
         
-        #Start validation input mentor
-        $mentor = $_POST['mentor'];
-
-        if(empty($mentor)){
-            $error = "Mentor não pode ser vazio.";
-        }
-
-        if(strlen($mentor) < 3 ){
-            $error = "Mentor deve conter min de 3 caracteres.";
-        }
-
         #Start validation input city
         $city = $_POST['city'];
 
@@ -86,7 +75,7 @@
         #./public/img/profile_photos/$new_file_name.$file_extension (Link do arquivo foto.)
 
         if(($_SESSION["erro"] = $error) != ""){
-            header('Location: teacher_registration.php?insert=Error');
+            header('Location: student_registration.php?insert=Error');
         }
         
         
@@ -112,11 +101,11 @@
 
     }else if($action == 'login'){
 
-        $email = new Teacher();
+        $email_user = new User();
         $conexion = new Conexion();
 
-        $userService = new TeacherService($conexion, $email);
-        $teachers = $teacherService->login();
+        $userService = new UserService($conexion, $email_user);
+        $users = $userService->login();
         
 
         //Start validation of input value with registered in the database
@@ -124,28 +113,27 @@
         #Variables for authentication
         $authenticated_user = false;
         $id_user = null;
-        $email = $_POST['email'];
-        $password = $_POST['password']; 
+        $email_user = $_POST['email'];
+        $user_password = $_POST['password']; 
 
-        foreach($teachers as $teacher){
-            if( $teacher->email == $email && $teacher->password == $password){
+        foreach($users as $user){
+            if( $user->email_user == $email_user && $user->password_user == $user_password){
                 $authenticated_user = true;
-                $id_user = $teacher->id_user;
+                $id_user = $user->id_user;
             }else{
-                header('Location: teacher_login.php?login=Error');
+                header('Location: login.php?login=Error');
             }
         };
 
         if($authenticated_user){
             $_SESSION['authenticated'] = 'Yes';
             $_SESSION['id_user'] = $id_user;
-            header('Location: user_teacher.php');
+            header('Location: user_student.php');
         } else{
             $_SESSION['authenticated'] = 'No';
-            header('Location: index.php?login=Error');
+            header('Location: index.php?login=Error2');
         }
 
         //End validation of input value with registered in the database
     }
 ?>
-

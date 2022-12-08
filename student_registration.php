@@ -1,8 +1,15 @@
+<?php
+    session_start();
+    $error = "";
+    if(isset($_SESSION["erro"])){
+       $error = $_SESSION["erro"];
+    }
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/user_registration.css">
-		<title>Login - Creative Youth City</title>
+		<link rel="stylesheet" href="public/css/student_registration.css">
+		<title>Registration - Creative Youth City</title>
 
 		<!--Font family-->
 		<style>
@@ -12,17 +19,8 @@
   	<body>
 		<div class="container">
             <div class="form">
-                <!--Start input radio for choose type user-->
-                <p id="inputs_radio" class="inputs_radio">
-                    <input type="radio" name="type_user"  value="mentor" onchange="choose_type_mentor()">Eu sou um mentor
-                </p>    
-                <p class="inputs_radio">
-                    <input type="radio" name="type_user" value="student" onchange="choose_type_student()">Eu sou um estudante
-                </p>
-                <!--End input radio for choose type user-->
-
                 <!--Start registration form-->
-                <form id="form_login" method="POST" action="user_controller.php?action=insert" enctype="multipart/form-data">
+                <form id="form_login" method="POST" action="teacher_controller.php?action=insert" enctype="multipart/form-data">
                     <label>Foto do perfil</label>
                     <div class="profile_img">
                         <input type="file" name="profile_img" required>
@@ -30,33 +28,11 @@
 
                     <!--Start error text loading image-->
                     <?php
-                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error3'){
+                        if(!empty($error)){
                     ?>
-                        <!--Error text of send image-->
                     <div class="text_error">
-                        <strong>Falha ao enviar arquivo.</strong>
+                        <strong><?php echo $error;?></strong>
                     </div>               
-
-                    <?php } ?>
-    
-                    <?php
-                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error4'){
-                    ?>
-                        <!--Error text of image size-->
-                    <div class="text_error">
-                        <strong>Arquivo muito grande. Max: 2MB.</strong>
-                    </div>               
-
-                    <?php } ?>
-
-                    <?php
-                        if(isset($_GET['insert']) && $_GET['insert'] == 'Error5'){
-                    ?>
-                        <!--Error text of image type-->
-                    <div class="text_error">
-                        <strong>Tipo de arquivo não aceito.</strong>
-                    </div>               
-
                     <?php } ?>
                     <!--End error text loading image-->
 
@@ -67,10 +43,6 @@
                     <label>Apelido</label>
                     <div class="last_name">
                         <input type="text" name="last_name" placeholder="Insere o teu apelido" required>
-                    </div>
-                    <label id="label_mentor">Mentor de</label>
-                    <div class="mentor">
-                        <input id="mentor" type="text" name="mentor" placeholder="Insere tua habilidade">
                     </div>
                     <label>Concelho</label>
                     <div class="city">
@@ -97,7 +69,4 @@
             </div>
 		</div> 
   	</body>
-  	<script src="public/js/user_registration.js">
-	       
-	</script>
 </html>

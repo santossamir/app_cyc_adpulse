@@ -33,14 +33,23 @@
                     Estás preparado para entrar na cidade?
                 </h2>
             </div>
+            <?php
+                if(isset($_GET['login']) && $_GET['login'] == 'Error'){
+            ?>
+                <!--Error text of authentication-->
+            <div class="text_error">
+                <strong>Faça login antes de acessar as páginas.</strong>
+            </div>               
+
+            <?php } ?>
             <div class="buttons">
                 <div class="button_teacher">
-                    <a href="login.php">
+                    <a href="teacher_login.php">
                         <button>Sim, quero ensinar</button>
                     </a>
                 </div>
                 <div class="button_student">
-                    <a href="login.php">
+                    <a href="student_login.php">
                         <button>Sim, quero aprender</button>
                     </a>
                 </div>

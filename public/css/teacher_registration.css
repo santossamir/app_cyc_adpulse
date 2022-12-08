@@ -19,21 +19,6 @@ body{
     margin-top: 40px;
 }
 
-#inputs_radio{
-    margin-top: 40px;
-}
-
-.inputs_radio{
-    margin: 10px 10% 0px;
-    font-weight:600;
-    font-size:30px;
-}
-
-.inputs_radio input{
-    width: 42px;
-    height: 26px;
-}
-
 .form{
     background-color: #f8f8f8;
     border-radius: 0 0 60px 60px;
@@ -42,14 +27,6 @@ body{
     flex-direction:column;
     justify-content: center;  
     padding-bottom: 40px;
-}
-
-#form_login{
-    display: none;
-}
-
-#mentor{
-    display: none;
 }
 
 .profile_img, .first_name, .last_name, .mentor, .city, .email, .password {
