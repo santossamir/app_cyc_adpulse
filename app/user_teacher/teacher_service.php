@@ -52,15 +52,7 @@
         public function login(){ 
             $query_consultar = '
                 select 
-                   teacher_id,
-                   first_name,
-                   last_name,
-                   email,
-                   mentor,
-                   city,
-                   password,
-                   image_path,
-                   date_registration
+                   *
                 from
                    tb_user_teacher
             ';

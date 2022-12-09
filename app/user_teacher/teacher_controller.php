@@ -127,22 +127,42 @@
         
         #Variables for authentication
         $authenticated_user = false;
-        $id_user = null;
+        $teacher_id = null;
+        $image_path = null;
+        $first_name = null;
+        $last_name = null;
+        $mentor = null;
+        $city = null;
+        $date_registration = null;
         $email = $_POST['email'];
         $password = $_POST['password']; 
 
         foreach($teachers as $teacher){
             if( $teacher->email == $email && $teacher->password == $password){
                 $authenticated_user = true;
-                $id_user = $teacher->id_user;
+                $teacher_id = $teacher->teacher_id;
+                $image_path = $teacher->image_path;
+                $first_name = $teacher->first_name;
+                $last_name = $teacher->last_name;
+                $mentor = $teacher->mentor;
+                $city = $teacher->city;
+                $date_registration = $teacher->date_registration;
             }else{
                 header('Location: teacher_login.php?login=Error');
             }
         };
 
         if($authenticated_user){
+
             $_SESSION['authenticated'] = 'Yes';
-            $_SESSION['id_user'] = $id_user;
+            $_SESSION['teacher_id'] = $teacher_id;
+            $_SESSION['image_path'] = $image_path;
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['last_name'] = $last_name;
+            $_SESSION['mentor'] = $mentor;
+            $_SESSION['city'] = $city;
+            $_SESSION['date_registration'] = $date_registration;
+
             header('Location: user_teacher.php');
         } else{
             $_SESSION['authenticated'] = 'No';

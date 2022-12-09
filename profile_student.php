@@ -1,3 +1,15 @@
+<?php
+	session_start();
+
+    $image_path = $_SESSION['image_path'];
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $date_registration = $_SESSION['date_registration'];
+
+    require_once "access_validator.php";
+    require "./app/user_teacher/teacher_controller.php";
+    $action = "login";
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -27,17 +39,25 @@
 				<img src="./public/img/png/foto-utilizador-20.png">
             </div>
             <div class="profile_img">
-                <img src="./public/img/svg/icon-feminino.svg">
+                <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
 				<div class="user_data">
 					<div class="user_data_name">
-						<h2>Joana Fonseca</h2>
+						<h2>
+							<?php
+								echo $first_name." ".$last_name;
+							?>
+						</h2>
 						<h4>18 anos</h4>
 					</div>
 					<div class="user_data_plus">
 						<img src="./public/img/svg/icon-localizacao.svg">
-						<span>Na cidade desde julho 2022</span>
+						<span>Na cidade desde
+							<?php
+								echo $date_registration;
+							?>
+						</span>
 					</div>
 					<div class="user_data_plus">
 						<img src="./public/img/svg/icon-aulas.svg">

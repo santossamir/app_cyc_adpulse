@@ -1,5 +1,12 @@
 <?php
-	require_once "access_validator.php";
+	session_start();
+
+    $image_path = $_SESSION['image_path'];
+    $date_registration = $_SESSION['date_registration'];
+    
+    require_once "access_validator.php";
+    require "./app/user_teacher/teacher_controller.php";
+    $action = "login";
 ?>
 <html>
   	<head>
@@ -18,7 +25,7 @@
                 <img src="./public/img/png/logo-CYC-19.png">
             </div>
             <div class="profile_img">
-                    <img src="./public/img/svg/icon-masculino.svg">
+                    <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
                 <div class="profile_button">

@@ -20,7 +20,7 @@
 		<div class="container">
             <div class="form">
                 <!--Start registration form-->
-                <form id="form_login" method="POST" action="teacher_controller.php?action=insert" enctype="multipart/form-data">
+                <form id="form_login" method="POST" action="student_controller.php?action=insert" enctype="multipart/form-data">
                     <label>Foto do perfil</label>
                     <div class="profile_img">
                         <input type="file" name="profile_img" required>

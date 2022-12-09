@@ -1,3 +1,15 @@
+<?php
+	session_start();
+    $image_path = $_SESSION['image_path'];
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $mentor = $_SESSION['mentor'];
+    $date_registration = $_SESSION['date_registration'];
+
+    require_once "access_validator.php";
+    require "./app/user_teacher/teacher_controller.php";
+    $action = "login";
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -19,7 +31,7 @@
 						</a>
                     </div>
                     <div class="menu_button">
-                        <a href="user_student.php">
+                        <a href="user_teacher.php">
 							<img src="./public/img/svg/menu.svg">
 						</a>
                     </div>
@@ -27,14 +39,22 @@
 				<img src="./public/img/png/foto-mentor-18.png">
             </div>
             <div class="profile_img">
-                <img src="./public/img/svg/icon-masculino.svg">
+                <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
 				<div class="user_data">
 					<div class="user_data_name">
                         <div>
-                            <h2>José Mourão</h2>
-                            <h4>Mentor de Guitarra</h4>
+                            <h2>
+								<?php
+									echo $first_name." ".$last_name;
+								?>
+							</h2>
+                            <h4> Mentor de
+								<?php
+								  echo $mentor
+								?>
+							</h4>
                         </div>
                         <div class="link_cv">
                             <a href="#">
@@ -44,7 +64,11 @@
 					</div>
 					<div class="user_data_plus">
 						<img src="./public/img/svg/icon-localizacao-green.svg">
-						<span>Na cidade desde julho 2022</span>
+						<span>Na cidade desde
+							<?php
+								echo $date_registration;
+							?>
+						</span>
 					</div>
 					<div class="user_data_plus">
 						<img src="./public/img/svg/icon-aulas-green.svg">

@@ -11,7 +11,7 @@
     
     //Start validation of form
         
-        #Start validation input profile_img
+        #Validation input profile_img
         $profile_img = $_FILES['profile_img'];
         $folder_profile_photos = "./public/img/profile_photos/";
         $file_name = $profile_img['name'];
@@ -26,10 +26,7 @@
             $error = "Apenas arquivos '.jpg', '.jpeg' ou '.png'. ";
         }
 
-        $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
-        $link_photo = "./public/img/profile_photos/$new_file_name.$file_extension";
-
-        #Start validation input name
+        #Validation input name
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $error = '';
@@ -42,7 +39,7 @@
             $error = "Nome/Apelido deve conter min de 3 caracteres.";
         }
         
-        #Start validation input city
+        #Validation input city
         $city = $_POST['city'];
 
         if(empty($city)){
@@ -53,7 +50,7 @@
             $error = "Concelho deve conter min de 3 caracteres.";
         }
 
-        #Start validation input email
+        #Validation input email
         $email = $_POST['email'];
 
         if(empty($email)){
@@ -64,76 +61,98 @@
             $error = "Email incorreto.";
         }
 
-        #Start validation input password
+        #Validation input password
         $password = $_POST['password'];
 
         if(empty($password) || strlen($password) < 4){
             $error = "Palavra-chave não pode ser vazio ou min 4 caracteres.";
         }
 
-        #$right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
-        #./public/img/profile_photos/$new_file_name.$file_extension (Link do arquivo foto.)
-
-        if(($_SESSION["erro"] = $error) != ""){
+        $_SESSION["erro"] = $error;
+        if(!empty($error)){
             header('Location: student_registration.php?insert=Error');
+            exit;
         }
-        
-        
+
+        #Variables of profile photos
+        $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
+        $path_photo = "$folder_profile_photos$new_file_name.$file_extension";
+        $_SESSION["path_photo"] = $path_photo;
+
     //End validation of form 
         
-        echo '<pre>';
-            print_r($_POST);
-            echo '<br>';
-            print_r($_FILES['profile_img']);
-            echo $link_photo;
-        echo'</pre>';
+        $image_path = new Student();
+        $first_name = new Student();
+        $last_name = new Student();
+        $city = new Student();
+        $email = new Student();
+        $password = new Student();
         
-        /*$user = new User();
-        
-        $user->__set('user', $_POST['user']);
+        $image_path->__set('image_path', $path_photo);
+        $first_name->__set('first_name', $_POST['first_name']);
+        $last_name->__set('last_name', $_POST['last_name']);
+        $city->__set('city', $_POST['city']);
+        $email->__set('email', $_POST['email']);
+        $password->__set('password', $_POST['password']);
 
         $conexion = new Conexion();
 
-        $userService = new UserService($conexion, $user);
-        $userService->inserir();
+        $studentService = new StudentService($conexion, $image_path, $first_name, $last_name, $city, $email, $password);
+        $studentService->insert();
 
-        header('Location: login.php');*/
+        header('Location: student_login.php');
 
     }else if($action == 'login'){
 
-        $email_user = new User();
+        $email = new Student();
         $conexion = new Conexion();
 
-        $userService = new UserService($conexion, $email_user);
-        $users = $userService->login();
-        
+        $studentService = new StudentService($conexion, $email);
+        $students = $studentService->login();
 
-        //Start validation of input value with registered in the database
+    //Start validation of input value with registered in the database
         
         #Variables for authentication
         $authenticated_user = false;
-        $id_user = null;
-        $email_user = $_POST['email'];
-        $user_password = $_POST['password']; 
+        $student_id = null;
+        $image_path = null;
+        $first_name = null;
+        $last_name = null;
+        $city = null;
+        $date_registration = null;
+        $email = $_POST['email'];
+        $password = $_POST['password']; 
 
-        foreach($users as $user){
-            if( $user->email_user == $email_user && $user->password_user == $user_password){
+        foreach($students as $student){
+            if( $student->email == $email && $student->password == $password){
                 $authenticated_user = true;
-                $id_user = $user->id_user;
+                $student_id = $student->student_id;
+                $image_path = $student->image_path;
+                $first_name = $student->first_name;
+                $last_name = $student->last_name;
+                $city = $student->city;
+                $date_registration = $student->date_registration;
             }else{
-                header('Location: login.php?login=Error');
+                header('Location: student_login.php?login=Error');
             }
         };
 
         if($authenticated_user){
+
             $_SESSION['authenticated'] = 'Yes';
-            $_SESSION['id_user'] = $id_user;
+            $_SESSION['student_id'] = $student_id;
+            $_SESSION['image_path'] = $image_path;
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['last_name'] = $last_name;
+            $_SESSION['city'] = $city;
+            $_SESSION['date_registration'] = $date_registration;
+
             header('Location: user_student.php');
         } else{
             $_SESSION['authenticated'] = 'No';
-            header('Location: index.php?login=Error2');
+            header('Location: index.php?login=Error');
         }
 
-        //End validation of input value with registered in the database
+    //End validation of input value with registered in the database
     }
 ?>
