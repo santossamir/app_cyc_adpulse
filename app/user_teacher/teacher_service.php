@@ -1,4 +1,6 @@
 <?php 
+    session_start();
+
     class TeacherService{
         private $conexion;
         private $teacher_id;
@@ -13,15 +15,37 @@
 
         public function __construct(Conexion $conexion, Teacher $email){
             $this->conexion = $conexion->connect();
-            $this->first_name = $first_name;
             $this->email = $email;
             $this->password = $password;
         }
-
+        
         public function insert(){
-            $query_insert = 'insert into tb_user_teacher(teacher)values(:teacher)';
+            $path_photo = "";
+            if(isset($_SESSION["path_photo"])){
+                $path_photo = $_SESSION["path_photo"];
+            }
+
+            $image_path = $path_photo;
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $mentor = $_POST['mentor'];
+            $city = $_POST['city'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $query_insert = "insert into tb_user_teacher(first_name, last_name, mentor,
+                                city, password, image_path, email)
+                            values(:first_name, :last_name, :mentor, :city, :password,
+                                :image_path, :email)";
+                                
             $stmt = $this->conexion->prepare($query_insert);
-            $stmt->bindValue(':teacher', $this->user->__get('teacher'));
+            $stmt->bindValue(':first_name', $first_name);
+            $stmt->bindValue(':last_name', $last_name);
+            $stmt->bindValue(':mentor', $mentor);
+            $stmt->bindValue(':city', $city);
+            $stmt->bindValue(':password', $password);
+            $stmt->bindValue(':image_path', $path_photo);
+            $stmt->bindValue(':email', $email);
             $stmt->execute();
         }
 

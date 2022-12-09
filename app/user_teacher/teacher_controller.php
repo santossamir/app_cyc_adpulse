@@ -11,7 +11,7 @@
     
     //Start validation of form
         
-        #Start validation input profile_img
+        #Validation input profile_img
         $profile_img = $_FILES['profile_img'];
         $folder_profile_photos = "./public/img/profile_photos/";
         $file_name = $profile_img['name'];
@@ -26,10 +26,7 @@
             $error = "Apenas arquivos '.jpg', '.jpeg' ou '.png'. ";
         }
 
-        $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
-        $link_photo = "./public/img/profile_photos/$new_file_name.$file_extension";
-
-        #Start validation input name
+        #Validation input name
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
         $error = '';
@@ -42,7 +39,7 @@
             $error = "Nome/Apelido deve conter min de 3 caracteres.";
         }
         
-        #Start validation input mentor
+        #Validation input mentor
         $mentor = $_POST['mentor'];
 
         if(empty($mentor)){
@@ -53,7 +50,7 @@
             $error = "Mentor deve conter min de 3 caracteres.";
         }
 
-        #Start validation input city
+        #Validation input city
         $city = $_POST['city'];
 
         if(empty($city)){
@@ -64,7 +61,7 @@
             $error = "Concelho deve conter min de 3 caracteres.";
         }
 
-        #Start validation input email
+        #Validation input email
         $email = $_POST['email'];
 
         if(empty($email)){
@@ -75,49 +72,56 @@
             $error = "Email incorreto.";
         }
 
-        #Start validation input password
+        #Validation input password
         $password = $_POST['password'];
 
         if(empty($password) || strlen($password) < 4){
             $error = "Palavra-chave não pode ser vazio ou min 4 caracteres.";
         }
 
-        #$right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
-        #./public/img/profile_photos/$new_file_name.$file_extension (Link do arquivo foto.)
-
-        if(($_SESSION["erro"] = $error) != ""){
+        $_SESSION["erro"] = $error;
+        if(!empty($error)){
             header('Location: teacher_registration.php?insert=Error');
+            exit;
         }
-        
-        
+
+        #Variables of profile photos
+        $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
+        $path_photo = "$folder_profile_photos$new_file_name.$file_extension";
+        $_SESSION["path_photo"] = $path_photo;
+
     //End validation of form 
+               
+        $image_path = new Teacher();
+        $first_name = new Teacher();
+        $last_name = new Teacher();
+        $mentor = new Teacher();
+        $city = new Teacher();
+        $email = new Teacher();
+        $password = new Teacher();
         
-        echo '<pre>';
-            print_r($_POST);
-            echo '<br>';
-            print_r($_FILES['profile_img']);
-            echo $link_photo;
-        echo'</pre>';
-        
-        /*$user = new User();
-        
-        $user->__set('user', $_POST['user']);
+        $image_path->__set('image_path', $path_photo);
+        $first_name->__set('first_name', $_POST['first_name']);
+        $last_name->__set('last_name', $_POST['last_name']);
+        $mentor->__set('mentor', $_POST['mentor']);
+        $city->__set('city', $_POST['city']);
+        $email->__set('email', $_POST['email']);
+        $password->__set('password', $_POST['password']);
 
         $conexion = new Conexion();
 
-        $userService = new UserService($conexion, $user);
-        $userService->inserir();
+        $teacherService = new TeacherService($conexion, $image_path, $first_name, $last_name, $mentor, $city, $email, $password);
+        $teacherService->insert();
 
-        header('Location: login.php');*/
+        header('Location: teacher_login.php');
 
     }else if($action == 'login'){
 
         $email = new Teacher();
         $conexion = new Conexion();
 
-        $userService = new TeacherService($conexion, $email);
+        $teacherService = new TeacherService($conexion, $email);
         $teachers = $teacherService->login();
-        
 
         //Start validation of input value with registered in the database
         
