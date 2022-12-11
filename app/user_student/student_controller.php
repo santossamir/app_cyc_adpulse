@@ -87,6 +87,7 @@
         $city = new Student();
         $email = new Student();
         $password = new Student();
+        $age = new Student();
         
         $image_path->__set('image_path', $path_photo);
         $first_name->__set('first_name', $_POST['first_name']);
@@ -94,10 +95,11 @@
         $city->__set('city', $_POST['city']);
         $email->__set('email', $_POST['email']);
         $password->__set('password', $_POST['password']);
+        $age->__set('age', $_POST['age']);
 
         $conexion = new Conexion();
 
-        $studentService = new StudentService($conexion, $image_path, $first_name, $last_name, $city, $email, $password);
+        $studentService = new StudentService($conexion, $image_path, $first_name, $last_name, $city, $email, $password, $age);
         $studentService->insert();
 
         header('Location: student_login.php');
@@ -119,9 +121,11 @@
         $first_name = null;
         $last_name = null;
         $city = null;
+        $age = null;
         $date_registration = null;
         $email = $_POST['email'];
         $password = $_POST['password']; 
+        
 
         foreach($students as $student){
             if( $student->email == $email && $student->password == $password){
@@ -132,6 +136,7 @@
                 $last_name = $student->last_name;
                 $city = $student->city;
                 $date_registration = $student->date_registration;
+                $age = $student->age;
             }else{
                 header('Location: student_login.php?login=Error');
             }
@@ -146,6 +151,7 @@
             $_SESSION['last_name'] = $last_name;
             $_SESSION['city'] = $city;
             $_SESSION['date_registration'] = $date_registration;
+            $_SESSION['age'] = $age;
 
             header('Location: user_student.php');
         } else{

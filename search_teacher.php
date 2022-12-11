@@ -1,3 +1,13 @@
+<?php
+	session_start();
+
+    $city = $_SESSION['city'];
+    $mentor = $_SESSION['mentor'];
+    
+    require_once "access_validator.php";
+    require "./app/user_teacher/teacher_controller.php";
+    $action = "search";
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -28,13 +38,23 @@
             <div class="title_find_teacher">
                 <h1>Encontra o teu mentor</h1>
             </div>
-            <form>
+            <?php
+                if(isset($_GET['search']) && $_GET['search'] == 'Error'){
+            ?>
+                <!--Error text of search-->
+            <div class="text_error">
+                <strong>Nenhum resultado encontrado.</strong>
+            </div>               
+
+            <?php } ?>
+            <form method="POST" action="teacher_controller.php?action=search">
                 <div class="search_teacher">
-                    <input typpe="search" name="search" placeholder="Escolhe a tua categoria">
-                    <button class="dropdown_search">
+                    <input id="input_search" typpe="search" name="search" placeholder="Escolhe a localização">
+                    <div class="dropdown_search">
                         <img id="dropdown" src="./public/img/svg/dropdown-pesquisa.svg">
-                    </button>
-                    <button class="icon_search" onClick="find_teacher()">
+                    </div>
+                    <!--onClick="find_teacher()"-->
+                    <button class="icon_search">
                         <img src="./public/img/svg/icon-search.svg">
                     </button>
                 </div>
@@ -43,29 +63,42 @@
                 <button id="btn_category" class="btn" onClick="category()">Categoria</button>
                 <button id="btn_localization" class="btn active" onClick="localization()">Localização</button>                     
             </div>
-            <div class="locator_buttons">
+            <!--Start of search return-->
+            <?php
+                if(isset($_GET['search']) && $_GET['search'] == 'Return'){
+            ?>
+                <!--Buttons return of search-->
+                <div class="locator_buttons">
                  <button class="button_locator_one" onClick="teste()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
-                            <h3>6</h3>
+                            <h3>
+                                <?php
+                                    print_r(count($city));
+                                ?>
+                            </h3>
                         </div>
                     </div>
                 </button>
                 <button class="button_locator_two" onClick="teste()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
-                            <h3>6</h3>
+                            <h3>0</h3>
                         </div>
                     </div>
                 </button>
                 <button class="button_locator_three" onClick="teste()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
-                            <h3>6</h3>
+                            <h3>0</h3>
                         </div>
                     </div>
                 </button>
-            </div>
+            </div>              
+
+            <?php } ?>
+            <!--End of search return-->
+
             <div class="modal_teacher">
                 <div class="modal_title">
                     <div class="modal_title_img">

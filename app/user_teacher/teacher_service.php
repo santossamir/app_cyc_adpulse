@@ -33,10 +33,8 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $query_insert = "insert into tb_user_teacher(first_name, last_name, mentor,
-                                city, password, image_path, email)
-                            values(:first_name, :last_name, :mentor, :city, :password,
-                                :image_path, :email)";
+            $query_insert = "INSERT INTO tb_user_teacher(first_name, last_name, mentor, city, password, image_path, email)
+                            VALUES(:first_name, :last_name, :mentor, :city, :password, :image_path, :email)";
                                 
             $stmt = $this->conexion->prepare($query_insert);
             $stmt->bindValue(':first_name', $first_name);
@@ -50,15 +48,24 @@
         }
 
         public function login(){ 
-            $query_consultar = '
-                select 
-                   *
-                from
-                   tb_user_teacher
-            ';
-            $stmt = $this->conexion->prepare($query_consultar);
+            $query_consult = "SELECT teacher_id, first_name, last_name, mentor, city, email, image_path, password,
+                               DATE_FORMAT(date_registration, '%M de %Y') AS date_registration 
+                               FROM tb_user_teacher";
+            $stmt = $this->conexion->prepare($query_consult);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
-        }     
+        }
+        
+        public function search(){
+            if(isset($_POST['search'])){
+                $find = $_POST['search'];
+                $query_search = "SELECT * FROM  tb_user_teacher
+                                WHERE city LIKE '%$find%' OR mentor LIKE '%$find%'";
+                $stmt = $this->conexion->prepare($query_search);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            }
+            
+        }
     }
 ?>

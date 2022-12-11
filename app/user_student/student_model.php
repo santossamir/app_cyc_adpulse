@@ -8,6 +8,7 @@
         private $password;
         private $image_path;
         private $date_registration;
+        private $age;
 
         public function __get($atributo) {
             return $this->$atributo;

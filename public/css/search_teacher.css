@@ -70,6 +70,9 @@ h1{
 .dropdown_search, .icon_search{
     width: 8%;
     background-color: #ffffff;
+}
+
+.icon_search{
     cursor: pointer;
 }
 
@@ -120,7 +123,6 @@ h1{
 .locator_buttons{
     display: flex;
     flex-direction: column;
-    display: none;
 }
 
 .button_locator_one, .button_locator_two, .button_locator_three{
@@ -162,6 +164,17 @@ h1{
     color: #fff;
     font-weight: bolder;
     font-size: 25px;
+}
+
+.text_error{
+    color: #c40b11;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 30px 0 30px 0;
 }
 
 .modal_teacher{

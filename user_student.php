@@ -70,7 +70,7 @@
                 </div>
                 <div class="logout_button">
                     <button>
-                        <a href="login.php">Logout</a>
+                        <a href="logoff.php">Logout</a>
                     </button>
                 </div>
                 <div class="footer_img_city">

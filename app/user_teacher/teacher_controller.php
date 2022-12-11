@@ -123,7 +123,7 @@
         $teacherService = new TeacherService($conexion, $email);
         $teachers = $teacherService->login();
 
-        //Start validation of input value with registered in the database
+        //Start validation of input value with data registered in the database
         
         #Variables for authentication
         $authenticated_user = false;
@@ -168,8 +168,31 @@
             $_SESSION['authenticated'] = 'No';
             header('Location: index.php?login=Error');
         }
+        //End validation of input value with data registered in the database
 
-        //End validation of input value with registered in the database
+    } else if($action == 'search'){
+        $email = new Teacher();
+        $conexion = new Conexion();
+
+        $teacherService = new TeacherService($conexion, $email);
+        $researches = $teacherService->search();
+
+        $mentor = array();
+        $city = array();
+
+        foreach($researches as $search){
+            
+            array_push($mentor, $search->mentor);
+            array_push($city, $search->city);
+        }
+
+        if(count($mentor) <= 0 && count($city) <= 0){
+            header('Location: search_teacher.php?search=Error');
+        }else{
+            $_SESSION['mentor'] = $mentor;
+            $_SESSION['city'] = $city;
+            header('Location: search_teacher.php?search=Return');
+        }
     }
 ?>
 

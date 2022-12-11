@@ -5,6 +5,7 @@
     $first_name = $_SESSION['first_name'];
     $last_name = $_SESSION['last_name'];
     $date_registration = $_SESSION['date_registration'];
+	$age = $_SESSION['age'];
 
     require_once "access_validator.php";
     require "./app/user_teacher/teacher_controller.php";
@@ -49,7 +50,11 @@
 								echo $first_name." ".$last_name;
 							?>
 						</h2>
-						<h4>18 anos</h4>
+						<h4>
+							<?php echo $age;
+							
+							?> anos
+						</h4>
 					</div>
 					<div class="user_data_plus">
 						<img src="./public/img/svg/icon-localizacao.svg">

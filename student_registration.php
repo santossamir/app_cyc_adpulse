@@ -44,6 +44,10 @@
                     <div class="last_name">
                         <input type="text" name="last_name" placeholder="Insere o teu apelido" required>
                     </div>
+                    <label>Idade</label>
+                    <div class="last_name">
+                        <input type="number" min="7" max="100" name="age" placeholder="Insere a tua idade" required>
+                    </div>
                     <label>Concelho</label>
                     <div class="city">
                         <input type="text" name="city" placeholder="Insere tua cidade" required>
