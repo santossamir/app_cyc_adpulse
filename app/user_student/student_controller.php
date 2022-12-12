@@ -115,19 +115,21 @@
     //Start validation of input value with registered in the database
         
         #Variables for authentication
+        $email = $_POST['email'];
+        $password = $_POST['password'];
         $authenticated_user = false;
         $student_id = null;
+        
+        #Variables to receive values from the database
         $image_path = null;
         $first_name = null;
         $last_name = null;
         $city = null;
         $age = null;
-        $date_registration = null;
-        $email = $_POST['email'];
-        $password = $_POST['password']; 
-        
+        $date_registration = null;        
 
         foreach($students as $student){
+            
             if( $student->email == $email && $student->password == $password){
                 $authenticated_user = true;
                 $student_id = $student->student_id;
@@ -158,7 +160,6 @@
             $_SESSION['authenticated'] = 'No';
             header('Location: index.php?login=Error');
         }
-
     //End validation of input value with registered in the database
     }
 ?>

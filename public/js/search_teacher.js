@@ -33,3 +33,9 @@ function localization(){
         alert("Não pode!");
      }
 }*/
+
+function teste(){
+    document.getElementById('modal_teacher').style.display = 'block'; 
+    document.getElementById('button_locator_two').style.display = 'none';
+    document.getElementById('button_locator_three').style.display = 'none';
+}

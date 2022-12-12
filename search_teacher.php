@@ -1,12 +1,17 @@
 <?php
 	session_start();
-
-    $city = $_SESSION['city'];
-    $mentor = $_SESSION['mentor'];
-    
+    $action = "show_modal";
     require_once "access_validator.php";
     require "./app/user_teacher/teacher_controller.php";
-    $action = "search";
+    
+    #Arrays with search values
+    $city = $_SESSION['city'];
+    $mentor = $_SESSION['mentor'];
+
+    #Variables to change body style after search -> inline style on body tag
+    $background = "linear-gradient(0deg, #0068379c, #8bc63f93),url('./public/img/png/background-city.jpg')";
+    $background_two = "linear-gradient(0deg, #c0c0c063, #dcdcdc56),url('./public/img/png/background-city.jpg')";
+    
 ?>
 <html>
   	<head>
@@ -19,7 +24,7 @@
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
         </style>
   	</head>
-  	<body>
+  	<body style="background-image: <?php if($_GET['search'] == 'Return'){echo $background_two;}else{ echo $background;}?>">
 		<div class="container">
 			<div class="header">
                 <div class="header_buttons">
@@ -46,7 +51,8 @@
                 <strong>Nenhum resultado encontrado.</strong>
             </div>               
 
-            <?php } ?>
+            <?php } 
+            ?>
             <form method="POST" action="teacher_controller.php?action=search">
                 <div class="search_teacher">
                     <input id="input_search" typpe="search" name="search" placeholder="Escolhe a localização">
@@ -68,8 +74,8 @@
                 if(isset($_GET['search']) && $_GET['search'] == 'Return'){
             ?>
                 <!--Buttons return of search-->
-                <div class="locator_buttons">
-                 <button class="button_locator_one" onClick="teste()">
+                <div class="locator_buttons" onClick="teste()">
+                 <button class="button_locator_one">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
                             <h3>
@@ -80,14 +86,14 @@
                         </div>
                     </div>
                 </button>
-                <button class="button_locator_two" onClick="teste()">
+                <button id="button_locator_two" class="button_locator_two" onClick="teste()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
                             <h3>0</h3>
                         </div>
                     </div>
                 </button>
-                <button class="button_locator_three" onClick="teste()">
+                <button id="button_locator_three" class="button_locator_three" onClick="teste()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
                             <h3>0</h3>
@@ -99,62 +105,58 @@
             <?php } ?>
             <!--End of search return-->
 
-            <div class="modal_teacher">
+            <div id="modal_teacher" class="modal_teacher">
                 <div class="modal_title">
                     <div class="modal_title_img">
                         <!--Image like background-->
                         <div class="modal_title_number">
-                            <h3>6</h3>
+                            <h3>
+                                <?php
+                                    print_r(count($city));
+                                ?>
+                            </h3>
                         </div>
                     </div>
-                    <h1>MENTORES EM <span>LISBOA</span></h1>
+                    <h1>MENTORES EM 
+                        <span>
+                            <?php
+                                print_r($city['0'])
+                            ?>
+                        </span>
+                    </h1>
                 </div>
                 <div class="card_teacher">
-                    <div class="card_teacher_box">
-                        <div class="card_name">
-                            <h2>José Mourão</h2>
-						    <h4>Mentor de Guitarra</h4>
-                            <div class="card_name_plus">
-                                <img src="./public/img/svg/estrela.svg">
-                                <span>4.3 de 5.0</span>
+                    <?php 
+                        if($action = "show_modal"){
+                            
+                            foreach($researches as $found){
+                                if ($found->city == $city['0']){
+                    ?>
+                        <div class="card_teacher_box">
+                            <div class="card_name">
+                                <h2>
+                                    <?php
+                                        echo $found->first_name." ".$found->last_name;
+                                    ?>
+                                </h2>
+                                <h4>Mentor de 
+                                    <?php
+                                        echo $found->mentor;
+                                    ?>
+                                </h4>
+                                <div class="card_name_plus">
+                                    <img src="./public/img/svg/estrela.svg">
+                                    <span>4.3 de 5.0</span>
+                                </div>
+                            </div>
+                            <div class="card_button">
+                                <a href="profile_teacher.php">
+                                    <img src="./public/img/svg/seta-direita.svg">
+                                </a>
                             </div>
                         </div>
-                        <div class="card_button">
-                            <a href="profile_teacher.php">
-                                <img src="./public/img/svg/seta-direita.svg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card_teacher_box">
-                        <div class="card_name">
-                            <h2>João Maria</h2>
-						    <h4>Mentor de Literatura</h4>
-                            <div class="card_name_plus">
-                                <img src="./public/img/svg/estrela.svg">
-                                <span>4.3 de 5.0</span>
-                            </div>
-                        </div>
-                        <div class="card_button">
-                            <a href="profile_teacher.php">
-                                <img src="./public/img/svg/seta-direita.svg">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card_teacher_box">
-                        <div class="card_name">
-                            <h2>Antonia Resende</h2>
-						    <h4>Mentora de Artes manuais</h4>
-                            <div class="card_name_plus">
-                                <img src="./public/img/svg/estrela.svg">
-                                <span>4.3 de 5.0</span>
-                            </div>
-                        </div>
-                        <div class="card_button">
-                            <a href="profile_teacher.php">
-                                <img src="./public/img/svg/seta-direita.svg">
-                            </a>
-                        </div>
-                    </div>
+                    <?php }}}
+                    ?>
                 </div>
             </div>
 		</div> 

@@ -124,21 +124,24 @@
         $teachers = $teacherService->login();
 
         //Start validation of input value with data registered in the database
-        
+
         #Variables for authentication
+        $email = $_POST['email'];
+        $password = $_POST['password']; 
         $authenticated_user = false;
         $teacher_id = null;
+        
+        #Variables to receive values from the database
         $image_path = null;
         $first_name = null;
         $last_name = null;
         $mentor = null;
         $city = null;
         $date_registration = null;
-        $email = $_POST['email'];
-        $password = $_POST['password']; 
 
         foreach($teachers as $teacher){
-            if( $teacher->email == $email && $teacher->password == $password){
+            
+            if( $teacher->email == $email && $teacher->password == $password){    
                 $authenticated_user = true;
                 $teacher_id = $teacher->teacher_id;
                 $image_path = $teacher->image_path;
@@ -147,7 +150,8 @@
                 $mentor = $teacher->mentor;
                 $city = $teacher->city;
                 $date_registration = $teacher->date_registration;
-            }else{
+
+            } else {
                 header('Location: teacher_login.php?login=Error');
             }
         };
@@ -164,7 +168,8 @@
             $_SESSION['date_registration'] = $date_registration;
 
             header('Location: user_teacher.php');
-        } else{
+
+        } else {
             $_SESSION['authenticated'] = 'No';
             header('Location: index.php?login=Error');
         }
@@ -177,6 +182,7 @@
         $teacherService = new TeacherService($conexion, $email);
         $researches = $teacherService->search();
 
+        #Arrays to receive values from the database after search
         $mentor = array();
         $city = array();
 
@@ -193,6 +199,12 @@
             $_SESSION['city'] = $city;
             header('Location: search_teacher.php?search=Return');
         }
+    }else if($action == 'show_modal'){
+        $email = new Teacher();
+        $conexion = new Conexion();
+
+        $teacherService = new TeacherService($conexion, $email);
+        $researches = $teacherService->show_modal();
     }
 ?>
 
