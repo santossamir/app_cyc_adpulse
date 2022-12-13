@@ -65,8 +65,7 @@
                 $stmt = $this->conexion->prepare($query_search);
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
-            }
-            
+            }  
         }
 
         public function show_modal(){

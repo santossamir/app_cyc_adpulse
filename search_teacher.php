@@ -127,10 +127,14 @@
                 </div>
                 <div class="card_teacher">
                     <?php 
+                    #This variable passes 'id' to the page found_teacher.php
+                    $teacher_id = null;
+
                         if($action = "show_modal"){
-                            
                             foreach($researches as $found){
                                 if ($found->city == $city['0']){
+                                    $teacher_id = $found->teacher_id;
+                                    $_SESSION['teacher_id'] = $teacher_id;
                     ?>
                         <div class="card_teacher_box">
                             <div class="card_name">
@@ -150,12 +154,13 @@
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="profile_teacher.php">
+                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name.'-'.$teacher_id?>">
                                     <img src="./public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
                         </div>
-                    <?php }}}
+                    <?php
+                        }}}
                     ?>
                 </div>
             </div>
