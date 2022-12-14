@@ -31,7 +31,7 @@
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
         </style>
   	</head>
-  	<body style="background-image: <?php if($_GET['search'] == 'Return'|| $_GET['search_category'] == 'Return2' ){echo $background_two;}else{ echo $background;}?>">
+  	<body style="background-image: <?php if($_GET['search'] == 'Return'|| $_GET['search_category'] == 'Return_category' ){echo $background_two;}else{ echo $background;}?>">
 		<div class="container">
 			<div class="header">
                 <div class="header_buttons">
@@ -50,6 +50,7 @@
             <div class="title_find_teacher">
                 <h1>Encontra o teu mentor</h1>
             </div>
+            <!--Start - It shows that there was an error in the search-->
             <?php
                 if(isset($_GET['search']) && $_GET['search'] == 'Error'){
             ?>
@@ -60,6 +61,7 @@
 
             <?php } 
             ?>
+            <!--End - It shows that there was an error in the search-->
             <form id="form_search" method="POST" action="teacher_controller.php?action=search">
                 <div class="search_teacher">
                     <input id="input_search" type="search" name="search" placeholder="Escolhe a localização" required>
@@ -113,12 +115,12 @@
 
             <!--Start of search_category return-->
             <?php
-                if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return2'){
+                if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return_category'){
             ?>
                 <!--Buttons return of search-->
                 <div class="locator_buttons" onClick="show_modal()">
                  <button class="button_locator_one">
-                    <div class="photo_locator">
+                    <div class="photo_locator_category">
                         <div class="photo_locator_number">
                             <h3>
                                 <?php
@@ -128,15 +130,15 @@
                         </div>
                     </div>
                 </button>
-                <button id="button_locator_two" class="button_locator_two" onClick="teste()">
-                    <div class="photo_locator">
+                <button id="button_locator_two" class="button_locator_two" onClick="show_modal()">
+                    <div class="photo_locator_category">
                         <div class="photo_locator_number">
                             <h3>0</h3>
                         </div>
                     </div>
                 </button>
-                <button id="button_locator_three" class="button_locator_three" onClick="teste()">
-                    <div class="photo_locator">
+                <button id="button_locator_three" class="button_locator_three" onClick="show_modal()">
+                    <div class="photo_locator_category">
                         <div class="photo_locator_number">
                             <h3>0</h3>
                         </div>
@@ -146,7 +148,8 @@
 
             <?php } ?>
             <!--End of search_category return-->
-
+            
+            <!--Start show modal-->
             <div id="modal_teacher" class="modal_teacher">
                 <div class="modal_title">
                     <div class="modal_title_img">
@@ -168,14 +171,15 @@
                     </h1>
                 </div>
                 <div class="card_teacher">
+                    <!--Starts to show the card with teachers found -->
                     <?php 
-                    #This variable passes 'id' to the page found_teacher.php
-                    $teacher_id = null;
+                        #This variable passes 'id' to the page found_teacher.php
+                        $teacher_id = null;
 
                         if($action = "show_modal"){
                             if(isset($_GET['search']) && $_GET['search'] == 'Return'){
                             foreach($researches as $found){
-                                if ($found->city == $city['0']){
+                                if($found->city == $city['0']){
                                     $teacher_id = $found->teacher_id;
                                     $_SESSION['teacher_id'] = $teacher_id;
                     ?>
@@ -203,9 +207,9 @@
                             </div>
                         </div>
                     <?php
-                        }}} else if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return2'){
+                        }}} else if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return_category'){
                             foreach($researches as $found){
-                                if ($found->mentor == $mentor['0']){
+                                if($found->mentor == $mentor['0']){
                                     $teacher_id = $found->teacher_id;
                                     $_SESSION['teacher_id'] = $teacher_id;
                     ?>
@@ -235,8 +239,10 @@
                     <?php
                         }}}}
                     ?>
+                    <!--Ends to show the card with teachers found -->
                 </div>
             </div>
+             <!--End show modal-->
 		</div> 
   	</body>
     <script src="public/js/search_teacher.js">

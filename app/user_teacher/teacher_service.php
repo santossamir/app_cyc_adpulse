@@ -68,15 +68,6 @@
             } 
         }
 
-        public function show_modal(){
-            $query_consult = "SELECT teacher_id, first_name, last_name, mentor, city, email, image_path, password,
-                               DATE_FORMAT(date_registration, '%M de %Y') AS date_registration 
-                               FROM tb_user_teacher";
-            $stmt = $this->conexion->prepare($query_consult);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_OBJ);
-        }
-
         public function search_category(){
             if(isset($_POST['search'])){
                 $find = $_POST['search'];
@@ -87,6 +78,15 @@
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
             } 
+        }
+
+        public function show_modal(){
+            $query_consult = "SELECT teacher_id, first_name, last_name, mentor, city, email, image_path, password,
+                               DATE_FORMAT(date_registration, '%M de %Y') AS date_registration 
+                               FROM tb_user_teacher";
+            $stmt = $this->conexion->prepare($query_consult);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
     }
 ?>

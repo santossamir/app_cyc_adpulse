@@ -203,15 +203,10 @@
             }
         } else {
             header('Location: search_teacher.php?search=Error');
-        }    
-    } else if($action == 'show_modal'){
-        $email = new Teacher();
-        $conexion = new Conexion();
-
-        $teacherService = new TeacherService($conexion, $email);
-        $researches = $teacherService->show_modal();
+        } 
+           
+    } else if($action == 'search_category'){
         
-    }else if($action == 'search_category'){
         if($_POST['search'] != " "){
             $email = new Teacher();
             $conexion = new Conexion();
@@ -234,11 +229,18 @@
             }else{
                 $_SESSION['mentor'] = $mentor;
                 $_SESSION['city'] = $city;
-                header('Location: search_teacher.php?search_category=Return2');
+                header('Location: search_teacher.php?search_category=Return_category');
             }
         } else {
             header('Location: search_teacher.php?search=Error');
-        }    
+        } 
+
+    } else if($action == 'show_modal'){
+        $email = new Teacher();
+        $conexion = new Conexion();
+
+        $teacherService = new TeacherService($conexion, $email);
+        $researches = $teacherService->show_modal();
     }
 ?>
 

@@ -140,12 +140,17 @@ h1{
     margin: 8% 0 6% 80% ;
 }
 
-
-
 .photo_locator{
     width: 100px;
     height: 100px;
     background-image: url("../img/svg/icon-localizadores.svg");
+    background-repeat:no-repeat;
+}
+
+.photo_locator_category{
+    width: 100px;
+    height: 100px;
+    background-image: url("../img/svg/icon-localizadores-orange.svg");
     background-repeat:no-repeat;
 }
 
