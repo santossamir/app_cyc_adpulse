@@ -65,7 +65,7 @@
                 $stmt = $this->conexion->prepare($query_search);
                 $stmt->execute();
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
-            }  
+            } 
         }
 
         public function show_modal(){
@@ -75,6 +75,18 @@
             $stmt = $this->conexion->prepare($query_consult);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        public function search_category(){
+            if(isset($_POST['search'])){
+                $find = $_POST['search'];
+                $query_search = "SELECT first_name, last_name, mentor, city, email, image_path, date_registration 
+                                FROM  tb_user_teacher
+                                WHERE city LIKE '%$find%' OR mentor LIKE '%$find%'";
+                $stmt = $this->conexion->prepare($query_search);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            } 
         }
     }
 ?>

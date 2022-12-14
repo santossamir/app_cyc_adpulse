@@ -52,7 +52,4 @@
             </div>
 		</div> 
   	</body>
-  	<script src="public/js/login.js">
-		
-	</script>
 </html>

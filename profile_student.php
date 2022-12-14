@@ -51,9 +51,7 @@
 							?>
 						</h2>
 						<h4>
-							<?php echo $age;
-							
-							?> anos
+							<?php echo $age;?> anos
 						</h4>
 					</div>
 					<div class="user_data_plus">
@@ -134,6 +132,7 @@
 						</button>
 					</div>
 				</div>
+			</div>
 		</div> 
   	</body>
 </html>

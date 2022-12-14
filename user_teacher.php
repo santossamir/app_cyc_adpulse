@@ -74,7 +74,4 @@
             </div>
 		</div> 
   	</body>
-  	<script src="public/js/index.js">
-		
-	</script>
 </html>
