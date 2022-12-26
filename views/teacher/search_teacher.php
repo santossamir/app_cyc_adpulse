@@ -1,8 +1,8 @@
 <?php
 	session_start();
     $action = "show_modal";
-    require_once "access_validator.php";
-    require "./app/user_teacher/teacher_controller.php";
+    require_once "../../access_validator.php";
+    require "../../app/user_teacher/teacher_controller.php";
     
     #Arrays with search values
     $city = array();
@@ -17,13 +17,13 @@
      }
 
     #Variables to change body style after search -> inline style on body tag
-    $background = "linear-gradient(0deg, #0068379c, #8bc63f93),url('./public/img/png/background-city.jpg')";
-    $background_two = "linear-gradient(0deg, #c0c0c063, #dcdcdc56),url('./public/img/png/background-city.jpg')";
+    $background = "linear-gradient(0deg, #0068379c, #8bc63f93),url('../../public/img/png/background-city.jpg')";
+    $background_two = "linear-gradient(0deg, #c0c0c063, #dcdcdc56),url('../../public/img/png/background-city.jpg')";
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/search_teacher.css">
+		<link rel="stylesheet" href="../../public/css/search_teacher.css">
 		<title>Search - Teacher CYC</title>
 
 		<!--Font family-->
@@ -37,12 +37,12 @@
                 <div class="header_buttons">
                     <div class="come_back_button">
                         <a href="user_student.php">    
-                            <img src="./public/img/svg/seta-esquerda.svg">
+                            <img src="../../public/img/svg/seta-esquerda.svg">
                         </a>                    
                     </div>
                     <div class="menu_button">
-                        <a href="user_student.php">
-                        <img src="./public/img/svg/menu.svg">
+                        <a href="../student/user_student.php">
+                        <img src="../../public/img/svg/menu.svg">
                         </a>
                     </div>
                 </div>
@@ -66,10 +66,10 @@
                 <div class="search_teacher">
                     <input id="input_search" type="search" name="search" placeholder="Escolhe a localização" required>
                     <div class="dropdown_search">
-                        <img id="dropdown" src="./public/img/svg/dropdown-pesquisa.svg">
+                        <img id="dropdown" src="../../public/img/svg/dropdown-pesquisa.svg">
                     </div>
                     <button class="icon_search">
-                        <img src="./public/img/svg/icon-search.svg">
+                        <img src="../../public/img/svg/icon-search.svg">
                     </button>
                 </div>
             </form>
@@ -179,9 +179,7 @@
                         if($action = "show_modal"){
                             if(isset($_GET['search']) && $_GET['search'] == 'Return'){
                             foreach($researches as $found){
-                                if($found->city == $city['0']){
-                                    $teacher_id = $found->teacher_id;
-                                    $_SESSION['teacher_id'] = $teacher_id;
+                                if($found->city == $city['0']){                                   
                     ?>
                         <div class="card_teacher_box">
                             <div class="card_name">
@@ -196,22 +194,21 @@
                                     ?>
                                 </h4>
                                 <div class="card_name_plus">
-                                    <img src="./public/img/svg/estrela.svg">
+                                    <img src="../../public/img/svg/estrela.svg">
                                     <span>4.3 de 5.0</span>
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name.'-'.$teacher_id?>">
-                                    <img src="./public/img/svg/seta-direita.svg">
+                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>" target="_blank">
+                                    <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
                         </div>
                     <?php
-                        }}} else if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return_category'){
+                        }}
+                    } else if(isset($_GET['search_category']) && $_GET['search_category'] == 'Return_category'){
                             foreach($researches as $found){
                                 if($found->mentor == $mentor['0']){
-                                    $teacher_id = $found->teacher_id;
-                                    $_SESSION['teacher_id'] = $teacher_id;
                     ?>
                         <div class="card_teacher_box">
                             <div class="card_name">
@@ -226,13 +223,13 @@
                                     ?>
                                 </h4>
                                 <div class="card_name_plus">
-                                    <img src="./public/img/svg/estrela.svg">
+                                    <img src="../../public/img/svg/estrela.svg">
                                     <span>4.3 de 5.0</span>
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name.'-'.$teacher_id?>">
-                                    <img src="./public/img/svg/seta-direita.svg">
+                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>" target="_blank">
+                                    <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
                         </div>
@@ -245,7 +242,7 @@
              <!--End show modal-->
 		</div> 
   	</body>
-    <script src="public/js/search_teacher.js">
+    <script src="../../public/js/search_teacher.js">
        
     </script>
 </html>

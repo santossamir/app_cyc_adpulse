@@ -4,14 +4,14 @@
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
     
-    require_once "access_validator.php";
-    require "./app/user_teacher/teacher_controller.php";
+    require_once "../../access_validator.php";
+    require "../../app/user_teacher/teacher_controller.php";
     $action = "login";
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/user_teacher.css">
+		<link rel="stylesheet" href="../../public/css/user_teacher.css">
 		<title>User - Teacher CYC</title>
 
 		<!--Font family-->
@@ -22,7 +22,7 @@
   	<body>
 		<div class="container">
 			<div class="logo_cyc">
-                <img src="./public/img/png/logo-CYC-19.png">
+                <img src="../../public/img/png/logo-CYC-19.png">
             </div>
             <div class="profile_img">
                     <img src="<?php echo $image_path;?>">
@@ -65,11 +65,11 @@
                 </div>
                 <div class="logout_button">
                     <button>
-                        <a href="logoff.php">Logout</a>
+                        <a href="../../logoff.php">Logout</a>
                     </button>
                 </div>
                 <div class="footer_img_city">
-                    <img src="./public/img/svg/cidade.svg">
+                    <img src="../../public/img/svg/cidade.svg">
                 </div>
             </div>
 		</div> 

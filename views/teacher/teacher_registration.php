@@ -8,7 +8,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/teacher_registration.css">
+		<link rel="stylesheet" href="../../public/css/teacher_registration.css">
 		<title>Registration - Creative Youth City</title>
 
 		<!--Font family-->
@@ -69,7 +69,7 @@
                 <!--End registration form-->
             </div>
             <div class="footer_img_city">
-                <img src="./public/img/svg/fundo-cidade.svg">
+                <img src="../../public/img/svg/fundo-cidade.svg">
             </div>
 		</div> 
   	</body>

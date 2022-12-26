@@ -1,20 +1,19 @@
 <?php
 	session_start();
-    $image_path = $_SESSION['image_path'];
-    $first_name = $_SESSION['first_name'];
-    $last_name = $_SESSION['last_name'];
-    $mentor = $_SESSION['mentor'];
-    $date_registration = $_SESSION['date_registration'];
 
-    require_once "access_validator.php";
-    require "./app/user_teacher/teacher_controller.php";
-    $action = "login";
+    $action = "show_modal";
+    require_once "../../access_validator.php";
+    require "../../app/user_teacher/teacher_controller.php";
+	
+	#This variable contains the "id" of the search made on the search_teacher.php
+	$teacher_id = $_GET['id'];
+	
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/profile_teacher.css">
-		<title>Profile - Teacher CYC</title>
+		<link rel="stylesheet" href="../../public/css/profile_teacher.css">
+		<title>Found - Teacher CYC</title>
 
 		<!--Font family-->
 		<style>
@@ -26,20 +25,24 @@
 			<div class="header_photo">
 				<div class="header_buttons">
                     <div class="come_back_button">
-                        <a href="user_teacher.php">
-							<img src="./public/img/svg/seta-esquerda.svg">
+                        <a href="search_teacher.php">
+							<img src="../../public/img/svg/seta-esquerda.svg">
 						</a>
                     </div>
                     <div class="menu_button">
-                        <a href="user_teacher.php">
-							<img src="./public/img/svg/menu.svg">
+                        <a href="../student/user_student.php">
+							<img src="../../public/img/svg/menu.svg">
 						</a>
                     </div>
                 </div>
-				<img src="./public/img/png/foto-mentor-18.png">
+				<img src="../../public/img/png/foto-mentor-18.png">
             </div>
+			<?php 
+				foreach($researches as $found){
+				if ($found->teacher_id ==  $teacher_id){
+			?>
             <div class="profile_img">
-                <img src="<?php echo $image_path;?>">
+                <img src="<?php echo $found->image_path;?>">
             </div>
             <div class="customization_user">
 				<div class="user_data">
@@ -47,48 +50,50 @@
                         <div>
                             <h2>
 								<?php
-									echo $first_name." ".$last_name;
+									echo $found->first_name." ".$found->last_name;
 								?>
 							</h2>
                             <h4> Mentor de
 								<?php
-								  echo $mentor
+									echo $found->mentor;
 								?>
 							</h4>
                         </div>
                         <div class="link_cv">
                             <a href="#">
-                                <img src="./public/img/svg/icon-CV.svg">
+                                <img src="../../public/img/svg/icon-CV.svg">
                             </a>
                         </div>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-localizacao-green.svg">
+						<img src="../../public/img/svg/icon-localizacao-green.svg">
 						<span>Na cidade desde
 							<?php
-								echo $date_registration;
+								echo $found->date_registration;
 							?>
 						</span>
 					</div>
+					<?php }}
+					?>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-aulas-green.svg">
+						<img src="../../public/img/svg/icon-aulas-green.svg">
 						<span>Participou em 30 aulas</span>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/estrela.svg">
+						<img src="../../public/img/svg/estrela.svg">
 						<span>4.3 de 5.0</span>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-boa-comunicacao-green.svg">
+							<img src="../../public/img/svg/icon-boa-comunicacao-green.svg">
 							<span id="span_communication">Boa comunicação</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-empatia-green.svg">
+							<img src="../../public/img/svg/icon-empatia-green.svg">
 							<span>Empatia</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-responsavel-green.svg">
+							<img src="../../public/img/svg/icon-responsavel-green.svg">
 							<span>Responsável</span>    
 						</div>
 					</div>

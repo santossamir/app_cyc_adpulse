@@ -1,9 +1,9 @@
 <?php
     session_start();
 
-    require "./app/user_teacher/teacher_model.php";
-    require "./app/user_teacher/teacher_service.php";
-    require "./app/conexion.php";
+    require "teacher_model.php";
+    require "teacher_service.php";
+    require "../../app/database_conexion/conexion.php";
 
     $action = isset($_GET['action']) ? $_GET['action'] : $action;
     
@@ -13,7 +13,7 @@
         
         #Validation input profile_img
         $profile_img = $_FILES['profile_img'];
-        $folder_profile_photos = "./public/img/profile_photos/";
+        $folder_profile_photos = "../../public/img/profile_photos/";
         $file_name = $profile_img['name'];
         $new_file_name = uniqid();
         $file_extension = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
@@ -87,8 +87,19 @@
 
         #Variables of profile photos
         $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
-        $path_photo = "$folder_profile_photos$new_file_name.$file_extension";
-        $_SESSION["path_photo"] = $path_photo;
+    
+        if($right_file){
+            $path_photo = "$folder_profile_photos$new_file_name.$file_extension";
+            $_SESSION["path_photo"] = $path_photo;
+        }else{
+            $error = "A imagem não foi carregada corretamente.";
+        }
+
+        $_SESSION["erro"] = $error;
+        if(!empty($error)){
+            header('Location: teacher_registration.php?insert=Error');
+            exit;
+        }
 
     //End validation of form 
                

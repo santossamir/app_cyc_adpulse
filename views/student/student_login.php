@@ -1,7 +1,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/login.css">
+		<link rel="stylesheet" href="../../public/css/login.css">
 		<title>Login - Creative Youth City</title>
 
 		<!--Font family-->
@@ -12,7 +12,7 @@
   	<body>
 		<div class="container">
             <div class="form">
-                <form id="form_login" method="POST" action="teacher_controller.php?action=login" onSubmit="handleSubmitForm(event)">
+                <form id="form_login" method="POST" action="student_controller.php?action=login" onSubmit="handleSubmitForm(event)">
                     
                     <!--Start of error text-->
                     <?php
@@ -24,16 +24,6 @@
                     </div>               
 
                     <?php } ?> 
-
-                    <?php
-                        if(isset($_GET['login']) && $_GET['login'] == 'Error2'){
-                    ?>
-                     <!--Error text of authentication-->
-                    <div class="text_error">
-                        <strong>Faça login antes de acessar as páginas.</strong>
-                    </div>               
-
-                    <?php } ?>
                     <!--End error text-->
 
                     <label>E-mail</label>
@@ -53,12 +43,12 @@
                         </button>
                     </div>
                     <h4>
-                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="teacher_registration.php">Regista-te</a>
+                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="student_registration.php">Regista-te</a>
                     </h4>
                 </form>
             </div>
             <div class="footer_img_city">
-                <img src="./public/img/svg/fundo-cidade.svg">
+                <img src="../../public/img/svg/fundo-cidade.svg">
             </div>
 		</div> 
   	</body>

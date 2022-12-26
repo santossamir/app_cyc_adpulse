@@ -7,14 +7,14 @@
     $date_registration = $_SESSION['date_registration'];
 	$age = $_SESSION['age'];
 
-    require_once "access_validator.php";
-    require "./app/user_teacher/teacher_controller.php";
+	require_once "../../access_validator.php";
+    require "../../app/user_student/student_controller.php";
     $action = "login";
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="public/css/profile_student.css">
+		<link rel="stylesheet" href="../../public/css/profile_student.css">
 		<title>Profile - Student CYC</title>
 
 		<!--Font family-->
@@ -28,16 +28,16 @@
 				<div class="header_buttons">
                     <div class="come_back_button">
                         <a href="user_student.php">
-							<img src="./public/img/svg/seta-esquerda.svg">
+							<img src="../../public/img/svg/seta-esquerda.svg">
 						</a>
                     </div>
                     <div class="menu_button">
                         <a href="user_student.php">
-							<img src="./public/img/svg/menu.svg">
+							<img src="../../public/img/svg/menu.svg">
 						</a>
                     </div>
                 </div>
-				<img src="./public/img/png/foto-utilizador-20.png">
+				<img src="../../public/img/png/foto-utilizador-20.png">
             </div>
             <div class="profile_img">
                 <img src="<?php echo $image_path;?>">
@@ -55,7 +55,7 @@
 						</h4>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-localizacao.svg">
+						<img src="../../public/img/svg/icon-localizacao.svg">
 						<span>Na cidade desde
 							<?php
 								echo $date_registration;
@@ -63,24 +63,24 @@
 						</span>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-aulas.svg">
+						<img src="../../public/img/svg/icon-aulas.svg">
 						<span>Participou em 30 aulas</span>
 					</div>
 					<div class="user_data_plus">
-						<img src="./public/img/svg/icon-rating.svg">
+						<img src="../../public/img/svg/icon-rating.svg">
 						<span>4.3 de 5.0</span>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-boa-comunicacao.svg">
+							<img src="../../public/img/svg/icon-boa-comunicacao.svg">
 							<span id="span_communication">Boa comunicação</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-empatia.svg">
+							<img src="../../public/img/svg/icon-empatia.svg">
 							<span>Empatia</span>    
 						</div>
 						<div class="user_qualifications_plus">
-							<img src="./public/img/svg/icon-responsavel.svg">
+							<img src="../../public/img/svg/icon-responsavel.svg">
 							<span>Responsável</span>    
 						</div>
 					</div>

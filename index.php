@@ -44,12 +44,12 @@
             <?php } ?>
             <div class="buttons">
                 <div class="button_teacher">
-                    <a href="teacher_login.php">
+                    <a href="views/teacher/teacher_login.php">
                         <button>Sim, quero ensinar</button>
                     </a>
                 </div>
                 <div class="button_student">
-                    <a href="student_login.php">
+                    <a href="views/student/student_login.php">
                         <button>Sim, quero aprender</button>
                     </a>
                 </div>
