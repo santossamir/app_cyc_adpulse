@@ -1,3 +1,22 @@
+<?php
+    include("language.php");
+    $en_select = "";
+    $es_select = "";
+    $pt_select = "";
+    $language = "";
+
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $pt_select = "selected";
+        $language = "pt";
+    }
+    else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $en_select = "selected";
+        $language = "en";
+    }else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $es_select = "selected";
+        $language = "es";
+    }
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -11,26 +30,29 @@
   	</head>
   	<body>
 		<div class="container">
+            <div class="select_language">
+                Language
+                <select onChange="set_language()" name="language" id="language">
+                    <option value=""></option>
+                    <option value="en" <?php echo $en_select?>>EN</option>
+                    <option value="es" <?php echo $es_select?>>ES</option>
+                    <option value="pt" <?php echo $pt_select?>>PT</option>
+                </select>
+            </div>
 			<div class="logo_cyc">
                 <img src="./public/img/svg/logo-cyc.svg">
             </div>
             <div class="text_show_cyc">
                 <p>
-                    A Creative Youth City é uma cidade onde podes
-                    partilhar, capacitar, experimentar e desenvolver a tua
-                    veia empreendedora e a de milhares de jovens
-                    interessados em desenvolver o seu potencial criativo.
+                    <?php echo $text_show_cyc[$language]['0']?>
                 </p>
                 <p>
-                    Aqui podes ser mentor e partilhar o teu conhecimento
-                    com todos os interessados ou aprender habilidades
-                    que, até agora, nunca pensaste que terias. Tudo de
-                    uma forma simples e criativa!
+                    <?php echo $text_show_cyc[$language]['1']?>
                 </p>
             </div>
             <div class="question_cyc">
                 <h2>
-                    Estás preparado para entrar na cidade?
+                    <?php echo $question_cyc[$language]['0']?>
                 </h2>
             </div>
             <?php
@@ -38,19 +60,19 @@
             ?>
                 <!--Error text of authentication-->
             <div class="text_error">
-                <strong>Faça login antes de acessar as páginas.</strong>
+                <strong><?php echo $text_error[$language]['0']?></strong>
             </div>               
 
             <?php } ?>
             <div class="buttons">
                 <div class="button_teacher">
-                    <a href="views/teacher/teacher_login.php">
-                        <button>Sim, quero ensinar</button>
+                    <a href="views/teacher/teacher_login.php?language=<?=$language?>">
+                        <button><?php echo $button_teacher[$language]['0']?></button>
                     </a>
                 </div>
                 <div class="button_student">
-                    <a href="views/student/student_login.php">
-                        <button>Sim, quero aprender</button>
+                    <a href="views/student/student_login.php?language=<?=$language?>">
+                        <button><?php echo $button_student[$language]['0']?></button>
                     </a>
                 </div>
             </div>
@@ -59,4 +81,11 @@
             </div>
 		</div> 
   	</body>
+      <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
+    <script src="public/js/index.js">
+
+    </script>
 </html>

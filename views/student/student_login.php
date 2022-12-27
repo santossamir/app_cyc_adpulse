@@ -1,3 +1,15 @@
+<?php
+    include("../../language.php");
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    };
+?>
 <html>
   	<head>
 		<meta charset="utf-8" />
@@ -20,30 +32,30 @@
                     ?>
                     <!--Error text of login-->
                     <div class="text_error">
-                        <strong>Usuário ou senha inválido(s).</strong>
+                        <strong><?php echo $text_error[$language]['0']?></strong>
                     </div>               
 
                     <?php } ?> 
                     <!--End error text-->
 
-                    <label>E-mail</label>
+                    <label><?php echo $email[$language]['0']?></label>
                     <div class="email">
-                        <input type="text" name="email" placeholder="Insere o teu e-mail" required>
+                        <input type="text" name="email" placeholder="<?php echo $email[$language]['1']?>" required>
                     </div>
-                    <label id="label_password">Palavra-chave</label>
+                    <label id="label_password"><?php echo $password[$language]['0']?></label>
                     <div class="password">
-                        <input type="password" name="password" placeholder="Insere tua palavra-chave" required>
+                        <input type="password" name="password" placeholder="<?php echo $password[$language]['1']?>" required>
                     </div>
                     <h4>
-                        <a href="#">Não te lembras da palavra-chave?</a>
+                        <a href="#"><?php echo $link_h4[$language]['0']?></a>
                     </h4>
                     <div class="button_submit">
                         <button type="submit">
-                            Entrar
+                            <?php echo $button_submit[$language]['0']?>
                         </button>
                     </div>
                     <h4>
-                        Ainda não tens uma conta?<a style="color:#8cc63f; padding-left:10px" href="student_registration.php">Regista-te</a>
+                        <?php echo $link_h4[$language]['1']?><a style="color:#8cc63f; padding-left:10px" href="student_registration.php"><?php echo $link_h4[$language]['2']?></a>
                     </h4>
                 </form>
             </div>

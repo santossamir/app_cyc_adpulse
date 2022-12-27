@@ -8,6 +8,22 @@ body{
     background-color: #f2f2db;
 }
 
+.select_language{
+    background-color:#f2f2db;
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 0 0;
+    font-size: 28px;
+    color: #000;
+}
+
+.select_language select{
+    background-color:#f2f2db;
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
+    border: none;
+}
+
 .logo_cyc img{
     width: 80%;
     padding: 0 10% 5%;
