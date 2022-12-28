@@ -38,12 +38,12 @@
 			<div class="header_photo">
 				<div class="header_buttons">
                     <div class="come_back_button">
-                        <a href="user_student.php">
+                        <a href="user_student.php?language=<?=$language?>">
 							<img src="../../public/img/svg/seta-esquerda.svg">
 						</a>
                     </div>
                     <div class="menu_button">
-                        <a href="user_student.php">
+                        <a href="user_student.php?language=<?=$language?>">
 							<img src="../../public/img/svg/menu.svg">
 						</a>
                     </div>
@@ -62,12 +62,12 @@
 							?>
 						</h2>
 						<h4>
-							<?php echo $age;?> anos
+							<?php echo $age;?> <?php echo $profile_student[$language]['0']?>
 						</h4>
 					</div>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/icon-localizacao.svg">
-						<span>Na cidade desde
+						<span><?php echo $found_teacher[$language]['0']?>
 							<?php
 								echo $date_registration;
 							?>
@@ -75,29 +75,29 @@
 					</div>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/icon-aulas.svg">
-						<span>Participou em 30 aulas</span>
+						<span><?php echo $found_teacher[$language]['1']?></span>
 					</div>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/icon-rating.svg">
-						<span>4.3 de 5.0</span>
+						<span><?php echo $found_teacher[$language]['2']?></span>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-boa-comunicacao.svg">
-							<span id="span_communication">Boa comunicação</span>    
+							<span id="span_communication"><?php echo $found_teacher[$language]['3']?></span>    
 						</div>
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-empatia.svg">
-							<span>Empatia</span>    
+							<span><?php echo $found_teacher[$language]['4']?></span>    
 						</div>
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-responsavel.svg">
-							<span>Responsável</span>    
+							<span><?php echo $found_teacher[$language]['5']?></span>    
 						</div>
 					</div>
 					<div class="topics_session">
 						<div class="topics_session_plus">
-							<h2>Conhecimento</h2>
+							<h2><?php echo $profile_student[$language]['1']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -107,7 +107,7 @@
 							</p>
 						</div>
 						<div class="topics_session_plus">
-							<h2>Qualidades</h2>
+							<h2><?php echo $profile_student[$language]['2']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -117,7 +117,7 @@
 							</p>
 						</div>
 						<div class="topics_session_plus">
-							<h2>O que é que eu gosto?</h2>
+							<h2><?php echo $profile_student[$language]['3']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -127,7 +127,7 @@
 							</p>
 						</div>
 						<div class="topics_session_plus">
-							<h2>A melhorar</h2>
+							<h2><?php echo $profile_student[$language]['4']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -139,7 +139,7 @@
 					</div>
 					<div class="send_button">
 						<button>
-							<a href="login.php">Enviar mensagem</a>
+							<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
 						</button>
 					</div>
 				</div>

@@ -314,5 +314,29 @@
             'Enviar mensaje',
             'Añadir a los favoritos'
         )
+    );
+
+    $profile_student = array(
+        'pt' => array(
+            'anos',
+            'Conhecimento',
+            'Qualidades',
+            'O que é que eu gosto?',
+            'A melhorar',
+        ),
+        'en' => array(
+            'years old',
+            'Knowledge',
+            'Qualities',
+            'What I like?',
+            'Improving',
+        ),
+        'es' => array(
+            'años',
+            'Conocimiento',
+            'Cualidades',
+            '¿Que me gusta?',
+            'Mejorar',
+        )
     )
 ?>
