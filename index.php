@@ -31,7 +31,7 @@
   	<body>
 		<div class="container">
             <div class="select_language">
-                Language
+                <?php echo $select_language[$language]['0']?>
                 <select onChange="set_language()" name="language" id="language">
                     <option value=""></option>
                     <option value="en" <?php echo $en_select?>>EN</option>

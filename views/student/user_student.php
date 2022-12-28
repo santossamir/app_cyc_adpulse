@@ -7,6 +7,17 @@
     require_once "../../access_validator.php";
     require "../../app/user_student/student_controller.php";
     $action = "login";
+
+    include("../../language.php");
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    }
 ?>
 <html>
   	<head>
@@ -30,47 +41,47 @@
             <div class="customization_user">
                 <div class="profile_button">
                     <button>
-                        <a href="profile_student.php">O meu perfil</a>
+                        <a href="profile_student.php?language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
                     </button>
                 </div>
                 <div class="look_teachers_button">
                     <button>
-                        <a href="../teacher/search_teacher.php">Procurar mentores</a>
+                        <a href="../teacher/search_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['8']?></a>
                     </button>
                 </div> 
                 <div class="profile_button">
                     <button>
-                        <a href="#">Os meus cursos</a>
+                        <a href="#"><?php echo $user_teacher[$language]['1']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#">Mensagens</a>
+                        <a href="#"><?php echo $user_teacher[$language]['3']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#">Favoritos</a>
+                        <a href="#"><?php echo $user_teacher[$language]['4']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#">Convidar um amigo</a>
+                        <a href="#"><?php echo $user_teacher[$language]['9']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#">Sobre a CYC</a>
+                        <a href="#"><?php echo $user_teacher[$language]['5']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#">Ajuda</a>
+                        <a href="#"><?php echo $user_teacher[$language]['6']?></a>
                     </button>
                 </div>
                 <div class="logout_button">
                     <button>
-                        <a href="../../logoff.php">Logout</a>
+                        <a href="../../logoff.php?language=<?=$language?>"><?php echo $user_teacher[$language]['7']?></a>
                     </button>
                 </div>
                 <div class="footer_img_city">

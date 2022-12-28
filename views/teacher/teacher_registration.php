@@ -4,6 +4,17 @@
     if(isset($_SESSION["erro"])){
        $error = $_SESSION["erro"];
     }
+
+    include("../../language.php");
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    }
 ?>
 <html>
   	<head>
@@ -21,7 +32,7 @@
             <div class="form">
                 <!--Start registration form-->
                 <form id="form_login" method="POST" action="teacher_controller.php?action=insert" enctype="multipart/form-data">
-                    <label>Foto do perfil</label>
+                    <label><?php echo $form[$language]['0']?></label>
                     <div class="profile_img">
                         <input type="file" name="profile_img" required>
                     </div>
@@ -36,33 +47,33 @@
                     <?php } ?>
                     <!--End error text loading image-->
 
-                    <label>Nome</label>
+                    <label><?php echo $form[$language]['1']?></label>
                     <div class="first_name">
-                        <input type="text" name="first_name" placeholder="Insere o teu nome" required>
+                        <input type="text" name="first_name" placeholder="<?php echo $form[$language]['2']?>" required>
                     </div>
-                    <label>Apelido</label>
+                    <label><?php echo $form[$language]['3']?></label>
                     <div class="last_name">
-                        <input type="text" name="last_name" placeholder="Insere o teu apelido" required>
+                        <input type="text" name="last_name" placeholder="<?php echo $form[$language]['4']?>" required>
                     </div>
-                    <label id="label_mentor">Mentor de</label>
+                    <label id="label_mentor"><?php echo $form[$language]['5']?></label>
                     <div class="mentor">
-                        <input id="mentor" type="text" name="mentor" placeholder="Insere tua habilidade" required>
+                        <input id="mentor" type="text" name="mentor" placeholder="<?php echo $form[$language]['6']?>" required>
                     </div>
-                    <label>Concelho</label>
+                    <label><?php echo $form[$language]['7']?></label>
                     <div class="city">
-                        <input type="text" name="city" placeholder="Insere tua cidade" required>
+                        <input type="text" name="city" placeholder="<?php echo $form[$language]['8']?>" required>
                     </div>
-                    <label>E-mail</label>
+                    <label><?php echo $form[$language]['9']?></label>
                     <div class="email">
-                        <input type="text" name="email" placeholder="Insere o teu e-mail" required>
+                        <input type="text" name="email" placeholder="<?php echo $form[$language]['10']?>" required>
                     </div>
-                    <label>Palavra-chave</label>
+                    <label><?php echo $form[$language]['11']?></label>
                     <div class="password">
-                        <input type="password" name="password" placeholder="Insere tua palavra-chave" required>
+                        <input type="password" name="password" placeholder="<?php echo $form[$language]['12']?>" required>
                     </div>
                     <div class="button_submit">
                         <button type="submit">
-                            Registrar
+                            <?php echo $form[$language]['13']?>
                         </button>
                     </div>
                 </form>

@@ -1,4 +1,16 @@
 <?php
+    $select_language = array(
+        'pt' => array(
+            'Idioma'
+        ),
+        'en' => array(
+            'Language'
+        ),
+        'es' => array(
+            'Idioma'
+        ),
+    );
+
     $text_show_cyc = array(
         'pt' => array(
             'A Creative Youth City é uma cidade onde podes partilhar, capacitar, experimentar e desenvolver a tua veia empreendedora e a de milhares de jovens interessados em desenvolver o seu potencial criativo.',
@@ -31,15 +43,18 @@
     $text_error = array(
         'pt' => array(
             'Faça login antes de acessar as páginas.',
-            'Usuário ou senha inválido(s).'
+            'Usuário ou senha inválido(s).',
+            'Nenhum resultado encontrado.'
         ),
         'en' => array(
             'Log in before accessing the pages.',
-            'The username or password is invalid.'
+            'The username or password is invalid.',
+            'No results found.'
         ),
         'es' => array(
             'Inicia sesión antes de acceder a las páginas.',
-            'El nombre de usuario o la contraseña no son válidos.'
+            'El nombre de usuario o la contraseña no son válidos.',
+            'No se han encontrado resultados.'
         )
     );
 
@@ -124,6 +139,180 @@
         ),
         'es' => array(
             'Iniciar sesión'
+        )
+    );
+
+    $form = array(
+        'pt' => array(
+            'Foto do perfil',
+            'Nome',
+            'Insere o teu nome',
+            'Apelido',
+            'Insere o teu apelido',
+            'Mentor de',
+            'Insere tua habilidade',
+            'Concelho',
+            'Insere tua cidade',
+            'E-mail',
+            'Insere o teu e-mail',
+            'Palavra-chave',
+            'Insere tua palavra-chave',
+            'Registrar',
+            'Idade',
+            'Insere a tua idade'
+        ),
+        'en' => array(
+            'Profile picture',
+            'First name',
+            'Enter your first name',
+            'Last name',
+            'Enter your last name',
+            'Mentor of',
+            'Enter your skill',
+            'City',
+            'Enter your city',
+            'Email',
+            'Enter your email',
+            'Password',
+            'Enter your password',
+            'Register',
+            'Age',
+            'Enter your age'
+        ),
+        'es' => array(
+            'Foto del perfil',
+            'Nombre',
+            'Inserte su nombre',
+            'Apellido',
+            'Introduce tu apellido',
+            'Mentor de',
+            'Inserta tu habilidad',
+            'Ciudad',
+            'Inserta tu ciudad',
+            'Correo electrónico',
+            'Introduce tu correo electrónico',
+            'Palabra clave',
+            'Ingrese su palabra clave',
+            'Registro',
+            'Años',
+            'Introduzca su edad'
+        ),
+    );
+
+    $user_teacher = array(
+        'pt' => array(
+            'O meu perfil',
+            'Os meus cursos',
+            'Documentos',
+            'Mensagens',
+            'Favoritos',
+            'Sobre a CYC',
+            'Ajuda',
+            'Logout',
+            'Procurar mentores',
+            'Convidar um amigo'
+        ),
+        'en' => array(
+            'My profile',
+            'My courses',
+            'Documents',
+            'Messages',
+            'Favorites',
+            'About the CYC',
+            'Help',
+            'Logout',
+            'Search for mentors',
+            'Invite a friend'
+        ),
+        'es' => array(
+            'Mi perfil',
+            'Mis cursos',
+            'Documentos',
+            'Mensajes',
+            'Favoritos',
+            'Sobre el CYC',
+            'Ayudar',
+            'Cerrar sesión',
+            'Encontrar mentores',
+            'Invita a un amigo'
+        )
+    );
+
+    $search_teacher = array(
+        'pt' => array(
+            'Encontra o teu mentor',
+            'Escolhe a localização',
+            'Categoria',
+            'Localização'
+        ),
+        'en' => array(
+            'Find your mentor',
+            'Choose location',
+            'Category',
+            'Localization'
+        ),
+        'es' => array(
+            'Encuentra a tu mentor',
+            'Elegir la ubicación',
+            'Categoría',
+            'Localización'
+        )
+    );
+
+    $modal_teacher = array(
+        'pt' => array(
+            'MENTORES EM',
+            'Mentor de',
+            '4.3 de 5.0',
+        ),
+        'en' => array(
+            'MENTORS IN',
+            'Mentor of',
+            '4.3 out of 5.0',
+        ),
+        'es' => array(
+            'MENTORES EN',
+            'Mentor de',
+            '4.3 de 5.0',
+        )
+    );
+
+    $found_teacher = array(
+        'pt' => array(
+            'Na cidade desde',
+            'Participou em 30 aulas',
+            '4.3 de 5.0',
+            'Boa comunicação',
+            'Empatia',
+            'Responsável',
+            'Sobre mim',
+            'O que tenho para te ensinar',
+            'Enviar mensagem',
+            'Adicionar os favoritos'
+        ),
+        'en' => array(
+            'In town since',
+            'Participated in 30 classes',
+            '4.3 out of 5.0',
+            'Good communication',
+            'Empathy',
+            'Responsible',
+            'About me',
+            'What I have to teach you',
+            'Send Message',
+            'Add to Favorites'
+        ),
+        'es' => array(
+            'En la ciudad desde',
+            'Participó en 30 clases',
+            '4.3 de 5.0',
+            'Buena comunicación',
+            'Empatía',
+            'Responsable',
+            'Sobre mi',
+            'Lo que tengo que enseñarte',
+            'Enviar mensaje',
+            'Añadir a los favoritos'
         )
     )
 ?>

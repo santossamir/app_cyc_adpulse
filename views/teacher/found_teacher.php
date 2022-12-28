@@ -7,6 +7,18 @@
 	
 	#This variable contains the "id" of the search made on the search_teacher.php
 	$teacher_id = $_GET['id'];
+
+	 #Languages
+	 include("../../language.php");
+	 $language = "";
+	
+	 if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+		 $language = 'pt';
+	 }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+		 $language = 'en';
+	 } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+		 $language = 'es';
+	 }
 	
 ?>
 <html>
@@ -25,12 +37,12 @@
 			<div class="header_photo">
 				<div class="header_buttons">
                     <div class="come_back_button">
-                        <a href="search_teacher.php">
+                        <a href="search_teacher.php?language=<?=$language?>">
 							<img src="../../public/img/svg/seta-esquerda.svg">
 						</a>
                     </div>
                     <div class="menu_button">
-                        <a href="../student/user_student.php">
+                        <a href="../student/user_student.php?language=<?=$language?>">
 							<img src="../../public/img/svg/menu.svg">
 						</a>
                     </div>
@@ -53,7 +65,7 @@
 									echo $found->first_name." ".$found->last_name;
 								?>
 							</h2>
-                            <h4> Mentor de
+                            <h4><?php echo $modal_teacher[$language]['1']?> 
 								<?php
 									echo $found->mentor;
 								?>
@@ -67,7 +79,7 @@
 					</div>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/icon-localizacao-green.svg">
-						<span>Na cidade desde
+						<span><?php echo $found_teacher[$language]['0']?>
 							<?php
 								echo $found->date_registration;
 							?>
@@ -77,29 +89,29 @@
 					?>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/icon-aulas-green.svg">
-						<span>Participou em 30 aulas</span>
+						<span><?php echo $found_teacher[$language]['1']?></span>
 					</div>
 					<div class="user_data_plus">
 						<img src="../../public/img/svg/estrela.svg">
-						<span>4.3 de 5.0</span>
+						<span><?php echo $found_teacher[$language]['2']?></span>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-boa-comunicacao-green.svg">
-							<span id="span_communication">Boa comunicação</span>    
+							<span id="span_communication"><?php echo $found_teacher[$language]['3']?></span>    
 						</div>
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-empatia-green.svg">
-							<span>Empatia</span>    
+							<span><?php echo $found_teacher[$language]['4']?></span>    
 						</div>
 						<div class="user_qualifications_plus">
 							<img src="../../public/img/svg/icon-responsavel-green.svg">
-							<span>Responsável</span>    
+							<span><?php echo $found_teacher[$language]['5']?></span>    
 						</div>
 					</div>
 					<div class="topics_session">
 						<div class="topics_session_plus">
-							<h2>Sobre mim</h2>
+							<h2><?php echo $found_teacher[$language]['6']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -109,7 +121,7 @@
 							</p>
 						</div>
 						<div class="topics_session_plus">
-							<h2>O que tenho para te ensinar</h2>
+							<h2><?php echo $found_teacher[$language]['7']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
 								elit, sed diam nonummy nibh euismod tincidunt ut
@@ -121,12 +133,12 @@
 					</div>
 					<div class="send_button">
 						<button>
-							<a href="login.php">Enviar mensagem</a>
+							<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
 						</button>
 					</div>
                     <div class="add_button">
 						<button>
-							<a href="login.php">Adicionar os favoritos</a>
+							<a href="login.php"><?php echo $found_teacher[$language]['9']?></a>
 						</button>
 					</div>
 				</div>

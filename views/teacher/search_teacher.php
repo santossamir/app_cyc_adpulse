@@ -19,6 +19,18 @@
     #Variables to change body style after search -> inline style on body tag
     $background = "linear-gradient(0deg, #0068379c, #8bc63f93),url('../../public/img/png/background-city.jpg')";
     $background_two = "linear-gradient(0deg, #c0c0c063, #dcdcdc56),url('../../public/img/png/background-city.jpg')";
+
+    #Languages
+    include("../../language.php");
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    }
 ?>
 <html>
   	<head>
@@ -36,19 +48,19 @@
 			<div class="header">
                 <div class="header_buttons">
                     <div class="come_back_button">
-                        <a href="user_student.php">    
+                        <a href="../student/user_student.php?language=<?=$language?>">    
                             <img src="../../public/img/svg/seta-esquerda.svg">
                         </a>                    
                     </div>
                     <div class="menu_button">
-                        <a href="../student/user_student.php">
+                        <a href="../student/user_student.php?language=<?=$language?>">
                         <img src="../../public/img/svg/menu.svg">
                         </a>
                     </div>
                 </div>
             </div>
             <div class="title_find_teacher">
-                <h1>Encontra o teu mentor</h1>
+                <h1><?php echo $search_teacher[$language]['0']?></h1>
             </div>
             <!--Start - It shows that there was an error in the search-->
             <?php
@@ -56,15 +68,15 @@
             ?>
                 <!--Error text of search-->
             <div class="text_error">
-                <strong>Nenhum resultado encontrado.</strong>
+                <strong><?php echo $text_error[$language]['2']?></strong>
             </div>               
 
             <?php } 
             ?>
             <!--End - It shows that there was an error in the search-->
-            <form id="form_search" method="POST" action="teacher_controller.php?action=search">
+            <form id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
                 <div class="search_teacher">
-                    <input id="input_search" type="search" name="search" placeholder="Escolhe a localização" required>
+                    <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
                     <div class="dropdown_search">
                         <img id="dropdown" src="../../public/img/svg/dropdown-pesquisa.svg">
                     </div>
@@ -74,8 +86,8 @@
                 </div>
             </form>
             <div class="search_button">
-                <button id="btn_category" class="btn" onClick="category()">Categoria</button>
-                <button id="btn_localization" class="btn active" onClick="localization()">Localização</button>                     
+                <button id="btn_category" class="btn" onClick="category()"><?php echo $search_teacher[$language]['2']?></button>
+                <button id="btn_localization" class="btn active" onClick="localization()"><?php echo $search_teacher[$language]['3']?></button>                     
             </div>
             <!--Start of search return-->
             <?php
@@ -94,14 +106,14 @@
                         </div>
                     </div>
                 </button>
-                <button id="button_locator_two" class="button_locator_two" onClick="teste()">
+                <button id="button_locator_two" class="button_locator_two" onClick="show_modal()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
                             <h3>0</h3>
                         </div>
                     </div>
                 </button>
-                <button id="button_locator_three" class="button_locator_three" onClick="teste()">
+                <button id="button_locator_three" class="button_locator_three" onClick="show_modal()">
                     <div class="photo_locator">
                         <div class="photo_locator_number">
                             <h3>0</h3>
@@ -162,7 +174,7 @@
                             </h3>
                         </div>
                     </div>
-                    <h1>MENTORES EM 
+                    <h1><?php echo $modal_teacher[$language]['0']?> 
                         <span>
                             <?php
                                 print_r($city['0'])
@@ -188,18 +200,18 @@
                                         echo $found->first_name." ".$found->last_name;
                                     ?>
                                 </h2>
-                                <h4>Mentor de 
+                                <h4><?php echo $modal_teacher[$language]['1']?>  
                                     <?php
                                         echo $found->mentor;
                                     ?>
                                 </h4>
                                 <div class="card_name_plus">
                                     <img src="../../public/img/svg/estrela.svg">
-                                    <span>4.3 de 5.0</span>
+                                    <span><?php echo $modal_teacher[$language]['2']?> </span>
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>" target="_blank">
+                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
@@ -217,18 +229,18 @@
                                         echo $found->first_name." ".$found->last_name;
                                     ?>
                                 </h2>
-                                <h4>Mentor de 
+                                <h4><?php echo $modal_teacher[$language]['1']?> 
                                     <?php
                                         echo $found->mentor;
                                     ?>
                                 </h4>
                                 <div class="card_name_plus">
                                     <img src="../../public/img/svg/estrela.svg">
-                                    <span>4.3 de 5.0</span>
+                                    <span><?php echo $modal_teacher[$language]['2']?> </span>
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>" target="_blank">
+                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>

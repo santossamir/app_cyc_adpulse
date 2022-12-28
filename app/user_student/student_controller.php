@@ -5,6 +5,17 @@
     require "student_service.php";
     require "../../app/database_conexion/conexion.php";
 
+    #Variable for languages
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    }
+
     $action = isset($_GET['action']) ? $_GET['action'] : $action;
     
     if($action == 'insert'){
@@ -165,7 +176,7 @@
             $_SESSION['date_registration'] = $date_registration;
             $_SESSION['age'] = $age;
 
-            header('Location: user_student.php');
+            header('Location: user_student.php?language='.$language);
         } else{
             $_SESSION['authenticated'] = 'No';
             header('Location: index.php?login=Error');

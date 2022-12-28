@@ -24,7 +24,7 @@
   	<body>
 		<div class="container">
             <div class="form">
-                <form id="form_login" method="POST" action="teacher_controller.php?action=login" onSubmit="handleSubmitForm(event)">
+                <form id="form_login" method="POST" action="teacher_controller.php?action=login&language=<?=$language?>" onSubmit="handleSubmitForm(event)">
                     
                     <!--Start of error text-->
                     <?php
@@ -65,7 +65,7 @@
                         </button>
                     </div>
                     <h4>
-                        <?php echo $link_h4[$language]['1']?><a style="color:#8cc63f; padding-left:10px" href="teacher_registration.php"><?php echo $link_h4[$language]['2']?></a>
+                        <?php echo $link_h4[$language]['1']?><a style="color:#8cc63f; padding-left:10px" href="teacher_registration.php?language=<?=$language?>"><?php echo $link_h4[$language]['2']?></a>
                     </h4>
                 </form>
             </div>

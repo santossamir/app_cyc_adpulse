@@ -5,6 +5,17 @@
     require "teacher_service.php";
     require "../../app/database_conexion/conexion.php";
 
+    #Variable for languages
+    $language = "";
+   
+    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
+        $language = 'pt';
+    }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
+        $language = 'en';
+    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
+        $language = 'es';
+    }
+
     $action = isset($_GET['action']) ? $_GET['action'] : $action;
     
     if($action == 'insert'){
@@ -178,7 +189,7 @@
             $_SESSION['city'] = $city;
             $_SESSION['date_registration'] = $date_registration;
 
-            header('Location: user_teacher.php');
+            header('Location: user_teacher.php?language='.$language);
 
         } else {
             $_SESSION['authenticated'] = 'No';
@@ -206,14 +217,14 @@
             } 
         
             if(count($mentor) <= 0 && count($city) <= 0){
-                header('Location: search_teacher.php?search=Error');
+                header('Location: search_teacher.php?search=Error&language='.$language);
             }else{
                 $_SESSION['mentor'] = $mentor;
                 $_SESSION['city'] = $city;
-                header('Location: search_teacher.php?search=Return');
+                header('Location: search_teacher.php?search=Return&language='.$language);
             }
         } else {
-            header('Location: search_teacher.php?search=Error');
+            header('Location: search_teacher.php?search=Error&language='.$language);
         } 
            
     } else if($action == 'search_category'){
@@ -236,14 +247,14 @@
             } 
         
             if(count($mentor) <= 0 && count($city) <= 0){
-                header('Location: search_teacher.php?search=Error');
+                header('Location: search_teacher.php?search=Error&language='.$language);
             }else{
                 $_SESSION['mentor'] = $mentor;
                 $_SESSION['city'] = $city;
-                header('Location: search_teacher.php?search_category=Return_category');
+                header('Location: search_teacher.php?search_category=Return_category&language='.$language);
             }
         } else {
-            header('Location: search_teacher.php?search=Error');
+            header('Location: search_teacher.php?search=Error&language='.$language);
         } 
 
     } else if($action == 'show_modal'){
