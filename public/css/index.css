@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body{
@@ -13,8 +13,6 @@ body{
     display: flex;
     justify-content: end;
     margin: 10px 10px 0 0;
-    font-size: 28px;
-    color: #000;
 }
 
 .select_language select{
@@ -22,6 +20,8 @@ body{
     margin: 0 5px 0 5px;
     border-radius: 5px;
     border: none;
+    font-size: 38px;
+    color: #4d4d4d;
 }
 
 .logo_cyc img{

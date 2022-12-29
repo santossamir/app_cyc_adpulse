@@ -31,12 +31,10 @@
   	<body>
 		<div class="container">
             <div class="select_language">
-                <?php echo $select_language[$language]['0']?>
                 <select onChange="set_language()" name="language" id="language">
-                    <option value=""></option>
+                    <option value="pt" <?php echo $pt_select?>>PT</option>
                     <option value="en" <?php echo $en_select?>>EN</option>
                     <option value="es" <?php echo $es_select?>>ES</option>
-                    <option value="pt" <?php echo $pt_select?>>PT</option>
                 </select>
             </div>
 			<div class="logo_cyc">

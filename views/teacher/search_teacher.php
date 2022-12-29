@@ -177,7 +177,7 @@
                     <h1><?php echo $modal_teacher[$language]['0']?> 
                         <span>
                             <?php
-                                print_r($city['0'])
+                                isset($_GET['search'])? print_r($city['0']): print_r($mentor['0']);
                             ?>
                         </span>
                     </h1>

@@ -1,16 +1,4 @@
 <?php
-    $select_language = array(
-        'pt' => array(
-            'Idioma'
-        ),
-        'en' => array(
-            'Language'
-        ),
-        'es' => array(
-            'Idioma'
-        ),
-    );
-
     $text_show_cyc = array(
         'pt' => array(
             'A Creative Youth City é uma cidade onde podes partilhar, capacitar, experimentar e desenvolver a tua veia empreendedora e a de milhares de jovens interessados em desenvolver o seu potencial criativo.',
