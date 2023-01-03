@@ -326,5 +326,75 @@
             '¿Que me gusta?',
             'Mejorar',
         )
-    )
+    );
+
+    //Translation for the about_cyc page
+    $text_about_cyc = array(
+        'pt' => array(
+            'Sobre a CYC',
+            'Estás curioso sobre o que é o CYC e porque te deves juntar a nós?',
+            'O acrónimo significa Cidade Jovem Criativa e este projeto é implementado pelo Centro de
+            Juventude de Águeda, localizado em Águeda, Portugal. É um projeto implementado a nível
+            europeu em conjunto com os parceiros PONT GROUP, localizado em Cluj Napoca, Roménia e
+            Ilmiofuturo, Campi, Itália, financiado pela Agência Nacional Erasmus+, Juventude, Desporto e
+            Corpo Europeu de Solidariedade.',
+            'Junto com os nossos parceiros, o nosso principal objetivo é transformar as cidades num espaço
+            de partilha, capacitação, experimentação e construção através da criatividade. Assim, através da
+            implementação de diferentes dinâmicas em diferentes espaços da cidade, promoveremos o
+            potencial criativo e empreendedor dos jovens e a igualdade de oportunidades entre jovens de
+            diversos contextos.',
+            'O nosso fator diferenciador é que pretendemos através desta plataforma tornar as cidades
+            criativas uma referência europeia para a participação ativa dos jovens nas suas comunidades.',
+            'Aqui juntamos jovens interessados em potenciar a sua criatividade e competências
+            empreendedoras com mentores interessados em ajudá-los a alcançar os seus objetivos.',
+            'Se és mentor, junta-te a nós e podes em questões de minutos começar a mudar milhares de
+            pequenos mundos através da tua arte!',
+            'Se és jovem, és a nossa personagem principal, é para ti fundamentalmente que esta plataforma
+            foi criada e é contigo que contamos para começares a tomar as rédeas do teu futuro!'
+        ),
+        'en' => array(
+            'About the CYC',
+            'Are you curious about what CYC is and why you should join us?',
+            'The acronym stands for Creative Young City and this project is implemented by the Águeda
+            Youth Centre, located in Águeda, Portugal. It is a project implemented at the European level
+            together with the PONT GROUP partners, located in Cluj Napoca, Romania, and Ilmiofuturo,Campi,
+            Italy, funded by the Portuguese National Agency Erasmus+, Youth, Sport and European
+            Solidarity Corps.',
+            'Together with our partners, our main objective is to transform cities into a space for sharing,
+            training, experimentation, and construction through creativity. Thus, through the
+            implementation of different dynamics in different areas of the city, we will promote the creative
+            and entrepreneurial potential of young people and equal opportunities for young people from
+            different contexts.',
+            'Our differentiating factor is that through this platform, we intend to make creative cities a
+            European reference for the active participation of young people in their communities.',
+            'Here we bring together young people interested in boosting their creativity and entrepreneurial
+            skills with mentors interested in helping them achieve their goals.',
+            'If you are a mentor, join us and you can start changing thousands of small worlds through your
+            art in a matter of minutes!',
+            'If you are young, you are our main character, it is fundamentally for you that this platform was
+            created, and it is with you that we count on you to start taking the reins of your future!'
+        ),
+        'es' => array(
+            'Sobre el CYC',
+            '¿Tienes curiosidad acerca de qué es CYC y por qué deberías unirte a nosotros?',
+            'Las siglas significan Creative Young City y este proyecto lo lleva a cabo la
+            Juventud de Águeda, ubicada en Águeda, Portugal. Es un proyecto implementado a nivel
+            junto con los socios de PONT GROUP, ubicados en Cluj Napoca, Rumania y
+            Ilmiofuturo, Campi, Italia, financiado por la Agencia Nacional Erasmus+, Juventud, Deporte y
+            Cuerpo Europeo de Solidaridad.',
+            'Junto con nuestros socios, nuestro principal objetivo es transformar las ciudades en un espacio
+            compartir, potenciar, experimentar y construir a través de la creatividad. luego a través de la
+            implementación de diferentes dinámicas en diferentes zonas de la ciudad, promoveremos la
+            potencial creativo y emprendedor de los jóvenes e igualdad de oportunidades para los jóvenes de
+            diferentes contextos.',
+            'Nuestro diferencial es que a través de esta plataforma pretendemos hacer ciudades
+            un referente europeo para la participación activa de los jóvenes en sus comunidades.',
+            'Aquí reunimos a jóvenes interesados ​​en potenciar su creatividad y habilidades
+            emprendedores con mentores interesados ​​en ayudarlos a alcanzar sus metas.',
+            'Si eres un mentor, únete a nosotros y en cuestión de minutos podrás empezar a cambiar miles de
+            ¡pequeños mundos a través de tu arte!',
+            'Si eres joven, eres nuestro personaje principal, es fundamentalmente para ti que esta plataforma
+            fue creado y contamos contigo para que empieces a tomar el control de tu futuro!'
+        )
+    ) 
 ?>

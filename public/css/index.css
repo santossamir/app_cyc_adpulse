@@ -101,3 +101,19 @@ body{
     width: 100%;
 }
 
+
+/*This styling is to add it to the about_cyc page */
+.header_buttons{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding-top: 40px;
+}
+
+.come_back_button, .menu_button{
+    padding: 0 10% 0;
+    width: 10%;
+}

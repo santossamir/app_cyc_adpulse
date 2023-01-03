@@ -71,7 +71,7 @@
                 </div>
                 <div class="profile_button">
                     <button>
-                        <a href="#"><?php echo $user_teacher[$language]['5']?></a>
+                        <a href="about_cyc_student.php?language=<?=$language?>"><?php echo $user_teacher[$language]['5']?></a>
                     </button>
                 </div>
                 <div class="profile_button">
