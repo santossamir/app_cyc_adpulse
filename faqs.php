@@ -27,10 +27,14 @@
                 <img src="../../public/img/svg/logo-cyc.svg">
             </div>
             <div class="faqs_cyc">
-                <h2>
-                    <?= $faqs[$language]['0']?>
-                    <img id="angle_right" onclick="show_faqs_youth('faqs_youth')" src="./public/img/svg/angle-right.svg">
-                </h2>
+                <div class="title_faqs">
+                    <div class="title_faqs_h2">
+                        <h2><?= $faqs[$language]['0']?></h2>
+                    </div>
+                    <div id="faqs_img" class="faqs_img">
+                        <img id="angle_right" onclick="show_faqs_youth('faqs_youth')" src="./public/img/svg/angle-right.svg">
+                    </div>
+                </div>
                 <div id="faqs_youth" class="faqs">
                     <ul>
                         <li><?= $faqs[$language]['2']?>
@@ -93,10 +97,14 @@
                         </div>
                     </ul>
                 </div>
-                <h2>
-                    <?= $faqs[$language]['1']?>
-                    <img id="angle_right_org" onclick="show_faqs_org('faqs_org')" src="./public/img/svg/angle-right.svg">
-                </h2>
+                <div class="title_faqs">
+                    <div class="title_faqs_h2">
+                        <h2><?= $faqs[$language]['1']?></h2>
+                    </div>
+                    <div id="faqs_img_org" class="faqs_img">
+                        <img id="angle_right_org" onclick="show_faqs_org('faqs_org')" src="./public/img/svg/angle-right.svg">
+                    </div>
+                </div>               
                 <div id="faqs_org" class="faqs">    
                     <ul>
                         <li><?= $faqs[$language]['16']?>

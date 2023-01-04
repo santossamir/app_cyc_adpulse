@@ -30,20 +30,34 @@ body{
     padding: 0 10% 5%;
 }
 
-.faqs_cyc h2{
+.title_faqs_h2{
+    width: 80%;
+}
+
+.title_faqs_h2 h2{
     font-weight: bolder;
     font-size:56px;
     color: #4d4d4d;
     line-height:62px;
-    padding: 0 10% 0;
-    text-align: center;
+    text-align: end;
     margin-bottom: 4%;
 }
 
-.faqs_cyc img{
-    width: 5%;
-    height: 5%;
-    margin-bottom: -1%;
+.title_faqs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 10%;
+}
+
+.title_faqs img{
+    height: 40%;
+    padding-top: 6%;
+}
+
+.faqs_img{
+    padding-left: 1%;
+    width: 25%;
 }
 
 #faqs_youth, #faqs_org, #angle_response_11, #angle_response_22, #angle_response_33, #angle_response_44,
@@ -54,7 +68,7 @@ body{
 
 .faqs{
     font-weight: bolder;
-    font-size: 28px;
+    font-size: 22px;
     color: #4d4d4d;
     padding: 0 10% 0;
     margin-bottom: 8%;
@@ -63,6 +77,11 @@ body{
 .faqs li {
     text-align: justify;
     margin-bottom: 4%;
+}
+
+.faqs img{
+    width: 4%;
+    height: 3%;
 }
 
 .faqs_response{

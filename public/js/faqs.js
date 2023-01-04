@@ -4,9 +4,11 @@ function show_faqs_youth(obj){
    
     if(faqs_youth.style.display != 'none'){
         document.getElementById('angle_right').style.transform = '';
+        document.getElementById('faqs_img').style.padding = '0 0 0 1%';
         faqs_youth.style.display = 'none';
     }else{
         document.getElementById('angle_right').style.transform = 'rotate(90deg)';
+        document.getElementById('faqs_img').style.padding = '1% 0 0 2%';
         faqs_youth.style.display = 'block';
     }
 }
@@ -16,9 +18,11 @@ function show_faqs_org(obj){
    
     if(faqs_org.style.display != 'none'){
         document.getElementById('angle_right_org').style.transform = '';
+        document.getElementById('faqs_img_org').style.padding = '0 0 0 1%';
         faqs_org.style.display = 'none';
     }else{
         document.getElementById('angle_right_org').style.transform = 'rotate(90deg)';
+        document.getElementById('faqs_img_org').style.padding = '1% 0 0 2%';
         faqs_org.style.display = 'block';
     }
 }
