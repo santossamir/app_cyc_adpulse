@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #f2f2db;
+}
+
+.select_language{
+    background-color:#f2f2db;
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 0 0;
+}
+
+.select_language select{
+    background-color:#f2f2db;
+    margin: 0 5px 0 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 38px;
+    font-weight: 600;
+    color: #4d4d4d;
+}
+
+.logo_cyc img{
+    width: 80%;
+    padding: 0 10% 5%;
+}
+
+.faqs_cyc h2{
+    font-weight: bolder;
+    font-size:56px;
+    color: #4d4d4d;
+    line-height:62px;
+    padding: 0 10% 0;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.faqs_cyc img{
+    width: 5%;
+    height: 5%;
+    margin-bottom: -1%;
+}
+
+#faqs_youth, #faqs_org, #angle_response_11, #angle_response_22, #angle_response_33, #angle_response_44,
+#angle_response_55, #angle_response_66, #angle_response_77, #angle_response_88, #angle_response_99, 
+#angle_response_101, #angle_response_121 {
+    display: none;
+}
+
+.faqs{
+    font-weight: bolder;
+    font-size: 28px;
+    color: #4d4d4d;
+    padding: 0 10% 0;
+    margin-bottom: 8%;
+}
+
+.faqs li {
+    text-align: justify;
+    margin-bottom: 4%;
+}
+
+.faqs_response{
+    font-weight: 500;
+    font-size:22px;
+    color: #4d4d4d;
+    padding: 0 0 0 8%;
+    line-height:50px;
+}
+
+.faqs_response li{
+    list-style:none;
+}
+
+.footer_img_city{
+    margin-top: -144px;
+}
+
+.footer_img_city img{
+    width: 100%;
+}
+
+.link_term{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.link_term a{
+    color: #4d4d4d;
+    font-size: 28px;
+    font-weight: 600;
+}

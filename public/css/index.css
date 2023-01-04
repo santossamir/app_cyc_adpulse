@@ -21,6 +21,7 @@ body{
     border-radius: 5px;
     border: none;
     font-size: 38px;
+    font-weight: 600;
     color: #4d4d4d;
 }
 
@@ -99,6 +100,21 @@ body{
 
 .footer_img_city img{
     width: 100%;
+}
+
+.link_term{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.link_term a{
+    color: #4d4d4d;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 
