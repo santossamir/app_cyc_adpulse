@@ -34,13 +34,14 @@
   	</head>
   	<body>
 		<div class="container">
-            <div class="select_language">
-                <select onChange="set_language()" name="language" id="language">
-                    <option value="pt" <?php echo $pt_select?>>PT</option>
-                    <option value="en" <?php echo $en_select?>>EN</option>
-                    <option value="it" <?php echo $it_select?>>IT</option>
-                    <option value="ro" <?php echo $ro_select?>>RO</option>
-                </select>
+            <div id="dropdown" class="dropdown">
+                <input type="text" id="textBox" class="textBox" placeholder="Language" readonLy>
+                <div class="option">
+                    <div onClick="chooseLanguage('pt')"><img src="./public/img/png/portugal.png"><span>PORTUGUESE</span></div>
+                    <div onClick="chooseLanguage('en')"><img src="./public/img/png/gra-bretanha.png"><span>ENGLISH</span></div>
+                    <div onClick="chooseLanguage('it')"><img src="./public/img/png/italia.png"><span>ITALIAN</span></div>
+                    <div onClick="chooseLanguage('ro')"><img src="./public/img/png/romenia.png"><span>ROMANIAN</span></div>
+                </div>
             </div>
 			<div class="logo_cyc">
                 <img src="./public/img/svg/logo-cyc.svg">

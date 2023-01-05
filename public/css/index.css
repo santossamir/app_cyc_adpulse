@@ -8,22 +8,96 @@ body{
     background-color: #f2f2db;
 }
 
-.select_language{
+/*Start Language select styling*/
+.dropdown{
+    position: relative;
+    width: 215px;
+    height: 50px;
+    left: 75%;
     background-color:#f2f2db;
-    display: flex;
-    justify-content: end;
-    margin: 10px 10px 0 0;
+    margin: 15px 10px 0 0;
 }
 
-.select_language select{
-    background-color:#f2f2db;
-    margin: 0 5px 0 5px;
-    border-radius: 5px;
+.dropdown::before{
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 10000;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #4d4d4d;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.dropdown.active::before{
+    top: 25px;
+    transform: rotate(-225deg);
+}
+
+.dropdown input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
     border: none;
-    font-size: 38px;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 26px;
     font-weight: 600;
     color: #4d4d4d;
 }
+
+.option span{
+    font-size: 17px;
+    font-weight: 600;
+    color: #4d4d4d;
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 16px;
+}
+
+.dropdown .option{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown.active .option{
+    display: block;
+}
+
+.dropdown .option div{
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover{
+    background: #8cc63f;;
+    color: #fff;
+}
+
+.dropdown .option div img{
+    position: relative;
+    top: 4px;
+    font-size: 1.2em;
+}
+
+/*Finish Language selection style*/
 
 .logo_cyc img{
     width: 80%;
