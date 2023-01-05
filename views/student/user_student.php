@@ -15,8 +15,10 @@
         $language = 'pt';
     }else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
         $language = 'en';
-    } else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
-        $language = 'es';
+    }else if((isset($_GET['language']) && $_GET['language'] == "it") || !isset($_GET['language'])){
+        $language = "it";
+    }else if((isset($_GET['language']) && $_GET['language'] == "ro") || !isset($_GET['language'])){
+        $language = "ro";
     }
 ?>
 <html>

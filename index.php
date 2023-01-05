@@ -1,8 +1,9 @@
 <?php
     include("language.php");
     $en_select = "";
-    $es_select = "";
     $pt_select = "";
+    $it_select = "";
+    $ro_select = "";
     $language = "";
 
     if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){
@@ -12,9 +13,12 @@
     else if((isset($_GET['language']) && $_GET['language'] == "en") || !isset($_GET['language'])){
         $en_select = "selected";
         $language = "en";
-    }else if((isset($_GET['language']) && $_GET['language'] == "es") || !isset($_GET['language'])){
-        $es_select = "selected";
-        $language = "es";
+    }else if((isset($_GET['language']) && $_GET['language'] == "it") || !isset($_GET['language'])){
+        $it_select = "selected";
+        $language = "it";
+    }else if((isset($_GET['language']) && $_GET['language'] == "ro") || !isset($_GET['language'])){
+        $ro_select = "selected";
+        $language = "ro";
     }
 ?>
 <html>
@@ -34,7 +38,8 @@
                 <select onChange="set_language()" name="language" id="language">
                     <option value="pt" <?php echo $pt_select?>>PT</option>
                     <option value="en" <?php echo $en_select?>>EN</option>
-                    <option value="es" <?php echo $es_select?>>ES</option>
+                    <option value="it" <?php echo $it_select?>>IT</option>
+                    <option value="ro" <?php echo $ro_select?>>RO</option>
                 </select>
             </div>
 			<div class="logo_cyc">
