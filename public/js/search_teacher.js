@@ -57,3 +57,12 @@ function show_modal(){
     document.getElementById('button_locator_two').style.display = 'none';
     document.getElementById('button_locator_three').style.display = 'none';
 }
+
+const tilesProvider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+        let myMap = L.map('map').setView([41.23668845, -8.302018317104206], 11);
+        
+        L.tileLayer(tilesProvider, {
+            maxZoom: 18,
+        }).addTo(myMap)
+
+        //let marker = L.marker([51.505, -0.09]).addTo(myMap)

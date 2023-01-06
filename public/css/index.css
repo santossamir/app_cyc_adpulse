@@ -87,7 +87,7 @@ body{
 }
 
 .dropdown .option div:hover{
-    background: #8cc63f;;
+    background: #8cc63f;
     color: #fff;
 }
 
@@ -187,7 +187,7 @@ body{
 
 .link_term a{
     color: #4d4d4d;
-    font-size: 28px;
+    font-size: 38px;
     font-weight: 600;
 }
 

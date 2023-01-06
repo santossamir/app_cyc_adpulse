@@ -38,6 +38,7 @@
   	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../../public/css/search_teacher.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
 		<title>Search - Teacher CYC</title>
 
 		<!--Font family-->
@@ -61,36 +62,42 @@
                     </div>
                 </div>
             </div>
-            <div class="title_find_teacher">
-                <h1><?php echo $search_teacher[$language]['0']?></h1>
-            </div>
-            <!--Start - It shows that there was an error in the search-->
-            <?php
-                if(isset($_GET['search']) && $_GET['search'] == 'Error'){
-            ?>
-                <!--Error text of search-->
-            <div class="text_error">
-                <strong><?php echo $text_error[$language]['2']?></strong>
-            </div>               
-
-            <?php } 
-            ?>
-            <!--End - It shows that there was an error in the search-->
-            <form id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
-                <div class="search_teacher">
-                    <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
-                    <div class="dropdown_search">
-                        <img id="dropdown" src="../../public/img/svg/dropdown-pesquisa.svg">
+            <div style="margin-top: 30px;"class="mt">Map</div>
+                <div style="position:absolute; z-index:1000; width: 100%;">
+                    <div class="title_find_teacher">
+                        <h1><?php echo $search_teacher[$language]['0']?></h1>
                     </div>
-                    <button class="icon_search">
-                        <img src="../../public/img/svg/icon-search.svg">
-                    </button>
+                    <!--Start - It shows that there was an error in the search-->
+                    <?php
+                        if(isset($_GET['search']) && $_GET['search'] == 'Error'){
+                    ?>
+                        <!--Error text of search-->
+                    <div class="text_error">
+                        <strong><?php echo $text_error[$language]['2']?></strong>
+                    </div>               
+
+                    <?php } 
+                    ?>
+                    <!--End - It shows that there was an error in the search-->
+                
+                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
+                        <div class="search_teacher">
+                            <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
+                            <div class="dropdown_search">
+                                <img id="dropdown" src="../../public/img/svg/dropdown-pesquisa.svg">
+                            </div>
+                            <button class="icon_search">
+                                <img src="../../public/img/svg/icon-search.svg">
+                            </button>
+                        </div>
+                    </form>
+                    <div class="search_button">
+                        <button id="btn_category" class="btn" onClick="category()"><?php echo $search_teacher[$language]['2']?></button>
+                        <button id="btn_localization" class="btn active" onClick="localization()"><?php echo $search_teacher[$language]['3']?></button>                     
+                    </div>
                 </div>
-            </form>
-            <div class="search_button">
-                <button id="btn_category" class="btn" onClick="category()"><?php echo $search_teacher[$language]['2']?></button>
-                <button id="btn_localization" class="btn active" onClick="localization()"><?php echo $search_teacher[$language]['3']?></button>                     
-            </div>
+                <div id="map"></div>
+            <div class="mt">Map</div>
             <!--Start of search return-->
             <?php
                 if(isset($_GET['search']) && $_GET['search'] == 'Return'){
@@ -256,6 +263,7 @@
              <!--End show modal-->
 		</div> 
   	</body>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     <script src="../../public/js/search_teacher.js">
        
     </script>
