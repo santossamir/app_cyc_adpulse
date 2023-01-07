@@ -1,6 +1,7 @@
 <?php
 	session_start();
     $action = "show_modal";
+    require_once "../../app/include/common.php";
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
     
@@ -80,7 +81,7 @@
                     ?>
                     <!--End - It shows that there was an error in the search-->
                 
-                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
+                    <form style=" z-index:1000;" id="form_search" method="POST" action="<?=base_url()?>/app/user_teacher/search.php?search=%cidade%&language=<?=$language?>">
                         <div class="search_teacher">
                             <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
                             <div class="dropdown_search">
@@ -97,7 +98,6 @@
                     </div>
                 </div>
                 <div id="map"></div>
-            <div class="mt">Map</div>
             <!--Start of search return-->
             <?php
                 if(isset($_GET['search']) && $_GET['search'] == 'Return'){

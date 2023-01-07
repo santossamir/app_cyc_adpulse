@@ -86,7 +86,7 @@ function show_modal(city, json){
 
 const tilesProvider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
-var myMap = L.map('map').setView([41.23668845, -8.302018317104206], 11);
+var myMap = L.map('map').setView([38.90871322732312, 10.413939356803896], 5);
 
 L.tileLayer(tilesProvider, {
     maxZoom: 18,
@@ -96,15 +96,19 @@ var marker = undefined;
         
 
 $(function() {
+
+    $('#map').css("height","calc(100vh - " + $('#map').position().top + "px)");
     
     $("#form_search").submit(function( event ) {
         event.preventDefault();
-        
+
         var cidade = '';
         
         $.each($(this).serializeArray(), function(i, field) {
             if (field.name == "search") cidade = field.value;
         });
+
+        const actionUrl = $(this).attr('action').replace('%cidade%', cidade);
 
         $.ajax({
             url: "https://nominatim.openstreetmap.org/search?q="+ cidade +"&format=json&limit=1",
@@ -119,7 +123,7 @@ $(function() {
             const lon = response[0].lon;
             
             $.ajax({
-                url: "https://creativeyouthcity.ad-pulse.com/app/user_teacher/search.php?search=" + cidade,
+                url: actionUrl,
             }).done(function(response) {
                
                let json = JSON.parse(response)
