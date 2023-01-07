@@ -52,17 +52,99 @@ function localization(){
     document.getElementById('dropdown').style.display = 'none'; 
 }
 
-function show_modal(){
+function show_modal(city, json){
+    
+    let modal = $('#modal_teacher');
+    
+    modal.find('.modal_title_number h3').html(json.length);
+    modal.find('.modal_title h1 span').html(city);
+    
+    modal.find('.card_teacher').html('');
+    for (i=0; i<json.length; i++) {
+        let teacher = json[i];
+        const htmlString = `<div class="card_teacher_box">
+            <div class="card_name">
+                <h2>${teacher.first_name} ${teacher.last_name}</h2>
+                <h4>Mentor de <span>${teacher.mentor}</span></h4>
+                <div class="card_name_plus">
+                    <img src="../../public/img/svg/estrela.svg">
+                    <span>4.3 de 5.0 </span>
+                </div>
+            </div>
+            <div class="card_button">
+                <a href="found_teacher.php?teacher=${teacher.first_name}${teacher.last_name}&id=${teacher.id}&language=pt" target="_blank">
+                    <img src="../../public/img/svg/seta-direita.svg">
+                </a>
+            </div>
+        </div>`;
+        
+        modal.find('.card_teacher').append(htmlString);
+    }
+   
     document.getElementById('modal_teacher').style.display = 'block'; 
-    document.getElementById('button_locator_two').style.display = 'none';
-    document.getElementById('button_locator_three').style.display = 'none';
 }
 
 const tilesProvider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-        let myMap = L.map('map').setView([41.23668845, -8.302018317104206], 11);
-        
-        L.tileLayer(tilesProvider, {
-            maxZoom: 18,
-        }).addTo(myMap)
 
-        //let marker = L.marker([51.505, -0.09]).addTo(myMap)
+var myMap = L.map('map').setView([41.23668845, -8.302018317104206], 11);
+
+L.tileLayer(tilesProvider, {
+    maxZoom: 18,
+}).addTo(myMap);
+
+var marker = undefined;
+        
+
+$(function() {
+    
+    $("#form_search").submit(function( event ) {
+        event.preventDefault();
+        
+        var cidade = '';
+        
+        $.each($(this).serializeArray(), function(i, field) {
+            if (field.name == "search") cidade = field.value;
+        });
+
+        $.ajax({
+            url: "https://nominatim.openstreetmap.org/search?q="+ cidade +"&format=json&limit=1",
+        }).done(function(response) {
+            
+            if (response.length == 0) {
+                alert('Cidade desconhecida');   
+                return;
+            }
+            
+            const lat = response[0].lat;
+            const lon = response[0].lon;
+            
+            $.ajax({
+                url: "https://creativeyouthcity.ad-pulse.com/app/user_teacher/search.php?search=" + cidade,
+            }).done(function(response) {
+               
+               let json = JSON.parse(response)
+               
+               if (json.length) {
+                   if (marker === undefined) {
+                        marker = L.marker([lat, lon]);
+                        marker.addTo(myMap).bindPopup("<b>" + json.length + " mentors on "+ cidade+ "</b>").openPopup();
+                        
+                   } else {
+                       marker.setLatLng([lat, lon]).bindPopup("<b>" + json.length + " mentors on "+ cidade+ "</b>").openPopup();
+                   }
+                   
+                   marker.off('click').on('click', function(e) {
+                            show_modal(cidade, json);
+                    });
+               }
+               
+               myMap.setView([lat, lon], 11);
+               
+            });
+            
+        });
+        
+        
+    });
+    
+});

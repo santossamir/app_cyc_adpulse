@@ -67,6 +67,17 @@
                 return $stmt->fetchAll(PDO::FETCH_OBJ);
             } 
         }
+        
+        public function searchByCity($city){
+            if(isset($city)){
+                $query_search = "SELECT teacher_id, first_name, last_name, mentor, city, email, image_path, date_registration 
+                                FROM  tb_user_teacher
+                                WHERE city LIKE '%$city%'";
+                $stmt = $this->conexion->prepare($query_search);
+                $stmt->execute();
+                return $stmt->fetchAll(PDO::FETCH_OBJ);
+            } 
+        }
 
         public function search_category(){
             if(isset($_POST['search'])){
