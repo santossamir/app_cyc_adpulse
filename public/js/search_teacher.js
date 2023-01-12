@@ -59,42 +59,45 @@ function localization(){
     document.getElementById('dropdown').style.display = 'none'; 
 }
 
-function show_modal(){
+function show_modal(city, json){
+    
+    let modal = $('#modal_teacher');
+    
+    modal.find('.modal_title_number h3').html(json.length);
+    modal.find('.modal_title h1 span').html(city);
+    
+    modal.find('.card_teacher').html('');
+    for (i=0; i<json.length; i++) {
+        let teacher = json[i];
+        const htmlString = `<div class="card_teacher_box">
+            <div class="card_name">
+                <h2>${teacher.first_name} ${teacher.last_name}</h2>
+                <h4>Mentor de <span>${teacher.mentor}</span></h4>
+                <div class="card_name_plus">
+                    <img src="../../public/img/svg/estrela.svg">
+                    <span>4.3 de 5.0 </span>
+                </div>
+            </div>
+            <div class="card_button">
+                <a href="found_teacher.php?teacher=${teacher.first_name}${teacher.last_name}&id=${teacher.id}&language=pt" target="_blank">
+                    <img src="../../public/img/svg/seta-direita.svg">
+                </a>
+            </div>
+        </div>`;
+        
+        modal.find('.card_teacher').append(htmlString);
+    }
+   
     document.getElementById('modal_teacher').style.display = 'block'; 
     document.getElementById('button_locator_two').style.display = 'none';
-    document.getElementById('button_locator_three').style.display = 'none';    
+    document.getElementById('button_locator_three').style.display = 'none';
 }
 
-/*
-Para fazer uso do OpenStreetMap dinÂmicamento com o input_search
-let lat = 0;
-let lon = 0;
-
-$('#search_button').click(function(){
-  
-    let cidade = $("#input_search").val();
-    let city = cidade.toLowerCase();
-    
-    $.ajax({
-      url: "https://nominatim.openstreetmap.org/search?q="+city+"&format=json&limit=1",
-    }).done(function(response) {
-      lat = response[0].lat;
-      lon = response[0].lon;
-      console.log(lat);
-      console.log(lon);
-
-      const provider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-        let newMap = L.map('map').setView([lat, lon], 9);
+const tilesProvider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+        let myMap = L.map('map').setView([41.23668845, -8.302018317104206], 11);
         
-        L.tileLayer(provider, {
+        L.tileLayer(tilesProvider, {
             maxZoom: 18,
-        }).addTo(newMap)
-    });
-  });*/
+        }).addTo(myMap)
 
-  const provider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  let newMap = L.map('map').setView([51, 10], 3.5);
-  
-  L.tileLayer(provider, {
-      maxZoom: 18,
-  }).addTo(newMap)
+        //let marker = L.marker([51.505, -0.09]).addTo(myMap)
