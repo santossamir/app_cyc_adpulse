@@ -1,6 +1,6 @@
 <?php
     class Student {
-        private $teacher_id;
+        private $student_id;
         private $first_name;
         private $last_name;
         private $city;

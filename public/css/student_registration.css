@@ -14,27 +14,30 @@ body{
     flex-direction:row;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 18px;
     margin-top: 40px;
 }
 
 .form{
+    width: 42%;
+    position: relative;
+    left: 28%;
     background-color: #f8f8f8;
-    border-radius: 0 0 60px 60px;
-    box-shadow: 1px 7px 20px #91918d38; 
+    border-radius: 0 0 40px 40px;
+    box-shadow: 1px 7px 20px #91918d38;
     display: flex;
-    flex-direction:column;
-    justify-content: center;  
-    padding-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
 }
 
-.profile_img, .first_name, .last_name, .city, .email, .password {
-    margin: 0 10% 0;
-    width: 80%;
+.profile_img, .first_name, .last_name, .mentor, .city, .email, .password {
+    margin: 0 12% 0;
+    width: 70%;
     background: #FFFFFF;
     border: 1px solid #F1F1F1;
-    border-radius: 25px;
+    border-radius: 16px;
     margin-top:10px; 
     box-shadow: 1px 1px 20px #91918d38;
 }
@@ -48,58 +51,56 @@ body{
 
 #form_login label{
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     width: 80%;
-    margin: 40px 10% 20px;
-    font-weight:bold;
-    font-size:30px;
-    color:#000;
+    margin: 38px 52px 14px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
     padding-left: 40px;
 }
 
-.first_name input, .last_name input, .city input, .email input, .password input{
+
+.first_name input, .last_name input, .mentor input, .city input, .email input, .password input{
     background: #FFFFFF;
     border: none;
-    height: 110px;
-    border-radius: 25px; 
+    height: 62px;
+    border-radius: 5px;
     font-weight: 600;
-    font-size: 30px;
-    width: 100%;
-    margin-left: 40px; 
+    font-size: 18px;
+    width: 86%;
+    margin-left: 22px;
 }
 
 .profile_img input{
     background: #f2f2db;
     font-weight: 600;
-    font-size: 30px; 
+    font-size: 16px; 
 }
 
-.first_name input:focus, .last_name input:focus, .city input:focus, .email input:focus, .password input:focus{
+.first_name input:focus, .last_name input:focus, .mentor input:focus, .city input:focus, .email input:focus, .password input:focus{
     outline: 0; 
 }
 
 #form_login ::placeholder{
     font-weight: 600;
-    font-size: 30px;
-    line-height: 22px;
+    font-size: 18px;
+    line-height: 16px;
     color: #b3b3b3;
 }
 
 .button_submit{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin: 5% 0 0 2%;
+    width: 69%;
+    margin: 10% 13% 8%;
 }
 
 .button_submit button{
-    width: 83%;
-    height: 120px;
-    border-radius: 25px;
+    width: 100%;
+    height: 60px;
+    border-radius: 14px;
     border: none;
-    font-size: 40px;
+    font-size: 18px;
     color: #fff;
     font-weight: bold;
     text-decoration: none;
@@ -113,4 +114,81 @@ body{
 
 .footer_img_city img{
     width: 100%;
+}
+
+.link_term{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.link_term a{
+    color: #4d4d4d;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+@media only screen and (max-device-width: 900px){
+    .text_error{
+        margin-top: 30px;
+    }
+
+    .form{
+        width: 100%;
+        position: block;
+        left: 0;
+        border-radius: 0 0 60px 60px; 
+        padding-bottom: 40px;
+    }
+
+    .profile_img, .first_name, .last_name, .mentor, .city, .email, .password {
+        margin: 0 10% 0;
+        width: 80%;
+        border-radius: 25px;
+    }
+
+    #form_login label{
+        margin: 40px 10% 20px;
+        font-size:30px;
+    }
+
+    .first_name input, .last_name input, .mentor input, .city input, .email input, .password input{
+        height: 110px;
+        border-radius: 25px; 
+        font-size: 30px;
+        width: 100%;
+        margin-left: 40px; 
+    }
+
+    .profile_img input{
+        font-size: 30px;
+        width: 100%; 
+    }
+
+    #form_login ::placeholder{
+        font-size: 30px;
+        line-height: 22px;
+    }
+
+    .button_submit{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: 5% 0 0 2%;
+    }
+
+    .button_submit button{
+        width: 83%;
+        height: 120px;
+        border-radius: 25px;
+        font-size: 40px;
+    }
+
+    .link_term a{
+        font-size: 38px;
+    }
 }

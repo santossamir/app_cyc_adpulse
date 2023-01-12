@@ -94,7 +94,7 @@
 
         $_SESSION["erro"] = $error;
         if(!empty($error)){
-            header('Location: teacher_registration.php?insert=Error');
+            header('Location: ../../views/teacher/teacher_registration.php?insert=Error&language='.$language);
             exit;
         }
 
@@ -110,7 +110,7 @@
 
         $_SESSION["erro"] = $error;
         if(!empty($error)){
-            header('Location: teacher_registration.php?insert=Error');
+            header('Location: ../../views/teacher/teacher_registration.php?insert=Error&language='.$language);
             exit;
         }
 
@@ -137,7 +137,7 @@
         $teacherService = new TeacherService($conexion, $image_path, $first_name, $last_name, $mentor, $city, $email, $password);
         $teacherService->insert();
 
-        header('Location: teacher_login.php');
+        header('Location: ../../views/teacher/teacher_login.php');
 
     }else if($action == 'login'){
 
@@ -176,7 +176,7 @@
                 $date_registration = $teacher->date_registration;
 
             } else {
-                header('Location: teacher_login.php?login=Error');
+                header('Location: ../../views/teacher/teacher_login.php?login=Error&language='.$language);
             }
         };
 
@@ -195,12 +195,14 @@
 
         } else {
             $_SESSION['authenticated'] = 'No';
-            header('Location: index.php?login=Error');
+            header('Location: ../../index.php?login=Error&language='.$language);
         }
         //End validation of input value with data registered in the database
 
     } else if($action == 'search'){
         
+        $studend_id = $_GET['id'];
+
         if($_POST['search'] != " "){
             $email = new Teacher();
             $conexion = new Conexion();
@@ -219,18 +221,20 @@
             } 
         
             if(count($mentor) <= 0 && count($city) <= 0){
-                header('Location: search_teacher.php?search=Error&language='.$language);
+                header('Location: search_teacher.php?id='.$studend_id.'&search=Error&language='.$language);
             }else{
                 $_SESSION['mentor'] = $mentor;
                 $_SESSION['city'] = $city;
-                header('Location: search_teacher.php?search=Return&language='.$language);
+                header('Location: search_teacher.php?id='.$studend_id.'&search=Return&language='.$language);
             }
         } else {
-            header('Location: search_teacher.php?search=Error&language='.$language);
+            header('Location: search_teacher.php?id='.$studend_id.'&search=Error&language='.$language);
         } 
            
     } else if($action == 'search_category'){
         
+        $studend_id = $_GET['id'];
+        
         if($_POST['search'] != " "){
             $email = new Teacher();
             $conexion = new Conexion();
@@ -249,18 +253,18 @@
             } 
         
             if(count($mentor) <= 0 && count($city) <= 0){
-                header('Location: search_teacher.php?search=Error&language='.$language);
+                header('Location: search_teacher.php?id='.$studend_id.'&search=Error&language='.$language);
             }else{
                 $_SESSION['mentor'] = $mentor;
                 $_SESSION['city'] = $city;
-                header('Location: search_teacher.php?search_category=Return_category&language='.$language);
+                header('Location: search_teacher.php?id='.$studend_id.'&search_category=Return_category&language='.$language);
             }
         } else {
-            header('Location: search_teacher.php?search=Error&language='.$language);
+            header('Location: search_teacher.php?id='.$studend_id.'&search=Error&language='.$language);
         } 
 
     } else if($action == 'show_modal'){
-        $email = new Teacher();
+        $email = new Teacher(); 
         $conexion = new Conexion();
 
         $teacherService = new TeacherService($conexion, $email);

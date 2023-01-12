@@ -41,40 +41,42 @@
                     <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
-                <div class="profile_button">
-                    <button>
-                        <a href="profile_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="#"><?php echo $user_teacher[$language]['1']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="#"><?php echo $user_teacher[$language]['2']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="#"><?php echo $user_teacher[$language]['3']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="#"><?php echo $user_teacher[$language]['4']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="about_cyc_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['5']?></a>
-                    </button>
-                </div>
-                <div class="profile_button">
-                    <button>
-                        <a href="#"><?php echo $user_teacher[$language]['6']?></a>
-                    </button>
+                <div class="buttons_of_profile">
+                    <div class="profile_button">
+                        <button>
+                            <a href="profile_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="my_courses_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['1']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="#"><?php echo $user_teacher[$language]['2']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="#"><?php echo $user_teacher[$language]['3']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="#"><?php echo $user_teacher[$language]['4']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="about_cyc_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['5']?></a>
+                        </button>
+                    </div>
+                    <div class="profile_button">
+                        <button>
+                            <a href="#"><?php echo $user_teacher[$language]['6']?></a>
+                        </button>
+                    </div>
                 </div>
                 <div class="logout_button">
                     <button>

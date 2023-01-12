@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: #f2f2db;
+}
+
+.logo_cyc img{
+    width: 40%;
+    padding: 15% 0 0 30%;
+}
+
+.header_buttons{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: -250px;
+    padding-top: 40px;
+}
+
+.come_back_button, .menu_button{
+    padding: 2% 2% 0;
+    width: 10%;
+}
+
+.text_show_cyc p{
+    font-size: 20px;
+    color: #000;
+    line-height: 32px;
+    text-align: justify;
+    padding: 0 22% 0;
+}
+
+.question_cyc h2{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #4d4d4d;
+    text-align: center;
+    margin: 4% 0 3% 0;
+}
+
+.footer_img_city img{
+    width: 100%;
+}
+
+.link_term{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.link_term a{
+    color: #4d4d4d;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/*START OF RESPONSIBILITY*/
+@media only screen and (max-device-width: 900px) {
+
+    .logo_cyc img{
+        width: 80%;
+        padding: 20% 10% 5%;
+    }
+
+    .header_buttons{
+        padding-top: 40px;
+    }
+
+    .come_back_button, .menu_button{
+        padding: 4% 8% 0;
+    }
+
+    .question_cyc h2{
+        font-size: 60px;
+        margin: 4% 0 8% 0;
+    }
+
+    .text_show_cyc p{
+        font-size: 28px;
+        line-height: 43px;
+        padding: 0 10% 0;
+    }
+
+    .footer_img_city{
+        margin-top: -144px;
+    }
+
+    .link_term a{
+        font-size: 38px;
+    }
+}

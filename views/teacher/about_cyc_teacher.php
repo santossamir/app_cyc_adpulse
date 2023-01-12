@@ -15,7 +15,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../../public/css/index.css">
+		<link rel="stylesheet" href="../../public/css/about_cyc.css">
 		<title>About - Creative Youth City</title>
 
 		<!--Font family-->
@@ -41,7 +41,7 @@
                 <img src="../../public/img/svg/logo-cyc.svg">
             </div>
             <div class="question_cyc">
-                <h2 style="margin: 0 0 8% 0;">
+                <h2>
                     <?php echo $text_about_cyc[$language]['0']?>
                 </h2>
             </div>
@@ -49,21 +49,27 @@
                 <p>
                     <?php echo $text_about_cyc[$language]['1']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['2']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['3']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['4']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['5']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['6']?>
                 </p>
+                <br>
                 <p>
                     <?php echo $text_about_cyc[$language]['7']?>
                 </p>

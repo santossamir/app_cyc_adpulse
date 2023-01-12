@@ -8,37 +8,25 @@ body{
     background-color: #f2f2db;
 }
 
-.select_language{
-    background-color:#f2f2db;
+.logo_cyc{
     display: flex;
-    justify-content: end;
-    margin: 10px 10px 0 0;
-}
-
-.select_language select{
-    background-color:#f2f2db;
-    margin: 0 5px 0 5px;
-    border-radius: 5px;
-    border: none;
-    font-size: 38px;
-    font-weight: 600;
-    color: #4d4d4d;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .logo_cyc img{
-    width: 80%;
-    padding: 0 10% 5%;
+    width: 50%;
 }
 
 .title_faqs_h2{
-    width: 80%;
+    width: 55%;
 }
 
 .title_faqs_h2 h2{
     font-weight: bolder;
-    font-size:56px;
+    font-size: 30px;
     color: #4d4d4d;
-    line-height:62px;
+    line-height: 62px;
     text-align: end;
     margin-bottom: 4%;
 }
@@ -48,6 +36,8 @@ body{
     flex-direction: row;
     justify-content: center;
     height: 10%;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 .title_faqs img{
@@ -68,28 +58,28 @@ body{
 
 .faqs{
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 20px;
     color: #4d4d4d;
     padding: 0 10% 0;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
 }
 
 .faqs li {
     text-align: justify;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 }
 
 .faqs img{
-    width: 4%;
+    width: 2%;
     height: 3%;
 }
 
 .faqs_response{
     font-weight: 500;
-    font-size:22px;
+    font-size: 20px;
     color: #4d4d4d;
-    padding: 0 0 0 8%;
-    line-height:50px;
+    padding: 0 0 0 4%;
+    line-height: 42px;
 }
 
 .faqs_response li{
@@ -115,6 +105,53 @@ body{
 
 .link_term a{
     color: #4d4d4d;
-    font-size: 38px;
+    font-size: 22px;
     font-weight: 600;
+    text-decoration: underline;
+}
+
+/*START OF RESPONSIBILITY*/
+@media only screen and (max-device-width: 900px) {
+
+    .logo_cyc img{
+        width: 80%;
+        padding: 0 10% 5%;
+    }
+
+    .title_faqs_h2{
+        width: 80%;
+    }
+
+    .title_faqs_h2 h2{
+        font-size:56px;
+    }
+
+    .title_faqs{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .faqs{
+        font-size: 22px;
+        margin-bottom: 8%;
+    }
+
+    .faqs li {
+        margin-bottom: 4%;
+    }
+
+    .faqs img{
+        width: 4%;
+        height: 3%;
+    }
+
+    .faqs_response{
+        font-size:22px;
+        padding: 0 0 0 8%;
+        line-height:50px;
+    }
+
+    .link_term a{
+        font-size: 38px;
+    }
 }

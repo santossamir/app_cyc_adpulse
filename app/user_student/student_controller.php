@@ -3,6 +3,7 @@
 
     require "student_model.php";
     require "student_service.php";
+    
     require "../../app/database_conexion/conexion.php";
 
     #Variable for languages
@@ -99,7 +100,7 @@
 
         $_SESSION["erro"] = $error;
         if(!empty($error)){
-            header('Location: student_registration.php?insert=Error');
+            header('Location: student_registration.php?insert=Error&language='.$language);
             exit;
         }
     //End validation of form 
@@ -125,7 +126,7 @@
         $studentService = new StudentService($conexion, $image_path, $first_name, $last_name, $city, $email, $password, $age);
         $studentService->insert();
 
-        header('Location: student_login.php');
+        header('Location: student_login.php?language='.$language);
 
     }else if($action == 'login'){
 
@@ -163,7 +164,7 @@
                 $date_registration = $student->date_registration;
                 $age = $student->age;
             }else{
-                header('Location: student_login.php?login=Error');
+                header('Location: ../../views/student/student_login.php?login=Error&language='.$language);
             }
         };
 
@@ -181,8 +182,9 @@
             header('Location: user_student.php?language='.$language);
         } else{
             $_SESSION['authenticated'] = 'No';
-            header('Location: index.php?login=Error');
+            header('Location: ../../index.php?login=Error&language='.$language);
         }
     //End validation of input value with registered in the database
     }
+    
 ?>

@@ -3,6 +3,8 @@
     $action = "show_modal";
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
+
+    $student_id = $_GET['id'];
     
     #Arrays with search values
     $city = array();
@@ -80,7 +82,7 @@
                     ?>
                     <!--End - It shows that there was an error in the search-->
                 
-                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
+                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&id=<?=$student_id?>&language=<?=$language?>">
                         <div class="search_teacher">
                             <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
                             <div class="dropdown_search">
@@ -97,7 +99,6 @@
                     </div>
                 </div>
                 <div id="map"></div>
-            <div class="mt">Map</div>
             <!--Start of search return-->
             <?php
                 if(isset($_GET['search']) && $_GET['search'] == 'Return'){
@@ -220,7 +221,7 @@
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
+                                <a href="found_teacher.php?student_id=<?=$student_id?>&teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
@@ -249,7 +250,7 @@
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
+                                <a href="found_teacher.php?student_id=<?=$student_id?>&teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>

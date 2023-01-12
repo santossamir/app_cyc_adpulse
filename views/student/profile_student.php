@@ -57,31 +57,33 @@
             </div>
             <div class="customization_user">
 				<div class="user_data">
-					<div class="user_data_name">
-						<h2>
-							<?php
-								echo $first_name." ".$last_name;
-							?>
-						</h2>
-						<h4>
-							<?php echo $age;?> <?php echo $profile_student[$language]['0']?>
-						</h4>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/icon-localizacao.svg">
-						<span><?php echo $found_teacher[$language]['0']?>
-							<?php
-								echo $date_registration;
-							?>
-						</span>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/icon-aulas.svg">
-						<span><?php echo $found_teacher[$language]['1']?></span>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/icon-rating.svg">
-						<span><?php echo $found_teacher[$language]['2']?></span>
+					<div class="div_1">
+						<div class="user_data_name">
+							<h2>
+								<?php
+									echo $first_name." ".$last_name;
+								?>
+							</h2>
+							<h4>
+								<?php echo $age;?> <?php echo $profile_student[$language]['0']?>
+							</h4>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/icon-localizacao.svg">
+							<span><?php echo $found_teacher[$language]['0']?>
+								<?php
+									echo $date_registration;
+								?>
+							</span>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/icon-aulas.svg">
+							<span><?php echo $found_teacher[$language]['1']?></span>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/icon-rating.svg">
+							<span><?php echo $found_teacher[$language]['2']?></span>
+						</div>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
@@ -139,11 +141,11 @@
 							</p>
 						</div>
 					</div>
-					<div class="send_button">
-						<button>
-							<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
-						</button>
-					</div>
+				</div>
+				<div class="send_button">
+					<button>
+						<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
+					</button>
 				</div>
 			</div>
 		</div> 

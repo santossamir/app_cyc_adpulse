@@ -7,6 +7,7 @@
 	
 	#This variable contains the "id" of the search made on the search_teacher.php
 	$teacher_id = $_GET['id'];
+	$student_id = $_GET['student_id'];
 
 	 #Languages
 	 include("../../language.php");
@@ -140,7 +141,7 @@
 					</div>
                     <div class="add_button">
 						<button>
-							<a href="login.php"><?php echo $found_teacher[$language]['9']?></a>
+							<a href="../../app/my_courses/my_courses_controller.php?action=insert_course&student_id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['9']?></a>
 						</button>
 					</div>
 				</div>

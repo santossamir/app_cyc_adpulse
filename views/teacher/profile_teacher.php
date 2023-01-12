@@ -56,40 +56,42 @@
             </div>
             <div class="customization_user">
 				<div class="user_data">
-					<div class="user_data_name">
-                        <div>
-                            <h2>
+					<div class="div_1">
+						<div class="user_data_name">
+							<div>
+								<h2>
+									<?php
+										echo $first_name." ".$last_name;
+									?>
+								</h2>
+								<h4><?php echo $modal_teacher[$language]['1']?> 
+									<?php
+									echo $mentor
+									?>
+								</h4>
+							</div>
+							<div class="link_cv">
+								<a href="#">
+									<img src="../../public/img/svg/icon-CV.svg">
+								</a>
+							</div>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/icon-localizacao-green.svg">
+							<span><?php echo $found_teacher[$language]['0']?>
 								<?php
-									echo $first_name." ".$last_name;
+									echo $date_registration;
 								?>
-							</h2>
-                            <h4><?php echo $modal_teacher[$language]['1']?> 
-								<?php
-								  echo $mentor
-								?>
-							</h4>
-                        </div>
-                        <div class="link_cv">
-                            <a href="#">
-                                <img src="../../public/img/svg/icon-CV.svg">
-                            </a>
-                        </div>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/icon-localizacao-green.svg">
-						<span><?php echo $found_teacher[$language]['0']?>
-							<?php
-								echo $date_registration;
-							?>
-						</span>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/icon-aulas-green.svg">
-						<span><?php echo $found_teacher[$language]['1']?></span>
-					</div>
-					<div class="user_data_plus">
-						<img src="../../public/img/svg/estrela.svg">
-						<span><?php echo $found_teacher[$language]['2']?></span>
+							</span>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/icon-aulas-green.svg">
+							<span><?php echo $found_teacher[$language]['1']?></span>
+						</div>
+						<div class="user_data_plus">
+							<img src="../../public/img/svg/estrela.svg">
+							<span><?php echo $found_teacher[$language]['2']?></span>
+						</div>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
@@ -105,8 +107,7 @@
 							<span><?php echo $found_teacher[$language]['5']?></span>    
 						</div>
 					</div>
-					<div class="topics_session">
-						<div class="topics_session_plus">
+					<div class="topics_session_plus">
 							<h2><?php echo $found_teacher[$language]['6']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
@@ -115,8 +116,8 @@
 								enim ad minim veniam, quis nostrud exerci tation
 								ullamcorper suscipit lobortis nisl ut aliquip ex
 							</p>
-						</div>
-						<div class="topics_session_plus">
+					</div>
+					<div class="topics_session_plus">
 							<h2><?php echo $found_teacher[$language]['7']?></h2>
 							<p>
 								Lorem ipsum dolor sit amet, consectetuer adipiscing
@@ -125,18 +126,17 @@
 								enim ad minim veniam, quis nostrud exerci tation
 								ullamcorper suscipit lobortis nisl ut aliquip ex
 							</p>
-						</div>
-					</div>
-					<div class="send_button">
-						<button>
-							<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
-						</button>
-					</div>
-                    <div class="add_button">
-						<button>
-							<a href="login.php"><?php echo $found_teacher[$language]['9']?></a>
-						</button>
-					</div>
+					</div>					
+				</div>
+				<div class="send_button">
+					<button>
+						<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
+					</button>
+				</div>
+                <div class="add_button">
+					<button>
+						<a href="login.php"><?php echo $found_teacher[$language]['9']?></a>
+					</button>
 				</div>
 		    </div> 
         </div>

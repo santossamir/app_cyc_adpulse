@@ -54,6 +54,7 @@
             $stmt = $this->conexion->prepare($query_consultar);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
-        }     
-    }
+        }   
+    }   
+
 ?>
