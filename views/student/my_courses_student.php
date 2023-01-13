@@ -26,7 +26,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../../public/css/user_student.css">
+		<link rel="stylesheet" href="../../public/css/my_courses.css">
 		<title>User - Student CYC</title>
 
 		<!--Font family-->
@@ -49,7 +49,7 @@
 						</a>
                     </div>
                 </div>
-                <img style="width: 80%; padding: 17% 10% 0;" src="../../public/img/png/logo-CYC-19.png">
+                <img src="../../public/img/png/logo-CYC-19.png">
             </div>
             <div class="profile_img">
                 <img src="<?php echo $image_path;?>">

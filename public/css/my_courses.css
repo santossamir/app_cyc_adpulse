@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+a{
+    text-decoration: none;
+}
+
+.logo_cyc img{
+    width: 40%;
+    padding: 12% 30% 0;
+}
+
+.header_buttons{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-bottom: -250px;
+    padding-top: 40px;
+}
+
+.come_back_button, .menu_button{
+    padding: 0 4% 0;
+    width: 10%;
+}
+
+
+.profile_img{
+    width: 90%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-bottom: -11%;
+    margin-left: 5%;
+}
+
+.profile_img img{
+    position: relative;
+    z-index: 10;
+    top: 10px;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.customization_user{
+    background-color: #8cc63f;
+    border-radius: 55px 55px 0px 0px;
+    padding-top: 10%;
+    margin-top: 4%;
+}
+
+.footer_img_city{
+    background-color: #8cc63f;
+}
+
+.footer_img_city img{
+    width: 100%;  
+}
+
+.link_term{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.link_term a{
+    color: #4d4d4d;
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.card_teacher{
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3%;
+    width: 95%;
+    border-radius: 35px;
+    margin-top: 2%;
+    padding-bottom: 3%;
+}
+
+.card_teacher_box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 28%;
+    margin: 15px 25px 0px 40px;
+    padding: 2% 0% 2%;
+    border-bottom: 3px dashed #d40023;
+}
+
+.card_name h2{
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.card_name h4{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.card_name_plus{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.card_name_plus img{
+    width: 8%;
+}
+
+.card_name_plus span{
+    font-weight: 400;
+    font-size: 20px;
+    color: #999999;
+    padding: 5px 10px 0;
+}
+
+.card_button{
+    width: 20%;
+    margin-top: 20px;
+}
+
+/*START OF RESPONSIBILITY*/
+@media only screen and (max-device-width: 900px) {
+
+    .logo_cyc img{
+        width: 80%;
+        padding: 20% 10% 0;
+    }
+
+    .header_buttons{
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        z-index: 10;
+        margin-bottom: -250px;
+        padding-top: 40px;
+    }
+
+    .come_back_button, .menu_button{
+        padding: 5% 6% 0;
+        width: 10%;
+    }
+
+    .profile_img{
+        width: 100%;
+        margin-bottom: -14%;
+        margin-left: 0;
+    }
+
+    .profile_img img{  
+        top: 15px;
+        width: 30%;
+    }
+
+    .customization_user{
+        padding-top: 16%;
+    }
+
+    .link_term a{
+        font-size: 38px;
+    }
+
+    .card_teacher{
+        background-color: #fff;
+        display: block;
+        padding-left: 0;
+        padding-bottom: 5%;
+        padding-top: 2%;
+    }
+
+    .card_teacher_box{
+        width: 80%;
+        margin: 0 10% 0;
+        padding: 2% 0 3%;
+    }
+
+    .card_name h2{
+        font-size: 35px;
+    }
+
+    .card_name h4{
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+    .card_name_plus{
+        display: block;
+        margin-top: 15px;
+    }
+
+    .card_name_plus img{
+        width: 10%;
+    }
+
+    .card_name_plus span{
+        font-size: 25px;
+        padding: 10px 20px 0;
+    }
+
+    .card_button{
+        width: 9%;
+        margin-top: 0;
+    }
+}

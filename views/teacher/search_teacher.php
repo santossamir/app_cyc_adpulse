@@ -1,7 +1,6 @@
 <?php
 	session_start();
     $action = "show_modal";
-    require_once "../../app/include/common.php";
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
 
@@ -83,7 +82,7 @@
                     ?>
                     <!--End - It shows that there was an error in the search-->
                 
-                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&language=<?=$language?>">
+                    <form style=" z-index:1000;" id="form_search" method="POST" action="teacher_controller.php?action=search&id=<?=$student_id?>&language=<?=$language?>">
                         <div class="search_teacher">
                             <input id="input_search" type="search" name="search" placeholder="<?php echo $search_teacher[$language]['1']?>" required>
                             <div class="dropdown_search">
@@ -265,9 +264,8 @@
              <!--End show modal-->
 		</div> 
   	</body>
-  	<script src="../../public/js/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="../../public/js/search_teacher.js"></script>
+    <script src="../../public/js/search_teacher.js">
        
     </script>
 </html>

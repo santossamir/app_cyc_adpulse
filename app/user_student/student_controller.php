@@ -182,7 +182,7 @@
             header('Location: user_student.php?language='.$language);
         } else{
             $_SESSION['authenticated'] = 'No';
-            header('Location: index.php?login=Error');
+            header('Location: ../../index.php?login=Error&language='.$language);
         }
     //End validation of input value with registered in the database
     }

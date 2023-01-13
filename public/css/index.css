@@ -167,8 +167,12 @@ body{
     background-color: #f7931e;
 }
 
-.footer_img_city img{
+.city_background_image{
+    background-image: url('../img/svg/fundo-cidade2.svg');
+    background-repeat: repeat-x;
     width: 100%;
+    height: 31%;
+    margin-top: 10%;
 }
 
 .link_term{
@@ -177,7 +181,7 @@ body{
     justify-content: center;
     position: relative;
     z-index: 10;
-    margin-top: -60px;
+    margin-top: -45px;
 }
 
 .link_term a{
@@ -249,6 +253,13 @@ body{
 
     .footer_img_city{
         margin-top: -144px;
+    }
+
+    .city_background_image{
+        background-image: url('../img/svg/fundo-cidade.svg');
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 48%;
     }
 
     .link_term a{
