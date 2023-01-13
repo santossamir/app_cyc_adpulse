@@ -35,7 +35,7 @@ a{
     flex-direction:row;
     justify-content: center;
     margin-bottom: -11%;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .profile_img img{
@@ -56,17 +56,17 @@ a{
     display: flex;
     flex-wrap: wrap;
     width: 85%;
-    margin-left: 10%;
+    margin-left: 9%;
 }
 
 .profile_button, .look_teachers_button{
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 28%;
     margin-bottom: 25px;
-    padding: 0 1% 0;
+    padding: 0px 2% 0;
 }
 
 .profile_button button, .look_teachers_button button{
@@ -74,7 +74,7 @@ a{
     height: 70px;
     border-radius: 16px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
@@ -91,11 +91,11 @@ a{
 }
 
 .logout_button button{
-    width: 30%;
+    width:25%;
     height: 70px;
     border-radius: 16px;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
@@ -122,8 +122,12 @@ a{
     background-color: #8cc63f;
 }
 
-.footer_img_city img{
-    width: 100%;  
+.city_background_image{
+    background-image: url('../img/svg/fundo-cidade2.svg');
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 31%;
+    margin-top: 5%;
 }
 
 .link_term{
@@ -132,7 +136,7 @@ a{
     justify-content: center;
     position: relative;
     z-index: 10;
-    margin-top: -60px;
+    margin-top: -45px;
 }
 
 .link_term a{
@@ -279,6 +283,17 @@ a{
         text-decoration: none;
         cursor: pointer;
         background-color: #fff;
+    }
+
+    .city_background_image{
+        background-image: url('../img/svg/fundo-cidade.svg');
+        background-repeat: repeat-x;
+        width: 100%;
+        height: 38%;
+    }
+
+    .link_term{
+        margin-top: -70px;
     }
 
     .link_term a{

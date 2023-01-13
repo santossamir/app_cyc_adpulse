@@ -26,6 +26,7 @@ a{
 
 .header_photo img{
     width: 100%;
+    margin-top: 75px;
 }
 
 .profile_img{
@@ -172,6 +173,10 @@ a{
 /*START OF RESPONSIBILITY*/
 @media only screen and (max-device-width: 900px) {
 
+    .header_photo img{
+        margin-top: 56px;
+    }
+    
     .come_back_button, .menu_button{
         padding: 0 10% 0;
         width: 10%;
