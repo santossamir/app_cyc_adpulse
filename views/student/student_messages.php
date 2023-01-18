@@ -2,12 +2,18 @@
 	session_start();
 
     require_once "../../access_validator.php";
-    require "../../app/my_courses/my_courses_controller.php";
-    $action = "show_my_courses";
+    require "../../app/messages/messages_controller.php";
+    $action = "";
 
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
     $student_id = $_SESSION['student_id'];
+
+
+    $student_id = $_GET['id'];
+    $teacher_id = $_GET['teacher_id'];
+    $teacher_name = $_GET['teacher_name'];
+    $teacher_apelido = $_GET['teacher_apelido'];
 
     include("../../language.php");
     $language = "";
@@ -21,18 +27,25 @@
     }else if((isset($_GET['language']) && $_GET['language'] == "ro") || !isset($_GET['language'])){
         $language = "ro";
     } 
-
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../../public/css/my_courses.css">
-		<title>My Courses - Student CYC</title>
+		<title>Messages - Student CYC</title>
 
 		<!--Font family-->
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-		</style>
+            .div_input input:focus{
+                outline: 0; 
+            }
+
+            .div_input ::placeholder{
+                font-size: 22px;
+                line-height: 20px;
+            }
+        </style>
   	</head>
   	<body>
 		<div class="container">
@@ -55,33 +68,44 @@
                 <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
-                <div class="card_teacher">
-                    <!--Starts to show the card with the courses -->
-                    <?php 
-                        foreach($courses as $course){  
-                            if($student_id == $course->student_id){                       
+                <div style="display:flex; flex-direction:column; text-align:center;" class="card_teacher">
+                    <?php
+                        if(isset($teacher_id)){
+                            echo "<h2 style='margin-top:30px;'>Enviar uma mensagem para " .$teacher_name." ".$teacher_apelido."</h2>";
                     ?>
+                    <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
+                        <div>
+                            <div class="div_input" style="display: flex; flex-direction: row; justify-content: center; margin-top: 15px;">
+                                <input style="height: 40px; font-size: 22px; width: 50%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="Digite sua mensagem">
+                                <div class="card_button" style="width:0; margin-top:0;">
+                                    <button type="submit" style="border:none; margin-left: 10px;">
+                                        <img style="width: 40px;" src="../../public/img/svg/seta-direita.svg">
+                                    </button>
+                                </div>    
+                            </div>
+                        </div>
+                    </form>
+                    <?php }
+                    ?>
+                    <div class="card_teacher">
+                        <?php
+                            foreach($messages as $message){
+                                if($message->issuer_id == $student_id){
+                        ?>
                         <div class="card_teacher_box">
                             <div class="card_name">
                                 <h2>
-                                    <?php echo $course->mentor;?>
+                                    Mensagem <?=$message->first_name." ".$message->last_name;?>
                                 </h2>
                                 <h4>
-                                    <?php echo $course->first_name.' '.$course->last_name;?>
+                                    <?=$message->mentor;?>
                                 </h4>
-                                <div class="card_name_plus">
-                                    <img src="../../public/img/svg/estrela.svg">
-                                    <span><?php echo $modal_teacher[$language]['2']?> </span>
-                                </div>
-                            </div>
-                            <div class="card_button">
-                                <a href="../teacher/found_teacher.php?student_id=<?=$course->student_id?>&teacher=<?=$course->first_name.$course->last_name?>&id=<?=$course->teacher_id?>&language=<?=$language?>" target="_blank">
-                                    <img src="../../public/img/svg/seta-direita.svg">
-                                </a>
+                                <p><?=$message->date_registration?> - <i><?=$message->message?></i></p>
                             </div>
                         </div>
-                        <?php }}
-                        ?>
+                    <?php }}
+                    ?>
+                </div>
                 </div>
                 <div class="footer_img_city">
                     <div class="city_background_image"></div>

@@ -1,9 +1,11 @@
 <?php
 	session_start();
+    
     $action = "show_modal";
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
 
+    
     $student_id = $_GET['id'];
     
     #Arrays with search values

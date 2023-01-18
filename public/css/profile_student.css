@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a{
@@ -176,7 +176,7 @@ a{
     .header_photo img{
         margin-top: 56px;
     }
-    
+
     .come_back_button, .menu_button{
         padding: 0 10% 0;
         width: 10%;

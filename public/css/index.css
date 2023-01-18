@@ -251,15 +251,14 @@ body{
         font-size: 40px;
     }
 
-    .footer_img_city{
-        margin-top: -144px;
-    }
-
     .city_background_image{
         background-image: url('../img/svg/fundo-cidade.svg');
         background-repeat: repeat-x;
         width: 100%;
         height: 48%;
+    }
+    .link_term{
+        margin-top: -9%;
     }
 
     .link_term a{

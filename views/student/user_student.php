@@ -60,7 +60,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="#"><?php echo $user_teacher[$language]['3']?></a>
+                            <a href="student_messages.php?action=show_message_student&id=<?=$student_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['3']?></a>
                         </button>
                     </div>
                     <div class="profile_button">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="#"><?php echo $user_teacher[$language]['9']?></a>
+                            <a href="my_friends_student.php?action=show_modal&id=<?=$student_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['9']?></a>
                         </button>
                     </div>
                     <div class="profile_button">

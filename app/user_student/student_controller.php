@@ -185,6 +185,5 @@
             header('Location: ../../index.php?login=Error&language='.$language);
         }
     //End validation of input value with registered in the database
-    }
-    
+    }  
 ?>

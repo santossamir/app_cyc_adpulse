@@ -3,6 +3,7 @@
 
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
+    $teacher_id = $_SESSION['teacher_id'];
     
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
@@ -59,7 +60,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="#"><?php echo $user_teacher[$language]['3']?></a>
+                            <a href="teacher_messages.php?action=show_message_teacher&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['3']?></a>
                         </button>
                     </div>
                     <div class="profile_button">
