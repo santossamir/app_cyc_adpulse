@@ -101,7 +101,7 @@
                         <button id="btn_localization" class="btn active" onClick="localization()"><?php echo $search_teacher[$language]['3']?></button>                     
                     </div>
                 </div>
-                <div id="map"></div>
+            <div id="map"></div>
             <!--Start of search return-->
             <?php
                 if(isset($_GET['search']) && $_GET['search'] == 'Return'){

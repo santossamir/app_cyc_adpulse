@@ -104,7 +104,7 @@ var marker = undefined;
 
 $(function() {
 
-    $('#map').css("height","calc(100vh - " + $('#map').position().top + "px)");
+    $('#map').css("height","calc(110vh - " + $('#map').position().top + "px)");
     
     $("#form_search").submit(function( event ) {
         event.preventDefault();
