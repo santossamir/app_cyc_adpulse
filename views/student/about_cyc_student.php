@@ -74,7 +74,7 @@
                     <?php echo $text_about_cyc[$language]['7']?>
                 </p>
             </div>
-            <div class="footer_img_city" style="margin-top:0;">
+            <div class="footer_img_city">
                 <div class="city_background_image"></div>
                 <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                 <div class="link_term">

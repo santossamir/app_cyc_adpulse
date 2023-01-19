@@ -9,7 +9,7 @@
     $date_registration = $_SESSION['date_registration'];
     $student_id = $_SESSION['student_id'];
 
-
+    #This variable contains values sent by the parameters
     $student_id = $_GET['id'];
     $teacher_id = $_GET['teacher_id'];
     $teacher_name = $_GET['teacher_name'];
@@ -71,12 +71,12 @@
                 <div style="display:flex; flex-direction:column; text-align:center;" class="card_teacher">
                     <?php
                         if(isset($teacher_id)){
-                            echo "<h2 style='margin-top:30px;'>Enviar uma mensagem para " .$teacher_name." ".$teacher_apelido."</h2>";
+                            echo "<h2 style='margin-top:30px;'>".$mensagens[$language]['0']." ".$teacher_name." ".$teacher_apelido. "</h2>";
                     ?>
                     <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
                         <div>
                             <div class="div_input" style="display: flex; flex-direction: row; justify-content: center; margin-top: 15px;">
-                                <input style="height: 40px; font-size: 22px; width: 50%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="Digite sua mensagem">
+                                <input style="height: 40px; font-size: 22px; width: 50%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['2']?>">
                                 <div class="card_button" style="width:0; margin-top:0;">
                                     <button type="submit" style="border:none; margin-left: 10px;">
                                         <img style="width: 40px;" src="../../public/img/svg/seta-direita.svg">
@@ -95,7 +95,7 @@
                         <div class="card_teacher_box">
                             <div class="card_name">
                                 <h2>
-                                    Mensagem <?=$message->first_name." ".$message->last_name;?>
+                                    <?= $mensagens[$language]['1']?> - <?=$message->first_name." ".$message->last_name;?>
                                 </h2>
                                 <h4>
                                     <?=$message->mentor;?>

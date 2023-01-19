@@ -223,7 +223,7 @@
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="found_teacher.php?student_id=<?=$student_id?>&teacher=<?=$found->first_name.$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
+                                <a href="found_teacher.php?student_id=<?=$student_id?>&teacher_name=<?=$found->first_name?>&teacher_apelido<?=$found->last_name?>&id=<?=$found->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>

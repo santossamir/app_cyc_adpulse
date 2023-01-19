@@ -6,6 +6,7 @@
     $last_name = $_SESSION['last_name'];
     $date_registration = $_SESSION['date_registration'];
 	$age = $_SESSION['age'];
+	$student_id = $_GET['id'];
 
 	require_once "../../access_validator.php";
     require "../../app/user_student/student_controller.php";
@@ -144,7 +145,7 @@
 				</div>
 				<div class="send_button">
 					<button>
-						<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
+						<a href="student_messages.php?action=show_message_student&id=<?=$student_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['8']?></a>
 					</button>
 				</div>
 			</div>

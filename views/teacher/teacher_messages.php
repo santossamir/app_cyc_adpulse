@@ -70,7 +70,7 @@
                             <div class="card_teacher_box">
                                 <div class="card_name">
                                     <h2>
-                                        Mensagem <?=$message->first_name." ".$message->last_name;?>
+                                        <?= $mensagens[$language]['1']?> - <?=$message->first_name." ".$message->last_name;?>
                                     </h2>
                                     <h4>
                                         <?=$message->mentor;?>
@@ -79,7 +79,7 @@
                                     <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_teacher&id=<?=$message->student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
                                         <div>
                                             <div class="div_input" style="display: flex; flex-direction: row; justify-content: flex-start; margin-top: 15px;">
-                                                <input style="height: 35px; font-size: 16px; width: 85%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="Responder essa mensagem">
+                                                <input style="height: 35px; font-size: 16px; width: 85%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['3']?>">
                                                 <div class="card_button" style="width:0; margin-top:0;">
                                                     <button type="submit" style="border:none; margin-left: 10px;">
                                                         <img style="width: 35px;" src="../../public/img/svg/seta-direita.svg">

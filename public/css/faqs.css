@@ -86,10 +86,6 @@ body{
     list-style:none;
 }
 
-.footer_img_city{
-    margin-top: -144px;
-}
-
 .city_background_image{
     background-image: url('../img/svg/fundo-cidade2.svg');
     background-repeat: repeat-x;
@@ -104,7 +100,7 @@ body{
     justify-content: center;
     position: relative;
     z-index: 10;
-    margin-top: -45px;
+    margin-top: -38px;
 }
 
 .link_term a{
@@ -122,6 +118,10 @@ body{
         padding: 0 10% 5%;
     }
 
+    .faqs_cyc{
+        margin-top: 8%;
+    }
+
     .title_faqs_h2{
         width: 80%;
     }
@@ -133,6 +133,10 @@ body{
     .title_faqs{
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    .title_faqs img {
+        padding-top: 2%;
     }
 
     .faqs{
@@ -156,14 +160,20 @@ body{
     }
 
     .city_background_image{
+        display: none;
+    }
+
+    .footer_img_city{
         background-image: url('../img/svg/fundo-cidade.svg');
         background-repeat: repeat-x;
+        margin-top: 16%;
         width: 100%;
-        height: 38%;
+        height: 35%;
     }
 
     .link_term{
-        margin-top: -70px;
+        margin-top: 0px;
+        bottom: -86%;    
     }
 
     .link_term a{

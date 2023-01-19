@@ -5,6 +5,7 @@
     $last_name = $_SESSION['last_name'];
     $mentor = $_SESSION['mentor'];
     $date_registration = $_SESSION['date_registration'];
+	$teacher_id = $_GET['teacher_id'];
 
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
@@ -130,7 +131,7 @@
 				</div>
 				<div class="send_button">
 					<button>
-						<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
+						<a href="teacher_messages.php?action=show_message_teacher&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['8']?></a>
 					</button>
 				</div>
                 <div class="add_button">

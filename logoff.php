@@ -2,7 +2,8 @@
    session_start();
    
    session_destroy();
-
+   
+   include("language.php");
    $language = "";
    
    if((isset($_GET['language']) && $_GET['language'] == "pt") || !isset($_GET['language'])){

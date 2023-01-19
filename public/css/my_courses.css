@@ -72,7 +72,7 @@ a{
     justify-content: center;
     position: relative;
     z-index: 10;
-    margin-top: -45px;
+    margin-top: -38px;
 }
 
 .link_term a{
@@ -176,14 +176,20 @@ a{
     }
 
     .city_background_image{
+        display: none;
+    }
+
+    .footer_img_city{
         background-image: url('../img/svg/fundo-cidade.svg');
         background-repeat: repeat-x;
+        margin-top: 10%;
         width: 100%;
-        height: 38%;
+        height: 35%;
     }
 
     .link_term{
-        margin-top: -70px;
+        margin-top: 0px;
+        bottom: -86%;    
     }
     
     .link_term a{

@@ -45,7 +45,7 @@
                 <div class="buttons_of_profile">
                     <div class="profile_button">
                         <button>
-                            <a href="profile_student.php?language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
+                            <a href="profile_student.php?id=<?=$student_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
                         </button>
                     </div>
                     <div class="look_teachers_button">

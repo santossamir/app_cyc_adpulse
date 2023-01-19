@@ -841,5 +841,31 @@
             disponibil la <i>www.psientifica.org</i> și pe platforma de rezultate Erasmus+. Manualul este disponibil în engleză, portugheză,
             română și italiană.'
         )
+    );
+    $mensagens = array(
+        'pt' => array(
+            'Enviar uma mensagem para',
+            'Mensagem',
+            'Digite sua mensagem',
+            'Responder essa mensagem'
+        ),
+        'en' => array(
+            'Send a message to',
+            'Message',
+            'Enter your message',
+            'Reply to this message'
+        ),
+        'it' => array(
+            'Invia un messaggio a',
+            'Messaggio',
+            'Digita il tuo messaggio',
+            'Rispondi a questo messaggio'
+        ),
+        'ro' => array(
+            'Trimite un mesaj către',
+            'Mesaj',
+            'Introduceți mesajul dvs',
+            'Răspunde la acest mesaj'
+        )
     )
 ?>

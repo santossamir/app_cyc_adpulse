@@ -5,9 +5,13 @@
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
 	
-	#This variable contains the "id" of the search made on the search_teacher.php
+	#This variables contains the "id" of the search made on the search_teacher.php
 	$teacher_id = $_GET['id'];
 	$student_id = $_GET['student_id'];
+
+	#This variable contains the teacher's name sent by the parameters
+	$teacher_name = $_GET['teacher_name'];
+	$teacher_apeldio = $_GET['teacher_apelido'];
 
 	 #Languages
 	 include("../../language.php");
@@ -21,8 +25,7 @@
         $language = "it";
     }else if((isset($_GET['language']) && $_GET['language'] == "ro") || !isset($_GET['language'])){
         $language = "ro";
-    }
-	
+    }	
 ?>
 <html>
   	<head>
@@ -137,7 +140,7 @@
 				</div>
 				<div class="send_button">
 					<button>
-						<a href="login.php"><?php echo $found_teacher[$language]['8']?></a>
+						<a href="../student/student_messages.php?action=show_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&teacher_name=<?=$teacher_name?>&teacher_apelido=<?=$teacher_apeldio?>&language=<?=$language?>"><?php echo $found_teacher[$language]['8']?></a>
 					</button>
 				</div>
 				<div class="add_button">

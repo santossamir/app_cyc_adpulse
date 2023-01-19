@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="card_button">
-                                <a href="../teacher/found_teacher.php?student_id=<?=$course->student_id?>&teacher=<?=$course->first_name.$course->last_name?>&id=<?=$course->teacher_id?>&language=<?=$language?>" target="_blank">
+                                <a href="../teacher/found_teacher.php?student_id=<?=$course->student_id?>&teacher_name=<?=$course->first_name?>&teacher_apelido=<?=$course->last_name?>&id=<?=$course->teacher_id?>&language=<?=$language?>" target="_blank">
                                     <img src="../../public/img/svg/seta-direita.svg">
                                 </a>
                             </div>
