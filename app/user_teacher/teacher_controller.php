@@ -269,6 +269,7 @@
 
         $teacherService = new TeacherService($conexion, $email);
         $researches = $teacherService->show_modal();
-    }
+
+    } 
 ?>
 

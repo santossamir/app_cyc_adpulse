@@ -153,16 +153,20 @@
 
     $button_submit = array(
         'pt' => array(
-            'Entrar'
+            'Entrar',
+            'Enviar'
         ),
         'en' => array(
-            'Log in'
+            'Log in',
+            'Send'
         ),
         'it' => array(
-            'Accesso'
+            'Accesso',
+            'Inviare'
         ),
         'ro' => array(
-            'Autentificare'
+            'Autentificare',
+            'Trimite'
         )
     );
 
@@ -866,6 +870,30 @@
             'Mesaj',
             'Introduceți mesajul dvs',
             'Răspunde la acest mesaj'
+        )
+    );
+
+    $documents = array(
+        'pt' => array(
+            'Carregar documento',
+            'Nome do arquivo',
+            'Meus documentos'
+        ),
+        'en' => array(
+            'Upload document',
+            'File name',
+            'My Documents'
+            
+        ),
+        'it' => array(
+            'Caricare il documenti',
+            'Nome del file',
+            'I miei documenti'
+        ),
+        'ro' => array(
+            'Încărcați documentul',
+            'Nume de fișier',
+            'Documentele mele'
         )
     )
 ?>

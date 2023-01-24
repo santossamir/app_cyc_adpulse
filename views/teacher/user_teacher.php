@@ -55,19 +55,14 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="#"><?php echo $user_teacher[$language]['2']?></a>
+                            <a href="teacher_documents.php?action=show_file&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['2']?></a>
                         </button>
                     </div>
                     <div class="profile_button">
                         <button>
                             <a href="teacher_messages.php?action=show_message_teacher&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['3']?></a>
                         </button>
-                    </div>
-                    <div class="profile_button">
-                        <button>
-                            <a href="#"><?php echo $user_teacher[$language]['4']?></a>
-                        </button>
-                    </div>
+                    </div>                 
                     <div class="profile_button">
                         <button>
                             <a href="about_cyc_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['5']?></a>
@@ -75,7 +70,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="#"><?php echo $user_teacher[$language]['6']?></a>
+                            <a href="help_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['6']?></a>
                         </button>
                     </div>
                 </div>

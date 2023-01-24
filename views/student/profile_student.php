@@ -145,7 +145,7 @@
 				</div>
 				<div class="send_button">
 					<button>
-						<a href="student_messages.php?action=show_message_student&id=<?=$student_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['8']?></a>
+						<a href="my_friends_student.php?action=show_modal&id=<?=$student_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['8']?></a>
 					</button>
 				</div>
 			</div>

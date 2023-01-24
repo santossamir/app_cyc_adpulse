@@ -12,6 +12,7 @@
         private $password;
         private $image_path;
         private $date_registration;
+        private $file_path;
 
         public function __construct(Conexion $conexion, Teacher $email){
             $this->conexion = $conexion->connect();
