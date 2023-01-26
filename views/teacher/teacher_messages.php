@@ -24,7 +24,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../../public/css/my_courses.css">
+		<link rel="stylesheet" href="../../public/css/my_favorites.css">
 		<title>Messages - Student CYC</title>
 
 		<!--Font family-->

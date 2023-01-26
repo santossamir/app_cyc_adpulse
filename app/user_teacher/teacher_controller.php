@@ -240,7 +240,7 @@
             $conexion = new Conexion();
 
             $teacherService = new TeacherService($conexion, $email);
-            $researches = $teacherService->search();
+            $researches = $teacherService->search_category();
 
             #Arrays to receive values from the database after search
             $mentor = array();
@@ -261,8 +261,7 @@
             }
         } else {
             header('Location: search_teacher.php?id='.$studend_id.'&search=Error&language='.$language);
-        } 
-
+        }
     } else if($action == 'show_modal'){
         $email = new Teacher(); 
         $conexion = new Conexion();

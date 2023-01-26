@@ -76,7 +76,7 @@
                     <span><?php echo $documents[$language]['2']?></span>
                     <table>
                         <thead>
-                            <tr>
+                            <tr class="thead_tr">
                                 <th>Nome do Arquivo</th>
                                 <th>Arquivo</th>
                             </tr>
@@ -86,9 +86,13 @@
                                 foreach($files as $file){
                                     if($file->teacher_id == $teacher_id){
                             ?>
-                            <tr>
+                            <tr class="tbody_tr">
                                 <td><h4><?= $file->file_name?></h4></td>
-                                <td><a href="<?php echo $file->file_path;?>" target="_blank">Here</a></td>
+                                <td>
+                                    <a href="<?php echo $file->file_path;?>" target="_blank">
+                                        <img src="../../public/img/png/folder.png">
+                                    </a>
+                                </td>
                             <?php }}
                             ?>
                             </tr>

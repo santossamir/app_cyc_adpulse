@@ -38,7 +38,7 @@ body{
     flex-direction: column;
     justify-content: center;
     width: 80%;
-    margin: 45px 75px 15px;
+    margin: 45px 75px 30px;
     font-weight: bold;
     font-size: 20px;
     color: #000;
@@ -82,7 +82,7 @@ body{
 }
 
 .file_name input{
-    height: 62px;
+    height: 60px;
 }
 
 .file_name input:focus{
@@ -94,11 +94,38 @@ body{
     flex-direction: column;
 }
 
-.my_documents table tr{
+.thead_tr{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 2%;
+    justify-content: space-between;
+    padding: 2% 5% 2%;
+    background: #91918d38;
+    width: 66%;
+    margin-left: 10%;
+    border-radius: 8px;
+}
+
+.my_documents table tbody{
+    width: 76%;
+    margin-left: 10%;
+}
+
+.tbody_tr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4%;
+    width: 80%;
+    margin-left: 4%;
+}
+
+.my_documents img{
+    width: 20px;
+}
+
+.my_documents h4{
+    font-weight:500;
+    font-size: 16px;
 }
 
 .submit_documents{
@@ -123,7 +150,11 @@ hr{
     margin-top: 10%;
     width: 76%;
     margin-left: 10%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
 .city_background_image{
     background-image: url('../img/svg/fundo-cidade2.svg');
     background-repeat: repeat-x;
