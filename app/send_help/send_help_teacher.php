@@ -1,5 +1,7 @@
 <?php
 
+    require_once('./sendmail.php');
+
     $teacher_id = $_GET['teacher_id'];
 
     $language = "";
@@ -33,15 +35,10 @@
     
     //Emails para quem será enviado o formulário
     $destino = "samirtxr@gmail.com";
+    $nome_destino = "Samir Santos";
     $assunto = $_POST['assunto'];
 
-    //Este sempre deverá existir para garantir a exibição correta dos caracteres
-    $headers  = "MIME-Version: 1.0\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\n";
-    $headers .= "From: $nome <$email>";
-
-    //Enviar
-    $email = mail($destino, $assunto, $arquivo, $headers);
+    $email = sendmail($destino, $nome_destino, $assunto, $arquivo);
 
     if($email){
         echo "<script>alert('Mensagem enviada com sucesso!');</script>";

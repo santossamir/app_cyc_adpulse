@@ -150,55 +150,7 @@ $(function() {
                }
                
                myMap.setView([lat, lon], 11);
-               
-            });
-            
-        });
-        
-        
+            }); 
+        }); 
     });
-    
 });
-
-
-
-
-/*function show_modal(){
-    document.getElementById('modal_teacher').style.display = 'block'; 
-    document.getElementById('button_locator_two').style.display = 'none';
-    document.getElementById('button_locator_three').style.display = 'none';    
-}
-
-/*
-Para fazer uso do OpenStreetMap dinÂmicamento com o input_search
-let lat = 0;
-let lon = 0;
-
-$('#search_button').click(function(){
-  
-    let cidade = $("#input_search").val();
-    let city = cidade.toLowerCase();
-    
-    $.ajax({
-      url: "https://nominatim.openstreetmap.org/search?q="+city+"&format=json&limit=1",
-    }).done(function(response) {
-      lat = response[0].lat;
-      lon = response[0].lon;
-      console.log(lat);
-      console.log(lon);
-
-      const provider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-        let newMap = L.map('map').setView([lat, lon], 9);
-        
-        L.tileLayer(provider, {
-            maxZoom: 18,
-        }).addTo(newMap)
-    });
-  });*/
-
-  /*const provider = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-  let newMap = L.map('map').setView([51, 10], 3.5);
-  
-  L.tileLayer(provider, {
-      maxZoom: 18,
-  }).addTo(newMap)*/
