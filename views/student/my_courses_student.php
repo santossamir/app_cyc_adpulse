@@ -2,8 +2,6 @@
 	session_start();
 
     require_once "../../access_validator.php";
-    require "../../app/my_courses/my_courses_controller.php";
-    $action = "show_my_courses";
 
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
@@ -26,7 +24,7 @@
 <html>
   	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="../../public/css/my_courses.css">
+		<link rel="stylesheet" href="../../public/css/my_favorites.css">
 		<title>My Courses - Student CYC</title>
 
 		<!--Font family-->
@@ -56,32 +54,11 @@
             </div>
             <div class="customization_user">
                 <div class="card_teacher">
-                    <!--Starts to show the card with the courses -->
-                    <?php 
-                        foreach($courses as $course){  
-                            if($student_id == $course->student_id){                       
-                    ?>
-                        <div class="card_teacher_box">
-                            <div class="card_name">
-                                <h2>
-                                    <?php echo $course->mentor;?>
-                                </h2>
-                                <h4>
-                                    <?php echo $course->first_name.' '.$course->last_name;?>
-                                </h4>
-                                <div class="card_name_plus">
-                                    <img src="../../public/img/svg/estrela.svg">
-                                    <span><?php echo $modal_teacher[$language]['2']?> </span>
-                                </div>
-                            </div>
-                            <div class="card_button">
-                                <a href="../teacher/found_teacher.php?student_id=<?=$course->student_id?>&teacher_name=<?=$course->first_name?>&teacher_apelido=<?=$course->last_name?>&id=<?=$course->teacher_id?>&language=<?=$language?>" target="_blank">
-                                    <img src="../../public/img/svg/seta-direita.svg">
-                                </a>
-                            </div>
-                        </div>
-                        <?php }}
-                        ?>
+                    <div style="width:100%; margin-top:4%;">
+                        <h2 style="text-align:center; font-weight: bolder; font-size:30px; color: #4d4d4d;">
+                            This page is under construction.
+                        </h2>
+                    </div>
                 </div>
                 <div class="footer_img_city">
                     <div class="city_background_image"></div>

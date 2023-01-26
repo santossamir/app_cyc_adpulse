@@ -1,5 +1,5 @@
 <?php
-    class MyCourses{
+    class MyFavorites{
         private $course_id;
         private $student_id;
         private $teacher_id;

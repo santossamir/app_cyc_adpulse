@@ -2,9 +2,8 @@
 	session_start();
 
     require_once "../../access_validator.php";
-    require "../../app/user_teacher/teacher_controller.php";
-    $action="show_modal";
-
+    require "../../app/my_favorites/my_favorites_controller.php";
+    $action = "show_my_favorites";
 
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
@@ -22,20 +21,18 @@
     }else if((isset($_GET['language']) && $_GET['language'] == "ro") || !isset($_GET['language'])){
         $language = "ro";
     } 
+
 ?>
 <html>
   	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../../public/css/my_favorites.css">
-		<title>My Friends - Student CYC</title>
+		<title>My Favorites - Student CYC</title>
 
 		<!--Font family-->
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-            .card_name{
-                width:50%;
-            }
-        </style>
+		</style>
   	</head>
   	<body>
 		<div class="container">
@@ -59,29 +56,32 @@
             </div>
             <div class="customization_user">
                 <div class="card_teacher">
-                    <?php
-                        foreach($researches as $teacher){
+                    <!--Starts to show the card with the favorites -->
+                    <?php 
+                        foreach($favorites as $favorite){  
+                            if($student_id == $favorite->student_id){                       
                     ?>
                         <div class="card_teacher_box">
-                            <div>
-                                <img style="width:70px; border-radius:50%;"src="<?=$teacher->image_path?>">
-                            </div>
                             <div class="card_name">
                                 <h2>
-                                    <?=$teacher->first_name." ".$teacher->last_name;?>
+                                    <?php echo $favorite->mentor;?>
                                 </h2>
                                 <h4>
-                                    <?=$teacher->mentor;?>
+                                    <?php echo $favorite->first_name.' '.$favorite->last_name;?>
                                 </h4>
+                                <div class="card_name_plus">
+                                    <img src="../../public/img/svg/estrela.svg">
+                                    <span><?php echo $modal_teacher[$language]['2']?> </span>
+                                </div>
                             </div>
                             <div class="card_button">
-                                <a href="student_messages.php?action=show_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher->teacher_id?>&teacher_name=<?=$teacher->first_name?>&teacher_apelido=<?=$teacher->last_name?>&language=<?=$language?>">
-                                    <img src="../../public/img/svg/seta-direita.svg">
+                                <a href="../teacher/found_teacher.php?student_id=<?=$favorite->student_id?>&teacher_name=<?=$favorite->first_name?>&teacher_apelido=<?=$favorite->last_name?>&id=<?=$favorite->teacher_id?>&language=<?=$language?>" target="_blank">
+                                    <img src="../../public/img/svg/icon-rating-yellow.svg">
                                 </a>
                             </div>
                         </div>
-                    <?php }
-                    ?>
+                        <?php }}
+                        ?>
                 </div>
                 <div class="footer_img_city">
                     <div class="city_background_image"></div>

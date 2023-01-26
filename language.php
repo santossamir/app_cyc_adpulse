@@ -872,7 +872,6 @@
             'Răspunde la acest mesaj'
         )
     );
-
     $documents = array(
         'pt' => array(
             'Carregar documento',
@@ -894,6 +893,44 @@
             'Încărcați documentul',
             'Nume de fișier',
             'Documentele mele'
+        )
+    );
+    $help = array(
+        'pt' => array(
+            'Nome completo',
+            'Email',
+            'Assunto',
+            'Insere o assunto',
+            'Mensagem',
+            'Insere a tua mensagem',
+            'Enviar'
+        ),
+        'en' => array(
+            'Full name',
+            'Email',
+            'Subject matter',
+            'Enter the subject',
+            'Message',
+            'Enter your message',
+            'Send'
+        ),
+        'it' => array(
+            "Nome e cognome",
+            "L'email",
+            "Argomento",
+            "Inserisci l'oggetto",
+            "Messaggio",
+            "Digita il tuo messaggio",
+            "Inviare"
+        ),
+        'ro' => array(
+            "Numele complet",
+            "Mail-ul",
+            "Temă",
+            "Introduceți subiectul",
+            "Mesaj",
+            "Introduceți mesajul dvs.",
+            "A trimite"
         )
     )
 ?>

@@ -32,7 +32,7 @@ body{
     padding-bottom: 20px;
 }
 
-.profile_img, .first_name, .last_name, .mentor, .city, .email, .password {
+.profile_img, .first_name, .last_name, .mentor, .city, .email, .password, .textarea{
     margin: 0 12% 0;
     width: 70%;
     background: #FFFFFF;
@@ -40,6 +40,19 @@ body{
     border-radius: 16px;
     margin-top:10px; 
     box-shadow: 1px 1px 20px #91918d38;
+}
+
+/*textarea used in help_teacher*/
+.textarea textarea{
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 22px 0;
+    font-size: 18px;
+}
+
+.textarea textarea:focus{
+    outline: 0; 
 }
 
 .profile_img{
@@ -153,6 +166,11 @@ body{
         margin: 0 10% 0;
         width: 80%;
         border-radius: 25px;
+    }
+
+    .textarea{
+        margin: 0px 10% 0;
+        width: 84%;
     }
 
     #form_login label{

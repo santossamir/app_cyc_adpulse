@@ -84,11 +84,12 @@
                         <tbody>
                             <?php
                                 foreach($files as $file){
+                                    if($file->teacher_id == $teacher_id){
                             ?>
                             <tr>
                                 <td><h4><?= $file->file_name?></h4></td>
                                 <td><a href="<?php echo $file->file_path;?>" target="_blank">Here</a></td>
-                            <?php }
+                            <?php }}
                             ?>
                             </tr>
                         </tbody>

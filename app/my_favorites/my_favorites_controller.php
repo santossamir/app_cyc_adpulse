@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    require "my_courses_model.php";
-    require "my_courses_service.php";
+    require "my_favorites_model.php";
+    require "my_favorites_service.php";
     require "../../app/database_conexion/conexion.php";
 
     #Variable for parameter studen_id
@@ -23,27 +23,27 @@
 
     $action = isset($_GET['action']) ? $_GET['action'] : $action;
 
-    if($action == 'insert_course'){
+    if($action == 'insert_favorite'){
         
-        $student_id = new MyCourses();
-        $teacher_id = new MyCourses();
+        $student_id = new MyFavorites();
+        $teacher_id = new MyFavorites();
         
         $student_id->__set('student_id', $_GET['student_id']);
         $teacher_id->__set('teacher_id', $_GET['teacher_id']);
     
         $conexion = new Conexion();
 
-        $coursesService = new MyCoursesService($conexion, $student_id, $teacher_id);
-        $coursesService->insert_course();
+        $favoritesService = new MyFavoritesService($conexion, $student_id, $teacher_id);
+        $favoritesService->insert_favorite();
 
-        header('Location: ../../views/student/my_courses_student.php?action=show_my_courses&id='.$id_student.'&language='.$language);
+        header('Location: ../../views/student/my_favorites_student.php?action=show_my_favorites&id='.$id_student.'&language='.$language);
         
-    }else if($action == 'show_my_courses'){
+    }else if($action == 'show_my_favorites'){
         
-        $course_id = new MyCourses(); 
+        $favorite_id = new MyFavorites(); 
         $conexion = new Conexion();
 
-        $coursesService = new MyCoursesService($conexion, $course_id);
-        $courses = $coursesService->show_my_courses();
+        $favoritesService = new MyFavoritesService($conexion, $favorite_id);
+        $favorites = $favoritesService->show_my_favorites();
     }
 ?>

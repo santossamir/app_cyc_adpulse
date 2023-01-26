@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $teacher_id = $_SESSION['teacher_id'];
+    $student_id = $_GET['student_id'];
 
     include("../../language.php");
     $language = "";
@@ -30,7 +30,7 @@
 		<div class="container">
         <div class="form">
                 <!--Start registration form-->
-                <form id="form_login" method="POST" action="../../app/send_help/send_help_teacher.php?teacher_id=<?=$teacher_id?>&language=<?=$language?>">
+                <form id="form_login" method="POST" action="../../app/send_help/send_help_student.php?student_id=<?=$student_id?>&language=<?=$language?>">
                     <!--Start error text loading image-->
                     <?php
                         if(!empty($error)){

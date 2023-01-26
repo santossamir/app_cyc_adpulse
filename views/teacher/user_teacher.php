@@ -55,7 +55,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="teacher_documents.php?action=show_file&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['2']?></a>
+                            <a href="teacher_documents.php?action=show_file&teacher_id=<?=$teacher_id?>&language=<?=$language?>" target="_blank"><?php echo $user_teacher[$language]['2']?></a>
                         </button>
                     </div>
                     <div class="profile_button">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="profile_button">
                         <button>
-                            <a href="help_teacher.php?language=<?=$language?>"><?php echo $user_teacher[$language]['6']?></a>
+                            <a href="help_teacher.php?teacher_id=<?=$teacher_id?>&language=<?=$language?>" target="_blank"><?php echo $user_teacher[$language]['6']?></a>
                         </button>
                     </div>
                 </div>

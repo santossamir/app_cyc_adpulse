@@ -145,7 +145,7 @@
 				</div>
 				<div class="add_button">
 					<button>
-						<a href="../../app/my_courses/my_courses_controller.php?action=insert_course&student_id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['9']?></a>
+						<a href="../../app/my_favorites/my_courses_controller.php?action=insert_course&student_id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['9']?></a>
 					</button>
 				</div>
 		    </div> 
