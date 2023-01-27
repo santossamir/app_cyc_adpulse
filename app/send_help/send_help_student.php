@@ -34,17 +34,21 @@
     ";
     
     //Emails para quem será enviado o formulário
-    $destino = "samirtxr@gmail.com";
-    $nome_destino = "Samir Santos";
+    $destino = "daniela.costa@cjagueda.pt";
+    $nome_destino = "Daniela Costa";
     $assunto = $_POST['assunto'];
 
     $email = sendmail($destino, $nome_destino, $assunto, $arquivo);
 
     if($email){
-        echo "<script>alert('Mensagem enviada com sucesso!');</script>";
-        header('Location: ../../views/student/user_student.php?language='.$language);
+        echo "<script>
+                    alert('Message sent successfully!');
+                    window.location.href='../../views/student/user_student.php?student_id=".$student_id."&language=".$language."';
+            </script>";
     }else{
-        echo "<script>alert('Erro ao enviar!');</script>";
-        header('Location: ../../views/student/user_student.php?language='.$language);
+        echo "<script>
+                    alert('Error sending message!');
+                    window.location.href='../../views/student/user_student.php?student_id=".$student_id."&language=".$language."';
+                </script>";
     }
 ?>
