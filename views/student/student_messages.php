@@ -34,16 +34,24 @@
 		<link rel="stylesheet" href="../../public/css/my_favorites.css">
 		<title>Messages - Student CYC</title>
 
-		<!--Font family-->
 		<style>
+            /*Font family*/
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-            .div_input input:focus{
-                outline: 0; 
+            
+            .card_teache{
+                display:flex;
+                flex-direction:column;
+                text-align:center;"
             }
 
-            .div_input ::placeholder{
+            .input_message input{
+                height: 40px;
                 font-size: 22px;
-                line-height: 20px;
+                width: 50%;"
+            }
+
+            .input_message ::placeholder{
+                font-size: 22px;
             }
         </style>
 
@@ -78,15 +86,15 @@
                 <img src="<?php echo $image_path;?>">
             </div>
             <div class="customization_user">
-                <div style="display:flex; flex-direction:column; text-align:center;" class="card_teacher">
+                <div class="card_teacher">
                     <?php
                         if(isset($teacher_id)){
                             echo "<h2 style='margin-top:30px;'>".$mensagens[$language]['0']." ".$teacher_name." ".$teacher_apelido. "</h2>";
                     ?>
                     <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
                         <div>
-                            <div class="div_input" style="display: flex; flex-direction: row; justify-content: center; margin-top: 15px;">
-                                <input style="height: 40px; font-size: 22px; width: 50%; padding-left: 10px; border-radius: 5px; border:1px solid #b3b3b3;" type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['2']?>">
+                            <div class="input_message">
+                                <input type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['2']?>">
                                 <div class="card_button" style="width:0; margin-top:0;">
                                     <button type="submit" style="border:none; margin-left: 10px;">
                                         <img style="width: 40px;" src="../../public/img/svg/seta-direita.svg">

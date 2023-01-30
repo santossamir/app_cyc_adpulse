@@ -136,6 +136,27 @@ a{
     margin-top: 20px;
 }
 
+.input_message{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.input_message input{
+    padding-left: 10px;
+    border-radius: 5px;
+    border:1px solid #b3b3b3;
+}
+
+.input_message input:focus{
+    outline: 0; 
+}
+
+.input_message ::placeholder{
+    line-height: 20px;
+}
+
 /*START OF RESPONSIBILITY*/
 @media only screen and (max-device-width: 900px) {
 
