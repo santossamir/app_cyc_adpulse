@@ -932,5 +932,67 @@
             "Introduceți mesajul dvs.",
             "A trimite"
         )
-    )
+    );
+    $edit_profile = array(
+        'pt' => array(
+            "Conhecimento",
+            "Insere teus conhecimentos",
+            "Qualidades",
+            "Insere tuas qualidades",
+            "O que é que eu gosto?",
+            "Insere o que gostas",
+            "A melhorar",
+            "Insere o que tens a melhorar",
+            "Sobre mim",
+            "Insere algo sobre ti",
+            "O que tenho para te ensinar?",
+            "Insere o que pretendes ensinar",
+            "Editar perdil"
+        ),
+        'en' => array(
+            "Knowledge",
+            "Insert your knowledge",
+            "Qualities",
+            "Insert your qualities",
+            "What I like?",
+            "Insert what you like",
+            "Improving",
+            "Insert what you have to improve",
+            "About me",
+            "Insert something about yourself",
+            "What do I have to teach you?",
+            "Insert what you intend to teach",
+            "Edit profile"
+        ),
+        'it' => array(
+            "Conoscenza",
+            "Introduci le tue conoscenze",
+            "Qualità",
+            "Inserisci le tue qualità",
+            "Cosa mi piace?",
+            "Digita quello che ti piace",
+            "Il miglioramento",
+            "Digita cosa devi migliorare",
+            "A proposito di me",
+            "Inserisci qualcosa su di te",
+            "Cosa devo insegnarti?",
+            "Digita cosa intendi insegnare",
+            "Modifica Profilo"
+        ),
+        'ro' => array(
+            "Cunoştinţe",
+            "Prezentați-vă cunoștințele",
+            "Calitate",
+            "Introduceți-vă calitățile",
+            "Ce imi place?",
+            "Tastați ceea ce vă place",
+            "A îmbunătăți",
+            "Introduceți ceea ce aveți nevoie pentru a îmbunătăți",
+            "Despre mine",
+            "Scrie ceva despre tine",
+            "Ce trebuie sa te invat?",
+            "Introduceți ceea ce intenționați să predați",
+            "Editează profilul"
+        )
+    );
 ?>

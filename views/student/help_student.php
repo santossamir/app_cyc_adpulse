@@ -38,7 +38,7 @@
   	</head>
   	<body>
 		<div class="container">
-        <div class="form">
+            <div class="form">
                 <!--Start registration form-->
                 <form id="form_login" method="POST" action="../../app/send_help/send_help_student.php?student_id=<?=$student_id?>&language=<?=$language?>">
                     <!--Start error text loading image-->
@@ -77,7 +77,6 @@
             </div>
             <div class="footer_img_city">
                 <div class="city_background_image"></div>
-                <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                 <div class="link_term">
                     <a href="faqs.php?language=<?=$language?>" target="_blank" style="margin-right: 14px;"><?php echo $link_term[$language]['0']?></a>
                     <a href="./public/pdf/terms_and_conditions_cyc.pdf" target="_blank"><?php echo $link_term[$language]['1']?></a>

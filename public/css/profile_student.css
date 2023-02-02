@@ -38,9 +38,9 @@ a{
 
 .profile_img img{
     position: relative;
-    z-index: 10;
+    z-index: 1;
     top:-212px;
-    width: 20%;
+    width: 18%;
     border-radius: 50%;
 }
 
@@ -49,7 +49,6 @@ a{
     border-radius: 55px 55px 0px 0px;
     padding-top: 20%;
     position: relative;
-    z-index: 5;
     margin-top: -25%;
 }
 
@@ -65,7 +64,7 @@ a{
 }
 
 .div_1{
-    width: 165%;
+    width: 45%;
 }
 
 .user_data_name h2{
@@ -99,9 +98,7 @@ a{
 .user_qualifications{
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin-left: 24px;
-    margin-right: 40px;
+    width: 30%;
 }
 
 .user_qualifications_plus{
@@ -127,6 +124,7 @@ a{
 }
 
 .topics_session{
+    width: 80%;
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -146,7 +144,6 @@ a{
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 18px;
-
 }
 
 .send_button{
@@ -169,6 +166,201 @@ a{
 .send_button button a{
     color: #fff;
 }
+
+/*Start modal*/
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .content{
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#close_modal{
+        cursor: pointer;
+        border: 1px solid #91918d38;
+        background-color: transparent;
+        height: 40px;
+        width: 10%;
+        color: #000000db;
+        font-size: 1.5em;
+        box-shadow: 0 6px 6px rgb(0 0 0 / 60%);
+        font-weight: 500;
+        border-radius: 10px;
+        margin-bottom: 10px;
+}
+
+.form{
+    width: 90%;
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 40px 40px 40px 40px;
+    box-shadow: 1px 7px 20px #91918d38;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.text_error{
+    color: #c1272d;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.photo_profile{
+    margin-top: 10%;
+}
+
+.img_modal{
+    width: 58%;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.img_modal input{
+    background: #f2f2db;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.first_name_modal, .last_name_modal{
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 16px;
+    margin-top:10px; 
+    box-shadow: 1px 1px 20px #91918d38;
+}
+
+.first_name_modal{
+    margin: 0 12% 0;
+    width: 80%;
+}
+
+.last_name_modal{
+    margin: 0 5% 0;
+    width: 80%;
+}
+
+.age_modal, .mentor, .city, .email, .password, .textarea{
+    margin: 0 6% 0;
+    width: 86%;
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 16px;
+    margin-top:10px; 
+    box-shadow: 1px 1px 20px #91918d38;
+}
+
+
+#form_login label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 38px 52px 14px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    padding-left: 40px;
+}
+
+#last_name_label{
+    padding-left: 10px !important;
+    
+}
+
+.first_name_modal input, .last_name_modal input, .age_modal input, .mentor input, .city input, .email input, .password input{
+    background: #FFFFFF;
+    border: none;
+    height: 62px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    width: 86%;
+    margin-left: 22px;
+}
+
+.profile_img input{
+    background: #f2f2db;
+    font-weight: 600;
+    font-size: 16px; 
+}
+
+.first_name_modal input:focus, .last_name_modal input:focus, .age_modal input:focus,.mentor input:focus, .city input:focus, .email input:focus, .password input:focus{
+    outline: 0; 
+}
+
+#form_login ::placeholder{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 16px;
+    color: #b3b3b3;
+}
+
+.student_information{
+    display:flex;
+    width: 92%;
+    margin-left: 3%;
+}
+
+.student_information_item{
+    width: 50%;
+}
+
+.button_submit{
+    width: 69%;
+    margin: 10% 13% 8%;
+}
+
+.button_submit button{
+    width: 100%;
+    height: 60px;
+    border-radius: 14px;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #8cc63f;
+}
+
+.textarea textarea{
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 22px 0;
+    font-size: 18px;
+}
+
+.textarea textarea:focus{
+    outline: 0; 
+}
+
+/*End modal*/
 
 /*START OF RESPONSIBILITY*/
 @media only screen and (max-device-width: 900px) {
@@ -233,6 +425,7 @@ a{
         flex-direction: row;
         justify-content: space-around;
         margin: 60px 0 80px 0;
+        width: 100%;
     }
 
     .user_qualifications_plus{
@@ -255,10 +448,12 @@ a{
     .topics_session{
         display: block;
         padding-right: 10%;
+        width: 90%;
     }
 
     .topics_session_plus{
         margin-top: 40px;
+        width:100%;
     }
 
     .topics_session_plus h2{
@@ -280,5 +475,9 @@ a{
         height: 120px;
         border-radius: 25px;
         font-size: 40px;
+    }
+
+    .img_modal{
+        margin-left: 10%;
     }
 }

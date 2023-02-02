@@ -136,6 +136,14 @@ a{
     margin-top: 20px;
 }
 
+/*Message session*/
+.top_message{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .input_message{
     display: flex;
     flex-direction: row;

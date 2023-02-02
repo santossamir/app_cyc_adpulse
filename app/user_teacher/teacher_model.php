@@ -9,7 +9,8 @@
         private $password;
         private $image_path;
         private $date_registration;
-        private $file_path;
+        private $about_me;
+        private $teach_you;
 
         public function __get($atributo) {
             return $this->$atributo;

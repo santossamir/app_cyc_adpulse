@@ -110,8 +110,6 @@
 							<img src="../../public/img/svg/estrela.svg">
 							<span><?php echo $found_teacher[$language]['2']?></span>
 						</div>
-						<?php }}
-						?>
 					</div>
 					<div class="user_qualifications">
 						<div class="user_qualifications_plus">
@@ -130,21 +128,13 @@
 					<div class="topics_session_plus">
 						<h2><?php echo $found_teacher[$language]['6']?></h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing
-							elit, sed diam nonummy nibh euismod tincidunt ut
-							laoreet dolore magna aliquam erat volutpat. Ut wisi
-							enim ad minim veniam, quis nostrud exerci tation
-							ullamcorper suscipit lobortis nisl ut aliquip ex
+							<?php echo $found->about_me;?>
 						</p>
 					</div>
 					<div class="topics_session_plus">
 						<h2><?php echo $found_teacher[$language]['7']?></h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing
-							elit, sed diam nonummy nibh euismod tincidunt ut
-							laoreet dolore magna aliquam erat volutpat. Ut wisi
-							enim ad minim veniam, quis nostrud exerci tation
-							ullamcorper suscipit lobortis nisl ut aliquip ex
+							<?php echo $found->teach_you;?>
 						</p>
 					</div>
 				</div>
@@ -158,7 +148,9 @@
 						<a href="../../app/my_favorites/my_courses_controller.php?action=insert_course&student_id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>"><?php echo $found_teacher[$language]['9']?></a>
 					</button>
 				</div>
-		    </div> 
+		    </div>
+			<?php }}
+			?> 
         </div>
   	</body>
 </html>

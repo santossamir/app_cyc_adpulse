@@ -87,24 +87,26 @@
             </div>
             <div class="customization_user">
                 <div class="card_teacher">
-                    <?php
-                        if(isset($teacher_id)){
-                            echo "<h2 style='margin-top:30px;'>".$mensagens[$language]['0']." ".$teacher_name." ".$teacher_apelido. "</h2>";
-                    ?>
-                    <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
-                        <div>
-                            <div class="input_message">
-                                <input type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['2']?>">
-                                <div class="card_button" style="width:0; margin-top:0;">
-                                    <button type="submit" style="border:none; margin-left: 10px;">
-                                        <img style="width: 40px;" src="../../public/img/svg/seta-direita.svg">
-                                    </button>
-                                </div>    
+                    <div class="top_message">
+                        <?php
+                            if(isset($teacher_id)){
+                                echo "<h2 style='margin-top:30px;'>".$mensagens[$language]['0']." ".$teacher_name." ".$teacher_apelido. "</h2>";
+                        ?>
+                        <form style="margin:10px 0 10px 0;" method="post" action="messages_controller.php?action=insert_message_student&id=<?=$student_id?>&teacher_id=<?=$teacher_id?>&language=<?=$language?>">
+                            <div>
+                                <div class="input_message">
+                                    <input type="text" name="message" id="message" placeholder="<?= $mensagens[$language]['2']?>">
+                                    <div class="card_button" style="width:0; margin-top:0;">
+                                        <button type="submit" style="border:none; margin-left: 10px;">
+                                            <img style="width: 40px;" src="../../public/img/svg/seta-direita.svg">
+                                        </button>
+                                    </div>    
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                    <?php }
-                    ?>
+                        </form>
+                        <?php }
+                        ?>
+                    </div>
                     <div class="card_teacher">
                         <?php
                             foreach($messages as $message){
@@ -127,7 +129,6 @@
                 </div>
                 <div class="footer_img_city">
                     <div class="city_background_image"></div>
-                    <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                     <div class="link_term">
                         <a href="../../faqs.php?language=<?=$language?>" target="_blank" style="margin-right: 14px;"><?php echo $link_term[$language]['0']?></a>
                         <a href="../../public/pdf/terms_and_conditions_cyc.pdf" target="_blank"><?php echo $link_term[$language]['1']?></a>

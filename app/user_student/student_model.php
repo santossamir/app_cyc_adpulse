@@ -9,6 +9,10 @@
         private $image_path;
         private $date_registration;
         private $age;
+        private $knowledge;
+        private $qualities;
+        private $i_like;
+        private $improve;
 
         public function __get($atributo) {
             return $this->$atributo;

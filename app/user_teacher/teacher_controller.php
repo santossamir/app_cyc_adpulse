@@ -161,7 +161,7 @@
         $last_name = null;
         $mentor = null;
         $city = null;
-        $date_registration = null;
+        $date_registration = null; 
 
         foreach($teachers as $teacher){
             
@@ -269,6 +269,84 @@
         $teacherService = new TeacherService($conexion, $email);
         $researches = $teacherService->show_modal();
 
+    } else if($action == 'edit_profile'){
+
+        $teacher_id = $_GET['id'];
+        $_SESSION['teacher_id'] = $teacher_id;
+        
+        $img_profile = $_FILES['profile_img'];
+       
+        if($img_profile['size'] != 0){
+            $profile_img = $_FILES['profile_img'];
+            $folder_profile_photos = "../../public/img/profile_photos/";
+            $file_name = $profile_img['name'];
+            $new_file_name = uniqid();
+            $file_extension = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+            
+            if($profile_img['size'] > 2097152){
+                $error = "Imagem maior que 2MB.";
+            }
+
+            if($file_extension != 'jpg' && $file_extension != 'jpeg' && $file_extension != 'png'){
+                $error = "Apenas arquivos '.jpg', '.jpeg' ou '.png'. ";
+            }
+
+            #Variables of profile photos
+            $right_file = move_uploaded_file($profile_img['tmp_name'], $folder_profile_photos . $new_file_name . "." . $file_extension);
+            
+            if($right_file){
+                $path_photo = "$folder_profile_photos$new_file_name.$file_extension";
+                $_SESSION["path_photo"] = $path_photo;
+            }else{
+                $error = "A imagem não foi carregada corretamente.";
+            }
+
+            $_SESSION["erro"] = $error;
+            if(!empty($error)){
+                header('Location: ../../views/teacher/profile_teacher.php?action=show_data_profile&edit_profile=Error&id='.$teacher_id.'&language='.$language);
+                exit;
+            }
+        }
+
+        $image_path = new Teacher();
+        $first_name = new Teacher();
+        $last_name = new Teacher();
+        $city = new Teacher();
+        $email = new Teacher();
+        $password = new Teacher();
+        $mentor = new Teacher();
+        $about_me = new Teacher();
+        $teach_you = new Teacher();
+        
+        if(isset($path_photo)){
+            $image_path->__set('image_path', $path_photo);
+        }else{
+            $image_path->__set('image_path', $_POST['used_img']);
+        }
+
+        $first_name->__set('first_name', $_POST['first_name']);
+        $last_name->__set('last_name', $_POST['last_name']);
+        $city->__set('city', $_POST['city']);
+        $email->__set('email', $_POST['email']);
+        $password->__set('password', $_POST['password']);
+        $mentor->__set('age', $_POST['mentor']);
+        $about_me->__set('about_me' , $_POST['about_me']);
+        $teach_you->__set('teach_you' , $_POST['teach_you']);
+
+        $conexion = new Conexion();
+
+        $teacherService = new TeacherService($conexion, $image_path, $first_name, $last_name, $city, $email, $password, $mentor, $about_me, $teach_you);
+        $teacherService->edit_profile();
+
+        header('Location: ../../views/teacher/profile_teacher.php?action=show_data_profile&teacher_id='.$teacher_id.'&language='.$language);
+    
+    } else if($action == 'show_data_profile'){
+
+        $email = new Teacher();
+        $conexion = new Conexion();
+
+        $teacherService = new TeacherService($conexion, $email);
+        $teachers = $teacherService->show_data_profile();
     } 
 ?>
 

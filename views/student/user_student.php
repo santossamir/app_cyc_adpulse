@@ -4,7 +4,7 @@
     $image_path = $_SESSION['image_path'];
     $date_registration = $_SESSION['date_registration'];
     $student_id = $_SESSION['student_id'];
-
+        
     require_once "../../access_validator.php";
     require "../../app/user_student/student_controller.php";
     $action = "login";
@@ -55,7 +55,7 @@
                 <div class="buttons_of_profile">
                     <div class="profile_button">
                         <button>
-                            <a href="profile_student.php?id=<?=$student_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
+                            <a href="profile_student.php?action=show_data_profile&id=<?=$student_id?>&language=<?=$language?>"><?php echo $user_teacher[$language]['0']?></a>
                         </button>
                     </div>
                     <div class="look_teachers_button">
@@ -101,7 +101,6 @@
                 </div>
                 <div class="footer_img_city">
                     <div class="city_background_image"></div>
-                    <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                     <div class="link_term">
                         <a href="../../faqs.php?language=<?=$language?>" target="_blank" style="margin-right: 14px;"><?php echo $link_term[$language]['0']?></a>
                         <a href="../../public/pdf/terms_and_conditions_cyc.pdf" target="_blank"><?php echo $link_term[$language]['1']?></a>

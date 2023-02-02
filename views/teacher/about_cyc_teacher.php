@@ -87,7 +87,6 @@
            
             <div class="footer_img_city" style="margin-top:0;">
                 <div class="city_background_image"></div>
-                <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                 <div class="link_term">
                     <a href="../../faqs.php?language=<?=$language?>" target="_blank" style="margin-right: 14px;"><?php echo $link_term[$language]['0']?></a>
                     <a href="../../public/pdf/terms_and_conditions_cyc.pdf" target="_blank"><?php echo $link_term[$language]['1']?></a>

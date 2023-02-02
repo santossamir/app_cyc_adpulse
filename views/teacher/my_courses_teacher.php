@@ -1,13 +1,13 @@
 <?php
 	session_start();
 
-    $image_path = $_SESSION['image_path'];
-    $date_registration = $_SESSION['date_registration'];
-    
     require_once "../../access_validator.php";
     require "../../app/user_teacher/teacher_controller.php";
     $action = "login";
 
+    $image_path = $_SESSION['image_path'];
+    $date_registration = $_SESSION['date_registration'];
+    
     include("../../language.php");
     $language = "";
    
@@ -72,7 +72,6 @@
                 </div>
                 <div style="background-color: #f7931e;" class="footer_img_city">
                     <div class="city_background_image"></div>
-                    <!--<img src="./public/img/svg/fundo-cidade.svg">-->
                     <div class="link_term">
                         <a href="../../faqs.php?language=<?=$language?>" target="_blank" style="margin-right: 14px;"><?php echo $link_term[$language]['0']?></a>
                         <a href="../../public/pdf/terms_and_conditions_cyc.pdf" target="_blank"><?php echo $link_term[$language]['1']?></a>
