@@ -205,6 +205,12 @@ a{
     align-items: center;
 }
 
+.close_modal{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 #close_modal{
         cursor: pointer;
         border: 1px solid #91918d38;
@@ -243,7 +249,7 @@ a{
 }
 
 .photo_profile{
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .img_modal{
@@ -506,5 +512,14 @@ a{
 
     .img_modal{
         margin-left: 10%;
+    }
+
+    .student_information{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .student_information_item{
+        width: 100%;
     }
 }

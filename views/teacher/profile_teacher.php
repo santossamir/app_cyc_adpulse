@@ -142,10 +142,10 @@
 				<!--Start of edit Profile Modal-->
 				<div id="modal" class="modal">
 					<div class="content">
-						<button id="close_modal" onClick="close_modal()">
-							X
-						</button>
 						<div class="form">
+							<div class="close_modal">
+								<button id="close_modal" onClick="close_modal()">X</button>
+							</div>
 							<form id="form_login" method="POST" action="teacher_controller.php?action=edit_profile&id=<?=$teacher_id?>&language=<?=$language?>" enctype="multipart/form-data">
 								<div class="photo_profile">
 									<label><?php echo $form[$language]['0']?></label>

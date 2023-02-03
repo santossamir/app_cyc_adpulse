@@ -191,18 +191,24 @@ a{
     align-items: center;
 }
 
+.close_modal{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 #close_modal{
-        cursor: pointer;
-        border: 1px solid #91918d38;
-        background-color: transparent;
-        height: 40px;
-        width: 10%;
-        color: #000000db;
-        font-size: 1.5em;
-        box-shadow: 0 6px 6px rgb(0 0 0 / 60%);
-        font-weight: 500;
-        border-radius: 10px;
-        margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #91918d38;
+    background-color: transparent;
+    height: 40px;
+    width: 10%;
+    color: #000000db;
+    font-size: 1.5em;
+    box-shadow: 0 6px 6px rgb(0 0 0 / 60%);
+    font-weight: 500;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .form{
@@ -229,7 +235,7 @@ a{
 }
 
 .photo_profile{
-    margin-top: 10%;
+    margin-top: 8%;
 }
 
 .img_modal{
@@ -480,4 +486,14 @@ a{
     .img_modal{
         margin-left: 10%;
     }
+
+    .student_information{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .student_information_item{
+        width: 100%;
+    }
+    
 }
