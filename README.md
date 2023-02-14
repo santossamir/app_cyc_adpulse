@@ -20,4 +20,10 @@ HTML, CSS, JavaScript, PHP, MySQL e Git. Ele pode ser utilizado nas versões des
 
 ![Captura de tela de 2023-02-14 10-36-42](https://user-images.githubusercontent.com/88064533/218754933-ff5c721c-ab83-4c12-9263-c5de8380c964.png)
 
+![Captura de tela de 2023-02-14 10-56-45](https://user-images.githubusercontent.com/88064533/218759151-b8706d52-5162-43a0-b676-89714c5ec9e1.png)
+![Captura de tela de 2023-02-14 10-56-54](https://user-images.githubusercontent.com/88064533/218759192-e0c8cd81-27ca-4db9-8975-f442ff73bf54.png)
+
+![Captura de tela de 2023-02-14 10-57-05](https://user-images.githubusercontent.com/88064533/218759231-018c20f9-9a99-4046-a1ab-332537683bc5.png)
+![Captura de tela de 2023-02-14 10-57-13](https://user-images.githubusercontent.com/88064533/218759251-35b0620f-17e5-4af8-835e-2d903ae63847.png)
+
 ![Captura de tela de 2023-02-14 10-37-02](https://user-images.githubusercontent.com/88064533/218754972-d305ac91-e020-4971-84a8-bea681f4f8d3.png)
